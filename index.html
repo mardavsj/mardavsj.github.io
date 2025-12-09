@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-1308401027139954">
+    <title>Play Mint - Free Online Games</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .filter-buttons {
+            margin: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+        
+        .filter-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out;
+            white-space: nowrap;
+        }
+        
+        .filter-btn:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .filter-btn.active {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+    </style>
+    <!-- AdSense verification code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <h1>Play Mint</h1>
+                <p>Free Online Games - No Download Required</p>
+            </div>
+            <div class="header-right" style="display: flex; flex-direction: column; align-items: flex-end;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <button id="escape-mode-btn" style="background-color: #2c3e50; color: white; border: none; border-radius: 20px; padding: 5px 12px; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <span style="font-size: 12px; color: white; border: 1px solid white; border-radius: 50%; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center;">i</span>
+                        <span>Escape Mode</span>
+                    </button>
+                    <div id="total-games-count" style="background-color: #3498db; color: white; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>
+                </div>
+                <!-- Escape mode modal -->
+                <div id="escape-mode-modal" style="display: none; position: absolute; top: 60px; right: 300px; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #2c3e50;">Double-tap Space to hide the game instantly.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #2c3e50;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
+                </div>
+                <form id="search-form" class="search-form">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search games..." autocomplete="off">
+                        <button type="submit" style="display: flex; align-items: center; justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></button>
+                        <div id="search-dropdown" class="search-dropdown">
+                            <!-- Search results will be populated here -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <!-- AdSense ad - top -->
+        <div class="ad-container" id="topAdContainer">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1308401027139954"
+                 data-ad-slot="1694166093"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 // Only load ad if there's sufficient content
+                 if (document.querySelectorAll('.game-card:not(.ad-card)').length > 0) {
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                 } else {
+                     // Hide ad container if no content
+                     document.getElementById('topAdContainer').style.display = 'none';
+                 }
+            </script>
+        </div>
+        
+        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <div class="filter-buttons" style="margin: 0; width: 100%; justify-content: center;">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Action & Adventure">Action & Adventure</button>
+                <button class="filter-btn" data-filter="Puzzle & Logic">Puzzle</button>
+                <button class="filter-btn" data-filter="Classic & Arcade">Arcade</button>
+                <button class="filter-btn" data-filter="Card & Strategy">Card</button>
+                <button class="filter-btn" data-filter="Strategy & Board">Board</button>
+                <button class="filter-btn" data-filter="Match 3">Match 3</button>
+                <button class="filter-btn" data-filter="Sports & Action">Sports</button>
+                <button class="filter-btn" data-filter="Tile & Puzzle">Tile</button>
+                <button class="filter-btn" data-filter="others">Others</button>
+            </div>
+        </div>
+        <div class="game-grid">
+            <!-- Game cards will be generated here -->
+            <!-- Each card represents a game with a link to its page -->
+            
+            <!-- Sample game cards (35 cards total) -->
+            <div class="game-card" data-game-link="games/NinjaBreakout.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/ninjabreakout/800x450/ninjabreakout800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/ninjabreakout/500x300/ninjabreakout500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/ninjabreakout/300x200/ninjabreakout300200.webp">
+                    <img src="assets/images/games/ninjabreakout/200x200/ninjabreakout200.webp" alt="Ninja Breakout">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Ninja Breakout</h3>
+                    <p>Action & Adventure</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/Sudoku.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/sudoku/800x450/sudokuclassic800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/sudoku/500x300/sudokuclassic500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/sudoku/300x200/sudokuclassic300200.webp">
+                    <img src="assets/images/games/sudoku/200x200/sudokuclassic200.webp" alt="Sudoku">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Sudoku Classic</h3>
+                    <p>Puzzle & Logic</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/Tetris.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/tetris/800x450/tetrisfun800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/tetris/500x300/tetrisfun500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/tetris/300x200/tetrisfun300200.webp">
+                    <img src="assets/images/games/tetris/200x200/tetrisfun200.webp" alt="Tetris">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Tetris Fun</h3>
+                    <p>Classic & Arcade</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/MahjongMerge.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/mahjong-merge/800x450/mahjongmerge800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/mahjong-merge/500x300/mahjongmerge500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/mahjong-merge/300x200/mahjongmerge300200.webp">
+                    <img src="assets/images/games/mahjong-merge/200x200/mahjongmerge200.webp" alt="Mahjong Merge">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Mahjong Merge</h3>
+                    <p>Tile & Puzzle</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/FlowerSolitaire.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/flower-solitaire/800x450/flowersolitaire800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/flower-solitaire/500x300/flowersolitaire500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/flower-solitaire/300x200/flowersolitaire-300200.webp">
+                    <img src="assets/images/games/flower-solitaire/200x200/flowersolitaire-200.webp" alt="Flower Solitaire">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Flower Solitaire</h3>
+                    <p>Card & Strategy</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/Chess.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/chess/800x450/chess800x450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/chess/500x300/chess500x300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/chess/300x200/chess300200.webp">
+                    <img src="assets/images/games/chess/200x200/chess200200.webp" alt="Chess">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Chess</h3>
+                    <p>Strategy & Board</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/ClassicWordSearch.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/classic-word-search/800x450/classic-word-search800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/classic-word-search/500x300/classic-word-search500.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/classic-word-search/300x200/classic-word-search-300.webp">
+                    <img src="assets/images/games/classic-word-search/200x200/classic-word-search-200.webp" alt="Classic Word Search">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Classic Word Search</h3>
+                    <p>Word & Puzzle</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/BubbleBuster.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/bubble-buster/800x450/bubblebuster800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/bubble-buster/500x300/bubblebuster500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/bubble-buster/300x200/bubblebuster300200.webp">
+                    <img src="assets/images/games/bubble-buster/200x200/bubblebuster200.webp" alt="Bubble Buster">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Bubble Buster</h3>
+                    <p>Match 3 & Puzzle</p>
+                </div>
+            </div>
+            
+            <!-- Ad Card - Before Minesweeper -->
+            <div class="game-card ad-card" id="adCard1">
+                <div class="ad-slot">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                         crossorigin="anonymous"></script>
+                    <!-- Card -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:200px"
+                         data-ad-client="ca-pub-1308401027139954"
+                         data-ad-slot="1247443536"></ins>
+                    <script>
+                         // Only load ad if there's sufficient content
+                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 5) {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         } else {
+                             // Hide ad card if not enough content
+                             document.getElementById('adCard1').style.display = 'none';
+                         }
+                    </script>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/Minesweeper.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/minesweeper/800x450/minesweeper800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/minesweeper/500x300/minesweeper500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/minesweeper/300x200/minesweeper300200.webp">
+                    <img src="assets/images/games/minesweeper/200x200/minesweeper200.webp" alt="Minesweeper">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Minesweeper</h3>
+                    <p>Logic & Puzzle</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/ClassicPac.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/classic-pac/800x450/classicpac800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/classic-pac/500x300/classicpac500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/classic-pac/300x200/classicpac300200.webp">
+                    <img src="assets/images/games/classic-pac/200x200/classicpac200.webp" alt="Classic Pac">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Classic Pac</h3>
+                    <p>Classic & Arcade</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/Checkers.html">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="assets/images/games/checkers/300x200/checkers300.webp">
+                    <img src="assets/images/games/checkers/300x200/checkers300.webp" alt="Checkers">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Checkers</h3>
+                    <p>Board & Strategy</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/Freecell.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/freecell/800x450/free-cell-800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/freecell/500x300/free-cell-500.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/freecell/300x200/free-cell-300.webp">
+                    <img src="assets/images/games/freecell/200x200/free-cell-200.webp" alt="Freecell">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Freecell</h3>
+                    <p>Card & Strategy</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/EasterZuma.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/easter-zuma/800x450/easterzuma800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/easter-zuma/500x300/easterzuma500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/easter-zuma/300x200/easterzuma300200.webp">
+                    <img src="assets/images/games/easter-zuma/200x200/easterzuma200.webp" alt="Easter Zuma">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Easter Zuma</h3>
+                    <p>Match 3 & Action</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/SpiderSolitaire.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/spider-solitaire/800x450/spidersolitaire800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/spider-solitaire/500x300/spidersolitaire500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/spider-solitaire/300x200/spidersolitaire300200.webp">
+                    <img src="assets/images/games/spider-solitaire/200x200/spidersolitaire200.webp" alt="Spider Solitaire">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Spider Solitaire</h3>
+                    <p>Card & Strategy</p>
+                </div>
+            </div>
+            
+            <!-- Ad Card - After Spider Solitaire -->
+            <div class="game-card ad-card" id="adCard2">
+                <div class="ad-slot">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                         crossorigin="anonymous"></script>
+                    <!-- Card -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:200px"
+                         data-ad-client="ca-pub-1308401027139954"
+                         data-ad-slot="1247443536"></ins>
+                    <script>
+                         // Only load ad if there's sufficient content
+                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 10) {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         } else {
+                             // Hide ad card if not enough content
+                             document.getElementById('adCard2').style.display = 'none';
+                         }
+                    </script>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/LuxorTriPeaks.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/luxor-tri-peaks/800x450/luxortripeaks800.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/luxor-tri-peaks/500x300/luxortripeaks500.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/luxor-tri-peaks/300x200/luxortripeaks300.webp">
+                    <img src="assets/images/games/luxor-tri-peaks/200x200/luxortripeaks200.webp" alt="Luxor Tri Peaks">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Luxor Tri Peaks</h3>
+                    <p>Card & Puzzle</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/Battleships.html">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="assets/images/games/battleships/300x200/battleships300.webp">
+                    <img src="assets/images/games/battleships/300x200/battleships300.webp" alt="Battleships">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Battleships</h3>
+                    <p>Strategy & Board</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/ConnectFour.html">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="assets/images/games/connect-four/300x200/connect4300.webp">
+                    <img src="assets/images/games/connect-four/300x200/connect4300.webp" alt="Connect Four">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Connect Four</h3>
+                    <p>Strategy & Board</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/ArcheryTraining.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/archery-training/800x450/acherytraining800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/archery-training/500x300/acherytraining500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/archery-training/300x200/acherytraining300200.webp">
+                    <img src="assets/images/games/archery-training/200x200/acherytraining200.webp" alt="Archery Training">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Archery Training</h3>
+                    <p>Sports & Action</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/HigherOrLower.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/higher-or-lower/800x450/higherorLower800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/higher-or-lower/500x300/higherorLower500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/higher-or-lower/300x200/higherorLower300200.webp">
+                    <img src="assets/images/games/higher-or-lower/200x200/higherorLower200.webp" alt="Higher or Lower">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Higher or Lower</h3>
+                    <p>Card & Puzzle</p>
+                </div>
+            </div>
+            
+            <!-- Ad Card - After Higher or Lower -->
+            <div class="game-card ad-card" id="adCard3">
+                <div class="ad-slot">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                         crossorigin="anonymous"></script>
+                    <!-- Card -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:200px"
+                         data-ad-client="ca-pub-1308401027139954"
+                         data-ad-slot="1247443536"></ins>
+                    <script>
+                         // Only load ad if there's sufficient content
+                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 15) {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         } else {
+                             // Hide ad card if not enough content
+                             document.getElementById('adCard3').style.display = 'none';
+                         }
+                    </script>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/GuardianLighthouseHiddenSecrets.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/guardian-lighthouse/800x450/guardianlighthousehiddensecrets800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/guardian-lighthouse/500x300/guardianlighthousehiddensecrets500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/guardian-lighthouse/300x200/guardianlighthousehiddensecrets300200.webp">
+                    <img src="assets/images/games/guardian-lighthouse/200x200/guardianlighthousehiddensecrets200.webp" alt="Guardian Lighthouse - Hidden Secrets">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Guardian Lighthouse - Hidden Secrets</h3>
+                    <p>Hidden Object</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/JewelsClassic.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/jewels-classic/800x450/jewelsclassic800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/jewels-classic/500x300/jewelsclassic500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/jewels-classic/300x200/jewelsclassic300200.webp">
+                    <img src="assets/images/games/jewels-classic/200x200/jewelsclassic200.webp" alt="Jewels Classic">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Jewels Classic</h3>
+                    <p>Puzzle & Logic</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/CarromPool.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/carrom-pool/800x450/carrompool800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/carrom-pool/500x300/carrompool500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/carrom-pool/300x200/carrompool300200.webp">
+                    <img src="assets/images/games/carrom-pool/200x200/carrompool200.webp" alt="Carrom Pool">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Carrom Pool</h3>
+                    <p>Sports & Action</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/PragueHiddenObjects.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/prague-hidden-objects/800x450/praquehiddenobjects800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/prague-hidden-objects/500x300/praquehiddenobjects500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/prague-hidden-objects/300x200/praquehiddenobjects300200.webp">
+                    <img src="assets/images/games/prague-hidden-objects/200x200/praquehiddenobjects200.webp" alt="Prague Hidden Objects">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Prague Hidden Objects</h3>
+                    <p>Hidden Object</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/BubbleShooter.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/bubble-shooter/800x450/bubble_shooter800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/bubble-shooter/500x300/bubble_shooter500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/bubble-shooter/300x200/bubble_shooter300200.webp">
+                    <img src="assets/images/games/bubble-shooter/200x200/bubble_shooter200.webp" alt="Bubble Shooter">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Bubble Shooter</h3>
+                    <p>Match 3</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/BalloonMaze.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/balloon-maze/800x450/balloonmaze800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/balloon-maze/500x300/balloonmaze500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/balloon-maze/300x200/balloonmaze300200.webp">
+                    <img src="assets/images/games/balloon-maze/200x200/balloonmaze200.webp" alt="Balloon Maze">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Balloon Maze</h3>
+                    <p>Puzzle & Logic</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/MazeRoll.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/maze-roll/800x450/mazeroll800450.jpg">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/maze-roll/500x300/mazeroll500300.jpg">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/maze-roll/300x200/mazeroll300200.jpg">
+                    <img src="assets/images/games/maze-roll/200x200/mazeroll200.jpg" alt="Maze Roll">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Maze Roll</h3>
+                    <p>Puzzle & Logic</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game-link="games/SnakeDash.html">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="assets/images/games/snake-dash/800x450/snakedash800450.webp">
+                    <source media="(min-width: 992px)" srcset="assets/images/games/snake-dash/500x300/snakedash500300.webp">
+                    <source media="(min-width: 768px)" srcset="assets/images/games/snake-dash/300x200/snakedash300200.webp">
+                    <img src="assets/images/games/snake-dash/200x200/snakedash200.webp" alt="Snake Dash">
+                </picture>
+                <div class="game-card-content">
+                    <h3>Snake Dash</h3>
+                    <p>Classic & Arcade</p>
+                </div>
+            </div>
+            
+            <!-- Ad Card - After Snake Dash -->
+            <div class="game-card ad-card" id="adCard4">
+                <div class="ad-slot">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                         crossorigin="anonymous"></script>
+                    <!-- Card -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:200px"
+                         data-ad-client="ca-pub-1308401027139954"
+                         data-ad-slot="1247443536"></ins>
+                    <script>
+                         // Only load ad if there's sufficient content
+                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 20) {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         } else {
+                             // Hide ad card if not enough content
+                             document.getElementById('adCard4').style.display = 'none';
+                         }
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AdSense ad - bottom -->
+        <div class="ad-container" id="bottomAdContainer">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1308401027139954"
+                 data-ad-slot="1694166093"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 // Only load ad if there's sufficient content
+                 if (document.querySelectorAll('.game-card:not(.ad-card)').length > 0) {
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                 } else {
+                     // Hide ad container if no content
+                     document.getElementById('bottomAdContainer').style.display = 'none';
+                 }
+            </script>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; <span id="current-year"></span> Play Mint. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Update total games count
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameCards = document.querySelectorAll('.game-card:not(.ad-card)');
+            const totalGamesCount = gameCards.length;
+            const countElement = document.getElementById('total-games-count');
+            if (countElement) {
+                countElement.textContent = 'Total Games: ' + totalGamesCount;
+            }
+            
+            // Add event listener for escape mode button
+            const escapeModeBtn = document.getElementById('escape-mode-btn');
+            const escapeModeModal = document.getElementById('escape-mode-modal');
+            if (escapeModeBtn && escapeModeModal) {
+                escapeModeBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    // Toggle modal visibility
+                    if (escapeModeModal.style.display === 'none' || escapeModeModal.style.display === '') {
+                        escapeModeModal.style.display = 'block';
+                    } else {
+                        escapeModeModal.style.display = 'none';
+                    }
+                });
+                
+                // Close modal when clicking elsewhere
+                document.addEventListener('click', function() {
+                    escapeModeModal.style.display = 'none';
+                });
+                
+                // Prevent modal from closing when clicking inside it
+                escapeModeModal.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+        });
+        
+        // Allow user to go to learning page by double-clicking spacebar
+        let lastSpacePress = 0;
+        document.addEventListener('keydown', function(event) {
+            // Check if spacebar was pressed
+            if (event.code === 'Space') {
+                event.preventDefault();
+                event.stopPropagation(); // Prevent event from bubbling to other listeners
+                const now = Date.now();
+                // Check if this is a double-click (within 300ms)
+                if (now - lastSpacePress < 300) {
+                    window.location.href = 'secret-learning.html';
+                }
+                lastSpacePress = now;
+            }
+        });
+        
+        // Game filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const gameCards = document.querySelectorAll('.game-card:not(.ad-card)');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    gameCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else if (filter === 'others') {
+                            // Show games that don't match any of the main categories
+                            const category = card.querySelector('p').textContent;
+                            const mainCategories = ['Action & Adventure', 'Puzzle & Logic', 'Classic & Arcade', 'Card & Strategy', 'Strategy & Board', 'Match 3', 'Sports & Action', 'Tile & Puzzle'];
+                            let matchesMainCategory = false;
+                            
+                            for (let mainCat of mainCategories) {
+                                // Normalize both category and main category for comparison
+                                const normalizedCategory = category.split(' & ').sort().join(' & ');
+                                const normalizedMainCat = mainCat.split(' & ').sort().join(' & ');
+                                
+                                if (normalizedCategory.includes(normalizedMainCat) || normalizedMainCat.includes(normalizedCategory)) {
+                                    matchesMainCategory = true;
+                                    break;
+                                }
+                            }
+                            
+                            card.style.display = matchesMainCategory ? 'none' : 'block';
+                        } else {
+                            const category = card.querySelector('p').textContent;
+                            // Normalize the category and filter for comparison by sorting words
+                            const normalizedCategory = category.split(' & ').sort().join(' & ');
+                            const normalizedFilter = filter.split(' & ').sort().join(' & ');
+                            if (normalizedCategory.includes(normalizedFilter) || normalizedFilter.includes(normalizedCategory)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

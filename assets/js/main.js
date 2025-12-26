@@ -377,3 +377,47 @@ document.addEventListener('DOMContentLoaded', function() {
     script.async = true;
     document.head.appendChild(script);
 });
+
+// Double-space toggle between home and guides
+(function() {
+    const DOUBLE_TAP_MS = 300;
+    let lastSpacePress = 0;
+
+    function shouldIgnoreTarget(target) {
+        if (!target) return false;
+        const tag = target.tagName;
+        return target.isContentEditable || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || tag === 'BUTTON';
+    }
+
+    function registerDoubleSpaceNav(navigateTo, fallback = 'index.html') {
+        document.addEventListener('keydown', function(event) {
+            if (event.code !== 'Space') return;
+            if (shouldIgnoreTarget(event.target)) return;
+
+            const now = Date.now();
+            if (now - lastSpacePress < DOUBLE_TAP_MS) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (navigateTo === 'back') {
+                    const stored = sessionStorage.getItem('pm-return-url');
+                    window.location.href = stored || fallback;
+                } else {
+                    sessionStorage.setItem('pm-return-url', window.location.href);
+                    window.location.href = navigateTo;
+                }
+            }
+            lastSpacePress = now;
+        });
+    }
+
+    const path = window.location.pathname;
+    const isHome = path.endsWith('/') || path.endsWith('index.html') || path === '';
+    const isGuides = path.includes('space-exploration.html');
+
+    if (isHome) {
+        registerDoubleSpaceNav('space-exploration.html');
+    } else if (isGuides) {
+        registerDoubleSpaceNav('back');
+    }
+})();

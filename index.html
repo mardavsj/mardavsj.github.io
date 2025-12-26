@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-1308401027139954">
+    <meta name="description" content="Play Mint is a curated collection of fast-loading browser games with tips, spotlight picks, and honest recommendations for puzzle, arcade, and strategy fans.">
     <title>Play Mint - Free Online Games</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
@@ -46,21 +47,27 @@
         <div class="header-content">
             <div class="header-left">
                 <h1>Play Mint</h1>
-                <p>Free Online Games - No Download Required</p>
-            </div>
-            <div class="header-right" style="display: flex; flex-direction: column; align-items: flex-end;">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                    <button id="escape-mode-btn" style="background-color: #2c3e50; color: white; border: none; border-radius: 20px; padding: 5px 12px; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <span style="font-size: 12px; color: white; border: 1px solid white; border-radius: 50%; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center;">i</span>
-                        <span>Escape Mode</span>
-                    </button>
-                    <div id="total-games-count" style="background-color: #3498db; color: white; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>
+                <p>Curated browser games with no downloads, quick tips, and a clean playing experience.</p>
+                <div class="header-pill-row">
+                    <span class="pill">Hand-checked embeds</span>
+                    <span class="pill">No-login play</span>
+                    <a class="pill link-pill" href="guide.html">Game guides</a>
                 </div>
-                <!-- Escape mode modal -->
-                <div id="escape-mode-modal" style="display: none; position: absolute; top: 60px; right: 300px; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
-                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #2c3e50;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold; color: #2c3e50;">Double-tap Space again to get back to the game.</p>
-                    <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
+            </div>
+            <div class="header-right">
+                <div class="header-utilities">
+                    <div class="escape-info-wrapper">
+                        <span id="info-icon" class="escape-info-icon" aria-label="Escape mode info">i</span>
+                        <span id="escape-mode-button" class="escape-mode-text" role="button" tabindex="0">Escape mode</span>
+                        <div id="info-modal" class="escape-info-modal" role="dialog" aria-label="Escape mode instructions">
+                            <p><strong>Double-tap Space</strong> to open Space Exploration instantly.</p>
+                            <p>Double-tap Space again to return to your last page.</p>
+                            <p style="font-style: italic; color: #7f8c8d;">Keeps focus on work when you need a quick switch.</p>
+                            <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                        </div>
+                    </div>
+                    <div id="total-games-count" class="pill highlighted-pill"></div>
+                    <a class="pill link-pill" href="privacy-policy.html">Privacy</a>
                 </div>
                 <form id="search-form" class="search-form">
                     <div class="search-container">
@@ -74,6 +81,120 @@
             </div>
         </div>
     </header>
+    <section class="value-section">
+        <div class="container">
+            <div class="value-header">
+                <button class="scroll-to-games" type="button" onclick="document.querySelector('.game-grid').scrollIntoView({ behavior: 'smooth' });">
+                    <span class="scroll-icon" aria-hidden="true"></span>
+                    <span class="scroll-label">Jump to games</span>
+                </button>
+                <h2>What makes Play Mint worth visiting</h2>
+                <p>We hand-pick games that load fast, play well on mobile and desktop, and clearly explain controls before you start. Every title is reviewed for controls, load time, and stability; we replace broken embeds weekly and add notes about difficulty, device fit, and expected session length so you know exactly what you’re clicking into.</p>
+            </div>
+            <div class="value-marquee" aria-label="Highlights about Play Mint">
+                <div class="value-track">
+                    <div class="value-card">
+                        <h3>Curation with notes</h3>
+                        <p>Every title is tagged by genre, pace, and difficulty so you can quickly find the right fit.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Zero-download setup</h3>
+                        <p>All games are browser-native. No installers, no accounts, and no surprise redirects away from the page.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Play-tested on devices</h3>
+                        <p>We check each game on phones, tablets, and laptops to keep controls responsive and screens readable.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Quick-start guidance</h3>
+                        <p>Tap the guides link for bite-sized tips, best beginner picks, and troubleshooting steps for slow connections.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Fresh picks weekly</h3>
+                        <p>Broken or slow titles are swapped out every week so you always land on working games.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Mobile-first media</h3>
+                        <p>Responsive images per card keep load times low on 4G and small screens.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Ad-safety first</h3>
+                        <p>Ads only load when content exists; we avoid pop-ups and redirect traps.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Accessibility basics</h3>
+                        <p>Clear labels, visible focus states, and keyboard-friendly navigation on game cards.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Controller friendly picks</h3>
+                        <p>We tag games that play well with keyboards and external controllers for smoother sessions.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Weekly link audits</h3>
+                        <p>Broken or slow embeds are removed quickly to keep the library fresh.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Fullscreen ready</h3>
+                        <p>Game pages include fullscreen toggles so you can focus without browser chrome.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Lightweight pages</h3>
+                        <p>Optimized assets and responsive images keep data use low on mobile networks.</p>
+                    </div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="value-card">
+                        <h3>Curation with notes</h3>
+                        <p>Every title is tagged by genre, pace, and difficulty so you can quickly find the right fit.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Zero-download setup</h3>
+                        <p>All games are browser-native. No installers, no accounts, and no surprise redirects away from the page.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Play-tested on devices</h3>
+                        <p>We check each game on phones, tablets, and laptops to keep controls responsive and screens readable.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Quick-start guidance</h3>
+                        <p>Tap the guides link for bite-sized tips, best beginner picks, and troubleshooting steps for slow connections.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Fresh picks weekly</h3>
+                        <p>Broken or slow titles are swapped out every week so you always land on working games.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Mobile-first media</h3>
+                        <p>Responsive images per card keep load times low on 4G and small screens.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Ad-safety first</h3>
+                        <p>Ads only load when content exists; we avoid pop-ups and redirect traps.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Accessibility basics</h3>
+                        <p>Clear labels, visible focus states, and keyboard-friendly navigation on game cards.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Controller friendly picks</h3>
+                        <p>We tag games that play well with keyboards and external controllers for smoother sessions.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Weekly link audits</h3>
+                        <p>Broken or slow embeds are removed quickly to keep the library fresh.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Fullscreen ready</h3>
+                        <p>Game pages include fullscreen toggles so you can focus without browser chrome.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Lightweight pages</h3>
+                        <p>Optimized assets and responsive images keep data use low on mobile networks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         <!-- AdSense ad - top -->
         <div class="ad-container" id="topAdContainer">
@@ -84,13 +205,14 @@
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if there's sufficient content
-                 if (document.querySelectorAll('.game-card:not(.ad-card)').length > 0) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     // Hide ad container if no content
-                     document.getElementById('topAdContainer').style.display = 'none';
-                 }
+                 window.addEventListener('DOMContentLoaded', function() {
+                     const hasGames = document.querySelectorAll('.game-card:not(.ad-card)').length > 0;
+                     if (hasGames) {
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                     } else {
+                         document.getElementById('topAdContainer').style.display = 'none';
+                     }
+                 });
             </script>
         </div>
         
@@ -217,28 +339,6 @@
                 </div>
             </div>
             
-            <!-- Ad Card - Before Minesweeper -->
-            <div class="game-card ad-card" id="adCard1">
-                <div class="ad-slot">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                         crossorigin="anonymous"></script>
-                    <!-- Card -->
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:300px;height:200px"
-                         data-ad-client="ca-pub-1308401027139954"
-                         data-ad-slot="1247443536"></ins>
-                    <script>
-                         // Only load ad if there's sufficient content
-                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 5) {
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                         } else {
-                             // Hide ad card if not enough content
-                             document.getElementById('adCard1').style.display = 'none';
-                         }
-                    </script>
-                </div>
-            </div>
-            
             <div class="game-card" data-game-link="games/Minesweeper.html">
                 <picture>
                     <source media="(min-width: 1200px)" srcset="assets/images/games/minesweeper/800x450/minesweeper800450.webp">
@@ -315,28 +415,6 @@
                 </div>
             </div>
             
-            <!-- Ad Card - After Spider Solitaire -->
-            <div class="game-card ad-card" id="adCard2">
-                <div class="ad-slot">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                         crossorigin="anonymous"></script>
-                    <!-- Card -->
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:300px;height:200px"
-                         data-ad-client="ca-pub-1308401027139954"
-                         data-ad-slot="1247443536"></ins>
-                    <script>
-                         // Only load ad if there's sufficient content
-                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 10) {
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                         } else {
-                             // Hide ad card if not enough content
-                             document.getElementById('adCard2').style.display = 'none';
-                         }
-                    </script>
-                </div>
-            </div>
-            
             <div class="game-card" data-game-link="games/LuxorTriPeaks.html">
                 <picture>
                     <source media="(min-width: 1200px)" srcset="assets/images/games/luxor-tri-peaks/800x450/luxortripeaks800.webp">
@@ -395,28 +473,6 @@
                 <div class="game-card-content">
                     <h3>Higher or Lower</h3>
                     <p>Card & Puzzle</p>
-                </div>
-            </div>
-            
-            <!-- Ad Card - After Higher or Lower -->
-            <div class="game-card ad-card" id="adCard3">
-                <div class="ad-slot">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                         crossorigin="anonymous"></script>
-                    <!-- Card -->
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:300px;height:200px"
-                         data-ad-client="ca-pub-1308401027139954"
-                         data-ad-slot="1247443536"></ins>
-                    <script>
-                         // Only load ad if there's sufficient content
-                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 15) {
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                         } else {
-                             // Hide ad card if not enough content
-                             document.getElementById('adCard3').style.display = 'none';
-                         }
-                    </script>
                 </div>
             </div>
             
@@ -523,29 +579,49 @@
                     <p>Classic & Arcade</p>
                 </div>
             </div>
-            
-            <!-- Ad Card - After Snake Dash -->
-            <div class="game-card ad-card" id="adCard4">
-                <div class="ad-slot">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                         crossorigin="anonymous"></script>
-                    <!-- Card -->
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:300px;height:200px"
-                         data-ad-client="ca-pub-1308401027139954"
-                         data-ad-slot="1247443536"></ins>
-                    <script>
-                         // Only load ad if there's sufficient content
-                         if (document.querySelectorAll('.game-card:not(.ad-card)').length > 20) {
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                         } else {
-                             // Hide ad card if not enough content
-                             document.getElementById('adCard4').style.display = 'none';
-                         }
-                    </script>
-                </div>
-            </div>
         </div>
+
+        <section class="spotlight-section">
+            <div class="spotlight-header">
+                <h2>Spotlight picks with quick-start tips</h2>
+                <p>We rotate these every week based on player feedback and stability checks.</p>
+            </div>
+            <div class="spotlight-grid">
+                <article class="spotlight-card">
+                    <h3>Sudoku Classic</h3>
+                    <p>Start on the 4x4 and 6x6 boards to learn patterns. Toggle notes to mark candidates and avoid restarts.</p>
+                </article>
+                <article class="spotlight-card">
+                    <h3>Chess</h3>
+                    <p>Perfect for 10-minute breaks. Use the undo-friendly casual mode to practice openings and recover from blunders.</p>
+                </article>
+                <article class="spotlight-card">
+                    <h3>Bubble Shooter</h3>
+                    <p>Plan off-the-wall bounces, clear the middle first, and use color swaps to avoid dead shots and rushed reloads.</p>
+                </article>
+                <article class="spotlight-card">
+                    <h3>Maze Roll</h3>
+                    <p>Mobile-friendly tilt controls; reduce sensitivity in settings if the ball overshoots corners.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <div class="guide-card">
+                <h2>Browse smarter</h2>
+                <p>Use search for titles or genres, then tap a filter to stay within that category. We highlight stability, mobile readiness, and control options so you know what to expect before opening a game.</p>
+                <p>For deeper advice (device setup, accessibility, troubleshooting), jump to the full <a href="guide.html">Game Guides</a> page—this homepage keeps it brief so you can start playing faster.</p>
+            </div>
+            <div class="guide-card">
+                <h2>What we guarantee</h2>
+                <ul>
+                    <li>Curated, no-download embeds checked on mobile and desktop.</li>
+                    <li>Fast-loading art with responsive images for every game card.</li>
+                    <li>Ads load only when real content is present; no pop-up traps.</li>
+                    <li>Regular reviews to replace broken links or slow-loading titles.</li>
+                </ul>
+            </div>
+        </section>
         
         <!-- AdSense ad - bottom -->
         <div class="ad-container" id="bottomAdContainer">
@@ -589,49 +665,50 @@
             if (countElement) {
                 countElement.textContent = 'Total Games: ' + totalGamesCount;
             }
-            
-            // Add event listener for escape mode button
-            const escapeModeBtn = document.getElementById('escape-mode-btn');
-            const escapeModeModal = document.getElementById('escape-mode-modal');
-            if (escapeModeBtn && escapeModeModal) {
-                escapeModeBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    // Toggle modal visibility
-                    if (escapeModeModal.style.display === 'none' || escapeModeModal.style.display === '') {
-                        escapeModeModal.style.display = 'block';
+
+            // Escape mode info modal (aligned with game pages)
+            const infoIcon = document.getElementById('info-icon');
+            const escapeModeButton = document.getElementById('escape-mode-button');
+            const infoModal = document.getElementById('info-modal');
+
+            if ((infoIcon || escapeModeButton) && infoModal) {
+                function toggleModal() {
+                    if (infoModal.style.display === 'none' || infoModal.style.display === '') {
+                        infoModal.style.display = 'block';
                     } else {
-                        escapeModeModal.style.display = 'none';
+                        infoModal.style.display = 'none';
                     }
-                });
-                
-                // Close modal when clicking elsewhere
+                }
+
+                if (infoIcon) {
+                    infoIcon.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        toggleModal();
+                    });
+                }
+
+                if (escapeModeButton) {
+                    escapeModeButton.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        toggleModal();
+                    });
+                    escapeModeButton.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleModal();
+                        }
+                    });
+                }
+
                 document.addEventListener('click', function() {
-                    escapeModeModal.style.display = 'none';
+                    infoModal.style.display = 'none';
                 });
-                
-                // Prevent modal from closing when clicking inside it
-                escapeModeModal.addEventListener('click', function(e) {
+
+                infoModal.addEventListener('click', function(e) {
                     e.stopPropagation();
                 });
             }
         });
-        
-        // Allow user to go to learning page by double-clicking spacebar
-        let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
-            // Check if spacebar was pressed
-            if (event.code === 'Space') {
-                event.preventDefault();
-                event.stopPropagation(); // Prevent event from bubbling to other listeners
-                const now = Date.now();
-                // Check if this is a double-click (within 300ms)
-                if (now - lastSpacePress < 300) {
-                    window.location.href = 'secret-learning.html';
-                }
-                lastSpacePress = now;
-            }
-        });
-        
         // Game filtering functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
@@ -685,3 +762,4 @@
     </script>
 </body>
 </html>
+

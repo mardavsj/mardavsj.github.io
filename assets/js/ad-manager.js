@@ -13,7 +13,8 @@
     
     // Check if we're on the secret learning page
     function isLearningPage() {
-        return window.location.pathname.includes('secret-learning');
+        const path = window.location.pathname;
+        return path.includes('guide') || path.includes('space-exploration');
     }
     
     // Check if we're on the privacy policy page

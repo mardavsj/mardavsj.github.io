@@ -1,186 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Advance pieces, force trades, and king up to control the board. Play online free on Play Mint.">
-<title>Checkers - Play Mint</title>
+    <meta name="description"
+        content="Advance pieces, force trades, and king up to control the board. Play online free on Play Mint.">
+    <title>Checkers - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/checkers/300x200/checkers300.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Checkers</h1>
-            <p class="game-desc">Advance pieces, force trades, and king up to control the board.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Hold your back row early; control the center and force trades on your terms.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/checkers/300x200/checkers300.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Checkers</h1>
-                    
-                    <!-- Game container - Checkers embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Replace this section with actual game embed -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=Checkers&bgcolor=white"></script>
+                    <p class="game-desc">Advance pieces, force trades, and king up to control the board.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Hold your back row early; control the center and force trades on your terms.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Checkers</h1>
+
+                <!-- Game container - Checkers embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Replace this section with actual game embed -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=Checkers&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +207,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +238,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +254,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,38 +270,38 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
-        
+
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -308,26 +320,396 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
             }
         }
     </script>
+
+    <!-- Comprehensive Checkers Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Checkers: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Checkers (also known as Draughts) is a classic strategy board game that combines tactical thinking with
+                long-term planning. This comprehensive guide covers everything from basic rules to advanced strategies
+                that will help you dominate the board.</p>
+        </div>
+
+        <h3>Checkers Fundamentals: Rules and Pieces</h3>
+        <p>Checkers is played on an 8×8 board with 12 pieces per player. The objective is to capture all opponent pieces
+            or block them from moving. The game combines strategy, tactics, and forward thinking.</p>
+
+        <div class="pieces-section">
+            <h4>Game Pieces and Movement</h4>
+            <div class="pieces-grid">
+                <div class="piece-card">
+                    <div class="piece-icon regular">●</div>
+                    <h5>Regular Piece</h5>
+                    <p>Starting pieces that can only move forward diagonally. Can capture by jumping over opponent
+                        pieces.</p>
+                </div>
+                <div class="piece-card">
+                    <div class="piece-icon king">♔</div>
+                    <h5>King (Crowned Piece)</h5>
+                    <p>Promoted pieces that can move both forward and backward. More powerful and flexible than regular
+                        pieces.</p>
+                </div>
+                <div class="piece-card">
+                    <div class="piece-icon capture">⚡</div>
+                    <h5>Capture/Jump</h5>
+                    <p>Mandatory jumps over opponent pieces. Multiple jumps in one turn are allowed and encouraged.</p>
+                </div>
+                <div class="piece-card">
+                    <div class="piece-icon board">□</div>
+                    <h5>Game Board</h5>
+                    <p>8×8 grid with alternating dark and light squares. Pieces move only on dark squares.</p>
+                </div>
+                <div class="piece-card">
+                    <div class="piece-icon promotion">⭐</div>
+                    <h5>Promotion Zone</h5>
+                    <p>Opponent's back row. Reach this row to crown your piece and turn it into a king.</p>
+                </div>
+                <div class="piece-card">
+                    <div class="piece-icon win">🏆</div>
+                    <h5>Win Conditions</h5>
+                    <p>Capture all opponent pieces or block them from making legal moves.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Center Control</h4>
+                    <p>Control the center of the board. Central pieces have more mobility and can attack in multiple
+                        directions.</p>
+                    <p><strong>Priority:</strong> Move pieces toward the center early in the game to establish strong
+                        positions.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>King Development</h4>
+                    <p>Focus on getting pieces to the promotion row. Kings are much more powerful than regular pieces.
+                    </p>
+                    <p><strong>Strategy:</strong> Create corridors for pieces to advance safely toward promotion.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Force Captures</h4>
+                    <p>When possible, create situations where your opponent must capture, even if it benefits you.</p>
+                    <p><strong>Tactic:</strong> Sacrifice pieces strategically to set up better positions or captures.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Edge Utilization</h4>
+                    <p>Use the edges for protection. Edge pieces are harder to capture and can serve as anchors.</p>
+                    <p><strong>Defense:</strong> Position strong pieces on edges to create a solid defensive line.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Tempo Control</h4>
+                    <p>Control the pace of the game. Sometimes slow play is better, sometimes aggressive advances.</p>
+                    <p><strong>Balance:</strong> Mix defensive and offensive moves based on board position.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Piece Coordination</h4>
+                    <p>Coordinate your pieces to work together. Isolated pieces are vulnerable to attack.</p>
+                    <p><strong>Unity:</strong> Keep pieces connected and mutually supporting.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tactics-section">
+            <h3>Essential Checkers Tactics</h3>
+
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <h4>The Bridge</h4>
+                    <p>Position pieces to block opponent advancement while maintaining your own mobility.</p>
+                    <p><strong>Setup:</strong> Create diagonal barriers that force opponents to take longer paths.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Sacrifice</h4>
+                    <p>Intentionally allow a capture to gain a better position or set up multiple captures.</p>
+                    <p><strong>Calculation:</strong> Ensure the sacrifice leads to net gain in material or position.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Trap</h4>
+                    <p>Lure opponent pieces into vulnerable positions where they can be captured.</p>
+                    <p><strong>Execution:</strong> Create situations where opponent must move into danger.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Exchange</h4>
+                    <p>Trade pieces when you have positional advantage. Sometimes losing material wins the game.</p>
+                    <p><strong>Evaluation:</strong> Consider piece value, position, and future possibilities.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Breakthrough</h4>
+                    <p>Create gaps in opponent defense to advance pieces toward promotion.</p>
+                    <p><strong>Method:</strong> Use captures or threats to force defensive weaknesses.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Endgame</h4>
+                    <p>With few pieces remaining, focus on king promotion and checkmate-like positions.</p>
+                    <p><strong>Precision:</strong> Every move becomes critical in simplified positions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="openings-section">
+            <h3>Opening Principles and Setups</h3>
+
+            <div class="opening-grid">
+                <div class="opening-card">
+                    <h4>Center Occupation</h4>
+                    <p>Move pieces toward the center squares to gain control of the board's most important area.</p>
+                    <p><strong>Goal:</strong> Establish central dominance early in the game.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Double Corner</h4>
+                    <p>Control both corners of your side to create a strong defensive and offensive foundation.</p>
+                    <p><strong>Advantage:</strong> Corners provide safe positions and attack launching points.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Side Development</h4>
+                    <p>Develop pieces along the sides while maintaining center presence.</p>
+                    <p><strong>Balance:</strong> Avoid over-committing to one side of the board.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Aggressive Center</h4>
+                    <p>Push pieces aggressively toward the center, challenging opponent control.</p>
+                    <p><strong>Risk:</strong> More aggressive but leaves flanks vulnerable.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Conservative Edge</h4>
+                    <p>Focus on edge control and gradual development rather than center battles.</p>
+                    <p><strong>Safety:</strong> Slower but more solid development.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Mixed Strategy</h4>
+                    <p>Combine center control with edge development for balanced opening play.</p>
+                    <p><strong>Flexibility:</strong> Adapt to opponent moves while maintaining options.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced-section">
+            <h3>Advanced Concepts</h3>
+
+            <div class="advanced-grid">
+                <div class="advanced-card">
+                    <h4>Piece Valuation</h4>
+                    <p>Understand relative piece values: Regular piece = 1, King = 3. Position matters too.</p>
+                    <p><strong>Calculation:</strong> Consider material balance plus positional factors.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Opponent Psychology</h4>
+                    <p>Learn to read opponent tendencies. Some players are aggressive, others defensive.</p>
+                    <p><strong>Adaptation:</strong> Adjust strategy based on opponent playing style.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Time Management</h4>
+                    <p>Think efficiently. Complex positions require more time, simple ones less.</p>
+                    <p><strong>Balance:</strong> Don't rush decisions but don't waste time on obvious moves.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Pattern Recognition</h4>
+                    <p>Learn common winning and losing patterns. Experience builds recognition speed.</p>
+                    <p><strong>Practice:</strong> Study games to identify recurring themes and outcomes.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Endgame Technique</h4>
+                    <p>Master king vs king, king vs piece, and piece vs piece endgames.</p>
+                    <p><strong>Precision:</strong> Endgames require perfect play to convert advantages.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Positional Play</h4>
+                    <p>Sometimes the best move isn't a capture but improving piece position.</p>
+                    <p><strong>Long-term:</strong> Consider future possibilities over immediate gains.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="variants-section">
+            <h3>Checkers Variants</h3>
+
+            <div class="variant-grid">
+                <div class="variant-card">
+                    <h4>American Checkers</h4>
+                    <p>Standard 8×8 board with 12 pieces. Mandatory captures, multiple jumps allowed.</p>
+                    <p><strong>Strategy:</strong> Focus on center control and king development.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>International Draughts</h4>
+                    <p>10×10 board with 20 pieces. More complex with flying kings and different rules.</p>
+                    <p><strong>Complexity:</strong> Requires deeper strategic thinking.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Turkish Draughts</h4>
+                    <p>8×8 board with diagonal movement. Kings can fly over pieces.</p>
+                    <p><strong>Unique:</strong> Different movement patterns change strategy.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Brazilian Draughts</h4>
+                    <p>8×8 board with 12 pieces. Kings move like queens, can capture backwards.</p>
+                    <p><strong>Dynamic:</strong> More aggressive king play.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Canadian Checkers</h4>
+                    <p>12×12 board with 30 pieces. Larger board requires different strategies.</p>
+                    <p><strong>Scale:</strong> More pieces mean more complex games.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Blindfold Checkers</h4>
+                    <p>Play without seeing the board. Requires perfect memory and calculation.</p>
+                    <p><strong>Challenge:</strong> Tests mental board visualization.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Checkers Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Always Look for Jumps</h4>
+                    <p>Scan the board for possible captures on every turn. Missed jumps lose games.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Control the Center</h4>
+                    <p>Center squares give pieces more options. Fight for central control early.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Get Kings Quickly</h4>
+                    <p>Kings are game-changers. Create safe paths for promotion.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Think Several Moves Ahead</h4>
+                    <p>Consider opponent responses. Don't just make the move you want to make.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Edges for Defense</h4>
+                    <p>Edge pieces are harder to capture. Use them as defensive anchors.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Endgames</h4>
+                    <p>Endgame technique often decides games. Study king vs king positions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn from Losses</h4>
+                    <p>Review lost games. Identify mistakes and improve your play.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Patient</h4>
+                    <p>Don't rush. Complex positions require careful thought.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The History of Checkers</h3>
+            <p>Checkers has ancient origins, with games similar to modern checkers dating back over 5,000 years. The
+                game evolved through different cultures and continents.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Ancient Origins</h4>
+                    <p>Board games with jumping pieces existed in ancient Egypt and Mesopotamia around 3000 BCE.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>European Evolution</h4>
+                    <p>The game spread to Europe in the Middle Ages, becoming popular in France as "Jeu de Dames."</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>American Standardization</h4>
+                    <p>Modern American checkers rules were standardized in the 19th century.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>World Championships</h4>
+                    <p>International competitions began in the 1840s, with Marion Tinsley dominating in the 20th
+                        century.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Computer Play</h4>
+                    <p>Chinook became the first program to win a human world championship in 1994.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Impact</h4>
+                    <p>Checkers appears in literature, films, and popular culture worldwide.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Checkers</h3>
+            <p>Checkers offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Strategic Thinking:</strong> Develops long-term planning and consequence evaluation</li>
+                <li><strong>Pattern Recognition:</strong> Improves ability to identify tactical patterns and
+                    combinations</li>
+                <li><strong>Problem-Solving:</strong> Teaches analytical thinking and creative solution finding</li>
+                <li><strong>Memory Enhancement:</strong> Strengthens working memory and position evaluation</li>
+                <li><strong>Logical Reasoning:</strong> Builds systematic thinking and deduction skills</li>
+                <li><strong>Decision-Making:</strong> Teaches evaluation of multiple options under time pressure</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

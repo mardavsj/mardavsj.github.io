@@ -1,172 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Sharpen your aim in timed archery drills with moving targets and varying distances. Play online free on Play Mint.">
-<title>Archery Training - Play Mint</title>
+    <meta name="description"
+        content="Sharpen your aim in timed archery drills with moving targets and varying distances. Play online free on Play Mint.">
+    <title>Archery Training - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/archery-training/800x450/acherytraining800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Archery Training</h1>
-            <p class="game-desc">Sharpen your aim in timed archery drills with moving targets and varying distances.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Use short drags and aim slightly ahead of moving targets; keep power low to avoid bounce-outs.</p></div>
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/archery-training/800x450/acherytraining800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
+                    <h1 class="game-title">Archery Training</h1>
+                    <p class="game-desc">Sharpen your aim in timed archery drills with moving targets and varying
+                        distances.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Use short drags and aim slightly ahead of moving targets; keep power low to avoid
+                                bounce-outs.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
 
         <div class="game-page-with-ads">
             <!-- Left vertical ad -->
             <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                    data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
+                    // Only load ad if game content exists
+                    if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } else {
+                        document.getElementById("leftVerticalAd").style.display = "none";
+                    }
                 </script>
             </div>
-            
+
             <!-- Main content -->
             <div class="main-content">
                 <div class="game-page">
                     <h1 class="game-title">Archery Training</h1>
-                    
+
                     <!-- Game container - Archery Training embed -->
                     <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=ArcheryTraining&bgcolor=white"></script></div>
+                        <div>
+                            <script
+                                src="https://cdn.htmlgames.com/embed.js?game=ArcheryTraining&bgcolor=white"></script>
+                        </div>
                     </div>
-                    
+
                     <!-- Fullscreen button below the game -->
                     <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
+
             <!-- Right vertical ad -->
             <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                    data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
+                    // Only load ad if game content exists
+                    if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } else {
+                        document.getElementById("rightVerticalAd").style.display = "none";
+                    }
                 </script>
             </div>
         </div>
-        
+
         <!-- AdSense ad - bottom -->
         <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameBottomAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +202,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +217,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +245,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +276,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +292,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +308,324 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Archery Training Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Archery Training: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Archery Training is a precision shooting game where players must hit moving targets at varying distances
+                while managing time constraints and scoring systems. This comprehensive guide covers everything from
+                basic aiming mechanics to advanced target prediction strategies that will help you achieve high scores
+                and master the art of virtual archery.</p>
+        </div>
+
+        <h3>Archery Training Fundamentals: Rules and Objectives</h3>
+        <p>Archery Training is a target shooting game where players use bow and arrow to hit various targets while
+            managing time, distance, and scoring mechanics.</p>
+
+        <div class="basics-section">
+            <h4>Core Game Mechanics</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon aim">🎯</div>
+                    <h5>Aiming System</h5>
+                    <p>Click and drag to aim bow, release to shoot arrow. Trajectory affected by distance and wind.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon target">🏹</div>
+                    <h5>Target Types</h5>
+                    <p>Stationary and moving targets with different point values and scoring zones.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon distance">📏</div>
+                    <h5>Distance Variation</h5>
+                    <p>Targets appear at different distances requiring power and angle adjustments.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon timer">⏱️</div>
+                    <h5>Time Pressure</h5>
+                    <p>Limited time to complete rounds with bonus points for speed and accuracy.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon wind">💨</div>
+                    <h5>Environmental Factors</h5>
+                    <p>Wind and gravity affect arrow trajectory, especially at longer distances.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon score">📊</div>
+                    <h5>Scoring System</h5>
+                    <p>Points awarded based on accuracy, target value, and completion speed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Power Control</h4>
+                    <p>Master the relationship between draw distance and arrow power. Longer draws = more power.</p>
+                    <p><strong>Calibration:</strong> Learn power requirements for different distances through practice.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Angle Adjustment</h4>
+                    <p>Adjust aim angle based on target distance and environmental conditions.</p>
+                    <p><strong>Trajectory:</strong> Higher angles needed for longer distances to counter gravity.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Wind Compensation</h4>
+                    <p>Observe wind direction and strength indicators to adjust shot placement.</p>
+                    <p><strong>Prediction:</strong> Lead targets appropriately based on wind direction and speed.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Target Prioritization</h4>
+                    <p>Focus on high-value targets first, then fill in lower-value ones as time allows.</p>
+                    <p><strong>Efficiency:</strong> Maximize points per second by targeting highest-value opportunities.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Movement Prediction</h4>
+                    <p>Learn target movement patterns to lead shots appropriately for moving targets.</p>
+                    <p><strong>Anticipation:</strong> Shoot ahead of moving targets based on their speed and direction.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Time Management</h4>
+                    <p>Balance accuracy with speed. Don't sacrifice too many points for minimal time savings.</p>
+                    <p><strong>Optimization:</strong> Find sweet spot between precision and speed for maximum scoring.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Power Draw</h4>
+                    <p>Master consistent draw strength for reliable shot power at different distances.</p>
+                    <p><strong>Consistency:</strong> Develop muscle memory for power requirements across distances.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Lead Shot</h4>
+                    <p>Aim ahead of moving targets based on their speed and direction of movement.</p>
+                    <p><strong>Prediction:</strong> Calculate interception point for moving target hits.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Wind Adjustment</h4>
+                    <p>Observe wind indicators and adjust aim point accordingly for accurate shots.</p>
+                    <p><strong>Compensation:</strong> Learn wind effect patterns at different distances.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Arc Calculation</h4>
+                    <p>Calculate proper arc for long-distance shots to account for gravity drop.</p>
+                    <p><strong>Physics:</strong> Higher arcs needed for longer distances to maintain trajectory.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Rapid Fire</h4>
+                    <p>Develop speed while maintaining accuracy for time-pressured rounds.</p>
+                    <p><strong>Efficiency:</strong> Quick, accurate shots maximize points in limited time.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Target Grouping</h4>
+                    <p>Group shots on high-value targets to maximize scoring potential.</p>
+                    <p><strong>Focus:</strong> Concentrate on valuable targets rather than spreading shots thin.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="target-types-section">
+            <h3>Target Types and Strategies</h3>
+
+            <div class="target-grid">
+                <div class="target-card">
+                    <h4>Stationary Targets</h4>
+                    <p>Fixed position targets requiring precise aim and power control.</p>
+                    <p><strong>Accuracy:</strong> Focus on consistent execution and wind compensation.</p>
+                </div>
+
+                <div class="target-card">
+                    <h4>Moving Targets</h4>
+                    <p>Targets that move in predictable patterns requiring lead shots.</p>
+                    <p><strong>Prediction:</strong> Anticipate movement and aim ahead of target position.</p>
+                </div>
+
+                <div class="target-card">
+                    <h4>High-Value Targets</h4>
+                    <p>Large or central targets worth maximum points when hit.</p>
+                    <p><strong>Priority:</strong> Target these first for maximum scoring efficiency.</p>
+                </div>
+
+                <div class="target-card">
+                    <h4>Small/Bonus Targets</h4>
+                    <p>Tiny targets or special zones offering bonus multipliers.</p>
+                    <p><strong>Risk:</strong> High difficulty but worth attempting when time allows.</p>
+                </div>
+
+                <div class="target-card">
+                    <h4>Distance Rings</h4>
+                    <p>Concentric scoring rings with higher points for center hits.</p>
+                    <p><strong>Precision:</strong> Aim for bullseyes to maximize individual shot value.</p>
+                </div>
+
+                <div class="target-card">
+                    <h4>Time-Sensitive Targets</h4>
+                    <p>Targets that appear briefly requiring immediate response.</p>
+                    <p><strong>Reaction:</strong> Quick assessment and execution for time-limited opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Archery Training Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Practice Power Control</h4>
+                    <p>Spend time learning power requirements for different distances.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Watch Wind Indicators</h4>
+                    <p>Always check wind direction and strength before shooting.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Lead Moving Targets</h4>
+                    <p>Aim ahead of moving targets based on their speed and direction.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Prioritize High Value</h4>
+                    <p>Focus on high-scoring targets first, then fill in others.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm Under Pressure</h4>
+                    <p>Don't rush shots when time is low; accuracy beats speed.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn Target Patterns</h4>
+                    <p>Study how different targets move and behave.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Master Angle Adjustment</h4>
+                    <p>Practice adjusting aim angle for different distances.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Develop Muscle Memory</h4>
+                    <p>Consistent practice builds reliable shooting instincts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Target Shooting Games</h3>
+            <p>Archery Training represents the digital evolution of traditional target shooting sports, bringing
+                precision archery to virtual platforms.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Traditional Archery</h4>
+                    <p>Archery dates back thousands of years as hunting and warfare tool.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Olympic Sport</h4>
+                    <p>Modern competitive archery became Olympic sport in 1900.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Digital Simulation</h4>
+                    <p>Computer archery games emerged in 1980s with basic mechanics.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Physics Accuracy</h4>
+                    <p>Modern games incorporate realistic physics and environmental factors.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Accessibility</h4>
+                    <p>Touch controls made precision archery games accessible to everyone.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Gaming</h4>
+                    <p>Online leaderboards and tournaments emerged for virtual archery.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Archery Training</h3>
+            <p>Archery Training offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Hand-Eye Coordination:</strong> Improves motor skills and visual tracking abilities</li>
+                <li><strong>Concentration:</strong> Builds sustained focus and attention to detail</li>
+                <li><strong>Spatial Awareness:</strong> Develops understanding of distance, angle, and trajectory</li>
+                <li><strong>Decision Making:</strong> Teaches rapid assessment of multiple targeting options</li>
+                <li><strong>Patience and Precision:</strong> Cultivates methodical approach to complex tasks</li>
+                <li><strong>Stress Management:</strong> Provides calming focus activity for mental relaxation</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

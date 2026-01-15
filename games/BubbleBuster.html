@@ -1,186 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Aim and pop tight bubble clusters to keep the board from filling up. Play online free on Play Mint.">
-<title>Bubble Buster - Play Mint</title>
+    <meta name="description"
+        content="Aim and pop tight bubble clusters to keep the board from filling up. Play online free on Play Mint.">
+    <title>Bubble Buster - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/bubble-buster/800x450/bubblebuster800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Bubble Buster</h1>
-            <p class="game-desc">Aim and pop tight bubble clusters to keep the board from filling up.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Pop clusters near the ceiling first; bank shots to slip into tight gaps.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/bubble-buster/800x450/bubblebuster800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Bubble Buster</h1>
-                    
-                    <!-- Game container - Bubble Buster embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Bubble Buster -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=BubbleBuster&bgcolor=white"></script>
+                    <p class="game-desc">Aim and pop tight bubble clusters to keep the board from filling up.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Pop clusters near the ceiling first; bank shots to slip into tight gaps.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Bubble Buster</h1>
+
+                <!-- Game container - Bubble Buster embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Bubble Buster -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=BubbleBuster&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +207,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +238,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +254,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,38 +270,369 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Bubble Buster Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Bubble Buster: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Bubble Buster is a fast-paced puzzle game where players aim and shoot colored bubbles to create clusters
+                of three or more matching bubbles. This comprehensive guide covers everything from basic aiming
+                mechanics to advanced cluster strategies that will help you clear levels efficiently and achieve high
+                scores.</p>
+        </div>
+
+        <h3>Bubble Buster Fundamentals: Rules and Objectives</h3>
+        <p>Bubble Buster is a match-3 bubble shooting game where players must clear bubbles by forming groups while
+            preventing the bubble ceiling from reaching the bottom.</p>
+
+        <div class="basics-section">
+            <h4>Core Game Mechanics</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon aim">🎯</div>
+                    <h5>Aiming System</h5>
+                    <p>Move cursor to aim bubble launcher. Shoot bubbles at the correct angle to hit targets.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon bubble">🫧</div>
+                    <h5>Bubble Colors</h5>
+                    <p>Multiple colored bubbles that must be matched in groups of 3 or more to clear.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon cluster">🔗</div>
+                    <h5>Cluster Formation</h5>
+                    <p>Connect 3+ same-colored bubbles to create clusters that disappear automatically.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon ceiling">⬇️</div>
+                    <h5>Ceiling Pressure</h5>
+                    <p>Bubble ceiling descends over time. Clear bubbles to prevent it from reaching bottom.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon chain">⛓️</div>
+                    <h5>Chain Reactions</h5>
+                    <p>Cleared bubbles can create new clusters, leading to cascading bubble clears.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon score">📊</div>
+                    <h5>Scoring System</h5>
+                    <p>Earn points for bubble clears, chain reactions, and level completion speed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Angle Planning</h4>
+                    <p>Calculate shot angles carefully. Consider bounce physics and bubble positioning.</p>
+                    <p><strong>Precision:</strong> Perfect aim prevents wasted shots and creates optimal cluster
+                        opportunities.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Cluster Recognition</h4>
+                    <p>Identify potential 3+ bubble groups before shooting. Plan shots to create multiple clusters.</p>
+                    <p><strong>Vision:</strong> Scan board for color patterns and potential chain reaction setups.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Chain Reaction Creation</h4>
+                    <p>Position shots to create cascading bubble clears that multiply scoring potential.</p>
+                    <p><strong>Efficiency:</strong> Chain reactions clear more bubbles with fewer shots.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Ceiling Management</h4>
+                    <p>Balance aggressive clearing with ceiling descent. Don't waste time on low-value shots.</p>
+                    <p><strong>Time Management:</strong> Monitor ceiling progress and prioritize high-impact clears.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Color Distribution</h4>
+                    <p>Analyze board color distribution. Target colors with highest cluster potential first.</p>
+                    <p><strong>Optimization:</strong> Focus on abundant colors to maximize clearing efficiency.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Risk Assessment</h4>
+                    <p>Evaluate shot risk vs. reward. Some shots create better future opportunities.</p>
+                    <p><strong>Planning:</strong> Consider long-term board state, not just immediate clears.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Bounce Shot</h4>
+                    <p>Use wall bounces to reach bubbles in difficult positions or create unusual angles.</p>
+                    <p><strong>Access:</strong> Wall bounces allow shots to corners and edges normally unreachable.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Setup Shot</h4>
+                    <p>Shoot bubbles that don't immediately clear but position for future high-value clusters.</p>
+                    <p><strong>Preparation:</strong> Strategic placement creates opportunities for chain reactions.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Chain Starter</h4>
+                    <p>Target bubbles that will trigger multiple cluster clears when removed.</p>
+                    <p><strong>Multiplication:</strong> Single shots that clear 10+ bubbles dramatically increase
+                        scores.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Ceiling Relief</h4>
+                    <p>Prioritize shots that clear large sections to give maximum ceiling breathing room.</p>
+                    <p><strong>Survival:</strong> Large clears buy more time to plan subsequent shots.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Color Focus</h4>
+                    <p>Concentrate on one color to clear large sections systematically.</p>
+                    <p><strong>Efficiency:</strong> Clearing one color creates space and simplifies board state.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Emergency Clear</h4>
+                    <p>When ceiling is low, take any available shot rather than overthinking.</p>
+                    <p><strong>Survival:</strong> Any clear is better than ceiling reaching bottom.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-bubbles-section">
+            <h3>Special Bubble Types</h3>
+
+            <div class="special-grid">
+                <div class="special-card">
+                    <h4>Normal Bubbles</h4>
+                    <p>Standard colored bubbles that form basic clusters of 3 or more.</p>
+                    <p><strong>Foundation:</strong> All clearing starts with normal bubble clusters.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Steel Bubbles</h4>
+                    <p>Gray bubbles that require multiple hits or special clearing methods.</p>
+                    <p><strong>Challenge:</strong> Steel bubbles block normal clearing and require strategy.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Bomb Bubbles</h4>
+                    <p>Explosive bubbles that clear large areas when triggered.</p>
+                    <p><strong>Power:</strong> Bomb bubbles can clear unreachable or clustered areas.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Rainbow Bubbles</h4>
+                    <p>Special bubbles that match any color and create massive chain reactions.</p>
+                    <p><strong>Ultimate:</strong> Rainbow bubbles are worth saving for critical situations.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Lightning Bubbles</h4>
+                    <p>Electric bubbles that clear entire rows or columns.</p>
+                    <p><strong>Area Clear:</strong> Lightning bubbles provide wide-area clearing capability.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Time Bubbles</h4>
+                    <p>Slow down ceiling descent temporarily for breathing room.</p>
+                    <p><strong>Temporal:</strong> Time bubbles give extra seconds to plan difficult shots.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-types-section">
+            <h3>Common Level Patterns</h3>
+
+            <div class="level-grid">
+                <div class="level-card">
+                    <h4>Color Flood Levels</h4>
+                    <p>Levels dominated by one or two colors. Focus on systematic clearing of dominant colors.</p>
+                    <p><strong>Strategy:</strong> Clear dominant colors first to create space and opportunities.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Mixed Color Chaos</h4>
+                    <p>Levels with even color distribution. Look for chain reaction opportunities.</p>
+                    <p><strong>Planning:</strong> Identify shots that create multiple cluster possibilities.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Ceiling Pressure Levels</h4>
+                    <p>Fast-descending ceilings require quick, high-impact shots.</p>
+                    <p><strong>Speed:</strong> Prioritize large cluster clears over precision placement.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Steel Block Levels</h4>
+                    <p>Levels with steel bubbles blocking normal clearing paths.</p>
+                    <p><strong>Navigation:</strong> Plan around steel bubbles or find ways to clear them.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Special Bubble Levels</h4>
+                    <p>Levels featuring special bubble types that change clearing dynamics.</p>
+                    <p><strong>Adaptation:</strong> Learn to incorporate special bubbles into clearing strategy.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Architectural Levels</h4>
+                    <p>Levels with unusual bubble arrangements requiring creative shot planning.</p>
+                    <p><strong>Creativity:</strong> Think outside normal shot patterns for these challenges.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Bubble Buster Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Scan Before Shooting</h4>
+                    <p>Always survey the entire board before taking a shot.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Look for Chains</h4>
+                    <p>Identify potential chain reactions before committing to a shot.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Monitor Ceiling</h4>
+                    <p>Keep track of ceiling descent and adjust strategy accordingly.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Wall Bounces</h4>
+                    <p>Master wall bounce shots to access difficult bubble positions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Save Special Bubbles</h4>
+                    <p>Don't waste powerful special bubbles on small clears.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Aiming</h4>
+                    <p>Develop consistent aiming skills for precise bubble placement.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm</h4>
+                    <p>Don't panic when ceiling is low; focus on available opportunities.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn Patterns</h4>
+                    <p>Recognize common bubble arrangements and optimal clearing sequences.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Bubble Popping Games</h3>
+            <p>Bubble Buster belongs to the bubble-popping genre that evolved from simple match-3 mechanics to complex
+                physics-based puzzle games.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Puzzle Bobble Origins</h4>
+                    <p>Original Bubble Bobble game released in 1994, starting the bubble-popping craze.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Match-3 Revolution</h4>
+                    <p>Early 2000s saw explosion of match-3 games with bubble-popping mechanics.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Adaptation</h4>
+                    <p>Touch controls made bubble games perfect for mobile platforms.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Physics Integration</h4>
+                    <p>Modern versions include realistic physics and special bubble effects.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Speed clearing and high-score competitions exist for skilled players.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Casual Gaming</h4>
+                    <p>Bubble games became staple of casual gaming across all platforms.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Bubble Buster</h3>
+            <p>Bubble Buster offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Spatial Reasoning:</strong> Improves understanding of angles, trajectories, and positioning
+                </li>
+                <li><strong>Pattern Recognition:</strong> Develops ability to identify color clusters and potential
+                    chains</li>
+                <li><strong>Strategic Planning:</strong> Builds planning skills for optimal shot sequences</li>
+                <li><strong>Decision Making:</strong> Teaches evaluation of shot risk vs. reward under time pressure
+                </li>
+                <li><strong>Visual Processing:</strong> Enhances ability to process complex visual information quickly
+                </li>
+                <li><strong>Problem Solving:</strong> Encourages creative solutions for challenging bubble arrangements
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-

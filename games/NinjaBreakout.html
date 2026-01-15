@@ -1,115 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Bounce the ball to crack every brick with ninja speed and power-ups. Play online free on Play Mint.">
-<title>Ninja Breakout - Play Mint</title>
+    <meta name="description"
+        content="Bounce the ball to crack every brick with ninja speed and power-ups. Play online free on Play Mint.">
+    <title>Ninja Breakout - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
-        <section class="game-hero-section" style="background-image: url('../assets/images/games/ninjabreakout/800x450/ninjabreakout800450.webp');">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/ninjabreakout/800x450/ninjabreakout800450.webp');">
             <div class="game-hero-inner">
                 <div class="game-hero-text">
-                    <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
                         <span class="scroll-icon" aria-hidden="true"></span>
                         <span class="scroll-label">Play game</span>
                     </button>
                     <h1 class="game-title">Ninja Breakout</h1>
                     <p class="game-desc">Bounce the ball to crack every brick with ninja speed and power-ups.</p>
                     <div class="game-highlight-grid">
-                        <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                        <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                        <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                        <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                        <div class="highlight-card"><h4>Game-specific tip</h4><p>Catch multi-ball and width power-ups; keep the paddle centered before each bounce.</p></div>
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Catch multi-ball and width power-ups; keep the paddle centered before each bounce.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
 
         <div class="game-page-with-ads">
             <!-- Left vertical ad -->
             <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                    data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
+                    // Only load ad if game content exists
+                    if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } else {
+                        document.getElementById("leftVerticalAd").style.display = "none";
+                    }
                 </script>
             </div>
-            
+
             <!-- Main content -->
             <div class="main-content">
                 <div class="game-page">
                     <h1 class="game-title">Ninja Breakout</h1>
-                    
+
                     <!-- Game container - Ninja Breakout embed -->
                     <div class="game-container" id="gameContainer">
                         <!-- START: Game Embed Script - Replace this section with actual game embed -->
@@ -118,56 +138,48 @@
                         </div>
                         <!-- END: Game Embed Script -->
                     </div>
-                    
+
                     <!-- Fullscreen button below the game -->
                     <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
+
             <!-- Right vertical ad -->
             <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                    data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
+                    // Only load ad if game content exists
+                    if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } else {
+                        document.getElementById("rightVerticalAd").style.display = "none";
+                    }
                 </script>
             </div>
         </div>
-        
+
         <!-- AdSense ad - bottom -->
         <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameBottomAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -186,13 +198,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -201,20 +213,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -229,19 +241,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -260,10 +272,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -276,13 +288,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -292,38 +304,369 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Ninja Breakout Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Ninja Breakout: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Ninja Breakout combines classic breakout mechanics with ninja-themed action and special abilities. This
+                comprehensive guide covers everything from basic paddle control to advanced ninja techniques that will
+                help you clear levels efficiently and achieve high scores.</p>
+        </div>
+
+        <h3>Ninja Breakout Fundamentals: Rules and Objectives</h3>
+        <p>Ninja Breakout is an action-puzzle game where players control a paddle to bounce a ball and destroy blocks
+            while collecting power-ups and mastering ninja abilities.</p>
+
+        <div class="basics-section">
+            <h4>Core Game Mechanics</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon paddle">🏓</div>
+                    <h5>Paddle Control</h5>
+                    <p>Move paddle left/right to bounce the ball. Paddle can stretch, shrink, or gain special abilities.
+                    </p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon ball">⚫</div>
+                    <h5>Bouncing Ball</h5>
+                    <p>Ball bounces off paddle, walls, and blocks. Maintain ball in play to continue scoring.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon blocks">🧱</div>
+                    <h5>Breakable Blocks</h5>
+                    <p>Destroy blocks by hitting them with the ball. Different blocks require multiple hits or special
+                        attacks.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon ninja">🥷</div>
+                    <h5>Ninja Powers</h5>
+                    <p>Special ninja abilities like teleportation, multi-ball, and destructive attacks.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon powerup">⚡</div>
+                    <h5>Power-ups</h5>
+                    <p>Collect falling power-ups for temporary abilities like laser shots and paddle extensions.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon score">📊</div>
+                    <h5>Scoring System</h5>
+                    <p>Earn points for breaking blocks, collecting items, and clearing levels quickly.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Paddle Positioning</h4>
+                    <p>Position paddle to create optimal bounce angles. Center paddle for straight shots, edges for
+                        angled returns.</p>
+                    <p><strong>Control:</strong> Paddle position determines ball trajectory and block-breaking
+                        efficiency.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Angle Management</h4>
+                    <p>Control bounce angles to hit specific blocks or create chain reactions.</p>
+                    <p><strong>Precision:</strong> Different angles reach different parts of the level layout.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Power-up Collection</h4>
+                    <p>Prioritize collecting power-ups that enhance your abilities and scoring potential.</p>
+                    <p><strong>Advantage:</strong> Power-ups can dramatically increase effectiveness and point
+                        multipliers.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Ninja Ability Usage</h4>
+                    <p>Use ninja powers strategically for difficult blocks or emergency situations.</p>
+                    <p><strong>Timing:</strong> Save powerful abilities for when they create maximum impact.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Block Pattern Recognition</h4>
+                    <p>Identify block layouts and plan destruction sequences for efficient clearing.</p>
+                    <p><strong>Efficiency:</strong> Some block arrangements allow for chain reaction clearing.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Risk Management</h4>
+                    <p>Balance aggressive play with ball preservation. Don't take unnecessary risks.</p>
+                    <p><strong>Survival:</strong> Keeping the ball in play is more important than speed in early levels.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Center Bounce</h4>
+                    <p>Position paddle centrally for straight, powerful returns that maintain ball speed.</p>
+                    <p><strong>Power:</strong> Center hits maximize ball velocity and block destruction.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Angle Control</h4>
+                    <p>Use paddle edges to create specific bounce angles for targeting weak blocks.</p>
+                    <p><strong>Precision:</strong> Edge hits allow access to blocks in corners and edges.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Power-up Chase</h4>
+                    <p>Position paddle to intercept falling power-ups while maintaining ball control.</p>
+                    <p><strong>Prioritization:</strong> Some power-ups are worth temporary ball loss to collect.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Chain Reaction</h4>
+                    <p>Create sequences where breaking one block leads to breaking others automatically.</p>
+                    <p><strong>Efficiency:</strong> Chain reactions clear multiple blocks with single ball contact.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Ninja Strike</h4>
+                    <p>Use ninja abilities to clear large areas or destroy unbreakable blocks.</p>
+                    <p><strong>Power:</strong> Ninja powers can change impossible situations into winnable ones.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Emergency Save</h4>
+                    <p>Use paddle extensions or special abilities to save balls that seem lost.</p>
+                    <p><strong>Recovery:</strong> Many "lost" balls can be saved with proper positioning.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="powerups-section">
+            <h3>Power-ups and Abilities</h3>
+
+            <div class="powerup-grid">
+                <div class="powerup-card">
+                    <h4>Laser Paddle</h4>
+                    <p>Shoot laser beams to destroy blocks without ball contact. Perfect for hard-to-reach blocks.</p>
+                    <p><strong>Use:</strong> Clear blocks above paddle or in corners without angle limitations.</p>
+                </div>
+
+                <div class="powerup-card">
+                    <h4>Paddle Extension</h4>
+                    <p>Increase paddle width for easier ball control and power-up collection.</p>
+                    <p><strong>Advantage:</strong> Wider paddle reduces ball loss and improves catching ability.</p>
+                </div>
+
+                <div class="powerup-card">
+                    <h4>Multi-Ball</h4>
+                    <p>Create multiple balls for simultaneous block destruction and higher scoring.</p>
+                    <p><strong>Risk:</strong> More balls increase scoring but also chance of losing all balls.</p>
+                </div>
+
+                <div class="powerup-card">
+                    <h4>Ball Speed Control</h4>
+                    <p>Slow down or speed up ball for better control or faster clearing.</p>
+                    <p><strong>Adaptation:</strong> Slow balls for precision, fast balls for rapid clearing.</p>
+                </div>
+
+                <div class="powerup-card">
+                    <h4>Shield Protection</h4>
+                    <p>Temporary invincibility or ball protection from losing a life.</p>
+                    <p><strong>Safety:</strong> Use in dangerous situations or when low on lives.</p>
+                </div>
+
+                <div class="powerup-card">
+                    <h4>Ninja Teleport</h4>
+                    <p>Instantly move paddle to any position for emergency saves or positioning.</p>
+                    <p><strong>Ultimate:</strong> Can save seemingly impossible situations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-types-section">
+            <h3>Common Level Patterns</h3>
+
+            <div class="level-grid">
+                <div class="level-card">
+                    <h4>Block Pyramids</h4>
+                    <p>Triangular block formations. Start from bottom and work upward systematically.</p>
+                    <p><strong>Strategy:</strong> Clear bottom blocks first to create space for upper blocks to fall.
+                    </p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Corner Clusters</h4>
+                    <p>Blocks concentrated in corners. Use angled shots to reach corner concentrations.</p>
+                    <p><strong>Technique:</strong> Position paddle for maximum angle access to corners.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Moving Blocks</h4>
+                    <p>Blocks that move or change position. Time shots to coincide with block locations.</p>
+                    <p><strong>Timing:</strong> Anticipate block movement patterns for successful hits.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Indestructible Blocks</h4>
+                    <p>Blocks that cannot be broken normally. Require special abilities or power-ups to destroy.</p>
+                    <p><strong>Planning:</strong> Save ninja powers for indestructible block removal.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Time Pressure Levels</h4>
+                    <p>Levels with time limits. Focus on rapid clearing rather than perfect efficiency.</p>
+                    <p><strong>Speed:</strong> Sacrifice some precision for faster block destruction.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Multi-Layer Levels</h4>
+                    <p>Blocks arranged in multiple layers. Clear bottom layers to access upper ones.</p>
+                    <p><strong>Sequence:</strong> Work from bottom to top to maximize chain reactions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Ninja Breakout Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Master Paddle Position</h4>
+                    <p>Learn to position paddle for optimal bounce angles and power-up collection.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Collect Power-ups</h4>
+                    <p>Always prioritize power-up collection when safe to do so.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Ninja Powers Wisely</h4>
+                    <p>Save powerful ninja abilities for critical moments and unbreakable blocks.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Control Ball Angle</h4>
+                    <p>Use different parts of the paddle to control ball trajectory precisely.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Study Level Layouts</h4>
+                    <p>Take a moment to understand block arrangements before starting.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Create Chain Reactions</h4>
+                    <p>Look for opportunities to clear multiple blocks with single ball contact.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm Under Pressure</h4>
+                    <p>When balls are low, focus on survival rather than aggressive clearing.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Special Shots</h4>
+                    <p>Master corner shots and angled returns for accessing difficult blocks.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Breakout Games</h3>
+            <p>Breakout originated in arcades in 1976 and spawned countless variations. Ninja Breakout represents the
+                modern evolution with enhanced graphics, power-ups, and ninja-themed special abilities.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Arcade Origins</h4>
+                    <p>Breakout created by Atari in 1976, one of the earliest arcade hits.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Arkanoid Revolution</h4>
+                    <p>1986's Arkanoid added power-ups and complex level designs.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Modern Variations</h4>
+                    <p>Contemporary versions include physics, special abilities, and online leaderboards.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Adaptation</h4>
+                    <p>Touch controls made breakout games perfect for mobile platforms.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Themed Variants</h4>
+                    <p>Games feature various themes from ninjas to space adventures.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Speedrunning and high-score competitions exist for skilled players.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Ninja Breakout</h3>
+            <p>Ninja Breakout offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Hand-Eye Coordination:</strong> Improves motor skills and reaction time</li>
+                <li><strong>Spatial Awareness:</strong> Develops understanding of angles and trajectories</li>
+                <li><strong>Strategic Planning:</strong> Builds planning for optimal block destruction sequences</li>
+                <li><strong>Risk Assessment:</strong> Teaches evaluation of power-up collection vs. ball preservation
+                </li>
+                <li><strong>Timing and Rhythm:</strong> Develops sense of timing for paddle positioning</li>
+                <li><strong>Problem Solving:</strong> Encourages creative solutions for complex block layouts</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-

@@ -1,186 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Clear the floral tableau by sequencing cards and revealing hidden stacks. Play online free on Play Mint.">
-<title>Flower Solitaire - Play Mint</title>
+    <meta name="description"
+        content="Clear the floral tableau by sequencing cards and revealing hidden stacks. Play online free on Play Mint.">
+    <title>Flower Solitaire - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/flower-solitaire/800x450/flowersolitaire800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Flower Solitaire</h1>
-            <p class="game-desc">Clear the floral tableau by sequencing cards and revealing hidden stacks.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Expose hidden cards before building stacks; save empty columns for moving long runs.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/flower-solitaire/800x450/flowersolitaire800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Flower Solitaire</h1>
-                    
-                    <!-- Game container - Flower Solitaire embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Replace this section with actual game embed -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=FlowerSolitaire&bgcolor=white"></script>
+                    <p class="game-desc">Clear the floral tableau by sequencing cards and revealing hidden stacks.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Expose hidden cards before building stacks; save empty columns for moving long runs.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Flower Solitaire</h1>
+
+                <!-- Game container - Flower Solitaire embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Replace this section with actual game embed -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=FlowerSolitaire&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +207,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +238,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +254,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,38 +270,38 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
-        
+
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -308,26 +320,367 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
             }
         }
     </script>
+
+    <!-- Comprehensive Flower Solitaire Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Flower Solitaire: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Flower Solitaire combines the elegance of traditional solitaire with beautiful floral themes. This
+                comprehensive guide covers everything from basic rules to advanced strategies that will help you master
+                this relaxing yet challenging card game.</p>
+        </div>
+
+        <h3>Flower Solitaire Fundamentals: Rules and Objectives</h3>
+        <p>Flower Solitaire is a patience card game where players arrange cards in a specific order to clear the tableau
+            and build foundations, all while working within the game's movement constraints.</p>
+
+        <div class="basics-section">
+            <h4>Game Setup and Layout</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon deck">🃏</div>
+                    <h5>Card Deck</h5>
+                    <p>Standard 52-card deck. Cards are arranged in tableau columns and foundation piles.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon tableau">📋</div>
+                    <h5>Tableau</h5>
+                    <p>Seven columns of cards, with first column having 1 card, second having 2, up to 7 cards.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon foundation">🏛️</div>
+                    <h5>Foundations</h5>
+                    <p>Four foundation piles built up by suit from Ace to King. Goal is to fill all four.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon stock">📦</div>
+                    <h5>Stock Pile</h5>
+                    <p>Remaining cards after tableau setup. Can be drawn one at a time or three at a time.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon waste">🗂️</div>
+                    <h5>Waste Pile</h5>
+                    <p>Cards drawn from stock that aren't immediately usable. Can be moved to tableau or foundations.
+                    </p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon flower">🌸</div>
+                    <h5>Floral Theme</h5>
+                    <p>Beautiful flower-themed graphics make the game visually appealing while maintaining classic
+                        rules.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-section">
+            <h3>Core Rules and Movement</h3>
+
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <h4>Foundation Building</h4>
+                    <p>Build foundations up by suit from Ace to King. Only one suit per foundation pile.</p>
+                    <p><strong>Sequence:</strong> A♠, 2♠, 3♠... K♠ for spades (same for other suits).</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Tableau Movement</h4>
+                    <p>Build tableau columns down by alternating colors. Can move sequences of cards together.</p>
+                    <p><strong>Order:</strong> Red on black, black on red, regardless of suit.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Card Flipping</h4>
+                    <p>Face-down cards in tableau are flipped when the card above them is moved.</p>
+                    <p><strong>Revelation:</strong> Exposing face-down cards creates new movement opportunities.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Empty Columns</h4>
+                    <p>Empty tableau columns can be filled with Kings or King-led sequences.</p>
+                    <p><strong>Placement:</strong> Only Kings can fill completely empty columns.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Stock Management</h4>
+                    <p>Draw from stock pile when no moves are available. Limited draws per game.</p>
+                    <p><strong>Strategy:</strong> Time stock draws carefully to maximize their benefit.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Winning Condition</h4>
+                    <p>Game is won when all cards are moved to the four foundation piles in proper order.</p>
+                    <p><strong>Completion:</strong> All foundations must contain Ace through King of their suit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Foundation Priority</h4>
+                    <p>Move cards to foundations as soon as possible. This frees up tableau space and reveals hidden
+                        cards.</p>
+                    <p><strong>Advantage:</strong> Foundations are the only way to win - prioritize them over tableau
+                        building.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Empty Column Management</h4>
+                    <p>Create empty columns strategically by moving Kings to foundations. Empty columns are powerful
+                        tools.</p>
+                    <p><strong>Power:</strong> Empty columns can be filled with any King, creating new building
+                        opportunities.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Color Alternation</h4>
+                    <p>Build tableau columns by alternating red and black cards. This creates longer movable sequences.
+                    </p>
+                    <p><strong>Flexibility:</strong> Longer sequences can be moved as units, opening more options.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Hidden Card Planning</h4>
+                    <p>Consider what's likely under face-down cards. Plan moves that will reveal useful cards.</p>
+                    <p><strong>Prediction:</strong> Experience helps you predict card locations and plan accordingly.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Sequence Building</h4>
+                    <p>Build long alternating sequences in tableau columns. These can be moved together for bigger
+                        plays.</p>
+                    <p><strong>Mobility:</strong> Long sequences give you more options for rearranging the tableau.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Stock Timing</h4>
+                    <p>Draw from stock only when necessary. Save draws for when they can create multiple new moves.</p>
+                    <p><strong>Conservation:</strong> Stock cards are limited - use them when they'll have maximum
+                        impact.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The King Maneuver</h4>
+                    <p>Use Kings strategically to create empty columns. Move Kings to foundations to free up space.</p>
+                    <p><strong>Tactic:</strong> Kings are the only cards that can fill empty columns.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Foundation Bridge</h4>
+                    <p>Use foundation moves to create pathways for other cards. Sometimes foundation moves enable
+                        tableau moves.</p>
+                    <p><strong>Connection:</strong> Foundation and tableau play are interconnected.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Sequence Shift</h4>
+                    <p>Move entire sequences between columns to reorganize the tableau for better foundation access.</p>
+                    <p><strong>Rearrangement:</strong> Don't be afraid to undo and redo tableau arrangements.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Card Revelation</h4>
+                    <p>Plan moves specifically to flip face-down cards. Sometimes wait for the right moment to reveal
+                        cards.</p>
+                    <p><strong>Timing:</strong> Revealing the right card at the right time can unlock the game.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Empty Column Fill</h4>
+                    <p>Use empty columns immediately with Kings. Don't leave empty columns unfilled for long.</p>
+                    <p><strong>Urgency:</strong> Empty columns are temporary opportunities - use them quickly.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Stock Optimization</h4>
+                    <p>Draw stock cards when they can be immediately moved to foundations or create new sequences.</p>
+                    <p><strong>Efficiency:</strong> Make each stock draw count by maximizing its immediate usefulness.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patterns-section">
+            <h3>Common Patterns and Solutions</h3>
+
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <h4>Blocked Foundation</h4>
+                    <p>When a foundation card is buried under a sequence. Use empty columns and sequence moves to free
+                        it.</p>
+                    <p><strong>Solution:</strong> Create space to maneuver the blocking sequence away.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Color Imbalance</h4>
+                    <p>Too many cards of one color blocking foundation access. Build long sequences to create movement.
+                    </p>
+                    <p><strong>Balance:</strong> Create alternating sequences to break color monopolies.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Hidden Card Dilemma</h4>
+                    <p>Uncertain what's under face-down cards. Make moves that reveal information without committing.
+                    </p>
+                    <p><strong>Exploration:</strong> Safe moves that flip cards are often worth making.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Stock Dependency</h4>
+                    <p>Game stalls waiting for specific cards from stock. Plan foundation moves to create more tableau
+                        options.</p>
+                    <p><strong>Independence:</strong> Reduce reliance on stock by maximizing tableau flexibility.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Sequence Lock</h4>
+                    <p>Long sequence blocks access to needed cards. Use empty columns to relocate the sequence.</p>
+                    <p><strong>Relocation:</strong> Move blocking sequences to create access paths.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Foundation Gap</h4>
+                    <p>Missing intermediate cards in foundation. Build around gaps while waiting for missing cards.</p>
+                    <p><strong>Workaround:</strong> Continue building other foundations while waiting.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Flower Solitaire Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Foundations First</h4>
+                    <p>Always move available cards to foundations immediately.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Empty Columns</h4>
+                    <p>Create and use empty columns as soon as possible.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Build Sequences</h4>
+                    <p>Focus on building long alternating color sequences.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Reveal Cards</h4>
+                    <p>Don't be afraid to make moves just to flip face-down cards.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Plan Ahead</h4>
+                    <p>Think several moves ahead before making your current move.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Conserve Stock</h4>
+                    <p>Save stock draws for when they can create multiple new moves.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Flexible</h4>
+                    <p>Keep multiple options open rather than committing to one path.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn Patterns</h4>
+                    <p>Study common losing and winning positions to improve recognition.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The History of Solitaire</h3>
+            <p>Solitaire, also known as Patience, originated in Europe in the 18th century. The game evolved from
+                simpler card games and became a popular pastime worldwide.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>European Origins</h4>
+                    <p>Developed in Northern Europe in the late 18th century as a single-player card game.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Klondike Variant</h4>
+                    <p>The most popular variant, Klondike (the standard solitaire), became widespread in the 19th
+                        century.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Digital Revolution</h4>
+                    <p>Microsoft included Solitaire with Windows 3.0 in 1990, bringing it to millions of computer users.
+                    </p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Global Popularity</h4>
+                    <p>Now played worldwide with countless variants and themed versions like Flower Solitaire.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mathematical Study</h4>
+                    <p>Solitaire has been studied mathematically, with winning probabilities calculated for different
+                        variants.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Impact</h4>
+                    <p>Remains one of the most played card games, both traditionally and digitally.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Flower Solitaire</h3>
+            <p>Flower Solitaire offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Strategic Planning:</strong> Develops long-term thinking and consequence evaluation</li>
+                <li><strong>Pattern Recognition:</strong> Improves ability to identify card sequences and arrangements
+                </li>
+                <li><strong>Decision Making:</strong> Builds evaluation of multiple options under uncertainty</li>
+                <li><strong>Memory Enhancement:</strong> Strengthens recall of card locations and sequences</li>
+                <li><strong>Problem Solving:</strong> Encourages creative solutions to complex card arrangements</li>
+                <li><strong>Patience Building:</strong> Teaches persistence and careful consideration</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

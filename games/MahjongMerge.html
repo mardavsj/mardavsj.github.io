@@ -1,186 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Match open mahjong tiles to clear the board without locking yourself out. Play online free on Play Mint.">
-<title>Mahjong Merge - Play Mint</title>
+    <meta name="description"
+        content="Match open mahjong tiles to clear the board without locking yourself out. Play online free on Play Mint.">
+    <title>Mahjong Merge - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/mahjong-merge/800x450/mahjongmerge800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Mahjong Merge</h1>
-            <p class="game-desc">Match open mahjong tiles to clear the board without locking yourself out.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Match only open tiles; free long horizontal rows first to unlock more options.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/mahjong-merge/800x450/mahjongmerge800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Mahjong Merge</h1>
-                    
-                    <!-- Game container - Mahjong Merge embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Mahjong Merge -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=MahjongMerge&bgcolor=white"></script>
+                    <p class="game-desc">Match open mahjong tiles to clear the board without locking yourself out.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Match only open tiles; free long horizontal rows first to unlock more options.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Mahjong Merge</h1>
+
+                <!-- Game container - Mahjong Merge embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Mahjong Merge -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=MahjongMerge&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +207,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +238,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +254,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,41 +270,367 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Mahjong Merge Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Mahjong Merge: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Mahjong Merge combines traditional Mahjong tile matching with modern merge mechanics. This comprehensive
+                guide covers everything from basic tile matching to advanced merging strategies that will help you clear
+                boards efficiently and achieve high scores.</p>
+        </div>
+
+        <h3>Mahjong Merge Fundamentals: Rules and Objectives</h3>
+        <p>Mahjong Merge is a tile-matching game where players remove matching open tiles and merge identical tiles to
+            create higher-value combinations, ultimately clearing the board.</p>
+
+        <div class="basics-section">
+            <h4>Game Mechanics and Components</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon tiles">🀄</div>
+                    <h5>Mahjong Tiles</h5>
+                    <p>Traditional Mahjong tiles including suits (bamboo, characters, circles) and honors (winds,
+                        dragons).</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon match">🔗</div>
+                    <h5>Tile Matching</h5>
+                    <p>Remove pairs of identical open tiles. Tiles must have both left and right sides free.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon merge">⬆</div>
+                    <h5>Merge Mechanics</h5>
+                    <p>Combine identical tiles to create higher-level tiles. Merging creates space and new
+                        opportunities.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon open">👁️</div>
+                    <h5>Open Tiles</h5>
+                    <p>Tiles that are accessible from both sides. Blocked tiles cannot be matched or merged.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon levels">📊</div>
+                    <h5>Merge Levels</h5>
+                    <p>Tiles progress through levels (1-4 or higher). Higher levels require more base tiles to create.
+                    </p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon clear">✅</div>
+                    <h5>Board Clearing</h5>
+                    <p>Remove all tiles by matching and merging. Some levels require specific objectives.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-section">
+            <h3>Core Rules and Tile Removal</h3>
+
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <h4>Open Tile Requirement</h4>
+                    <p>Only tiles that are completely free on both left and right sides can be selected.</p>
+                    <p><strong>Accessibility:</strong> Tiles blocked by others cannot be matched or merged.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Identical Matching</h4>
+                    <p>Match tiles that are exactly identical in suit, number, and type.</p>
+                    <p><strong>Precision:</strong> Only perfect matches can be removed from the board.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Merge Process</h4>
+                    <p>Drag identical tiles together to merge them into higher-level tiles.</p>
+                    <p><strong>Upgrade:</strong> Merging creates more valuable tiles and frees up board space.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Level Progression</h4>
+                    <p>Each merge increases tile level. Higher levels require more base tiles to create.</p>
+                    <p><strong>Mathematics:</strong> Level 2 requires 2 tiles, level 3 requires 3 tiles, etc.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Space Creation</h4>
+                    <p>Merging and matching create empty spaces that can reveal previously blocked tiles.</p>
+                    <p><strong>Cascading:</strong> New spaces often create chain reactions of available moves.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Winning Objectives</h4>
+                    <p>Clear all tiles or achieve specific goals like reaching certain merge levels.</p>
+                    <p><strong>Variation:</strong> Different levels have different victory conditions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Early Merging</h4>
+                    <p>Merge tiles early to create higher-level pieces and free up space.</p>
+                    <p><strong>Advantage:</strong> Higher-level tiles are easier to match and create more space when
+                        removed.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Space Creation</h4>
+                    <p>Prioritize moves that create empty spaces to reveal blocked tiles.</p>
+                    <p><strong>Unblocking:</strong> New spaces often create multiple new matching opportunities.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Chain Planning</h4>
+                    <p>Plan sequences where one move creates opportunities for subsequent moves.</p>
+                    <p><strong>Flow:</strong> Create cascading effects where each move enables the next.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Tile Preservation</h4>
+                    <p>Avoid removing tiles that could be valuable for future merges.</p>
+                    <p><strong>Conservation:</strong> Keep useful tiles available for higher-level combinations.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Board Vision</h4>
+                    <p>Develop ability to see the entire board and identify optimal move sequences.</p>
+                    <p><strong>Overview:</strong> Don't focus on one area at expense of the whole board.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Endgame Precision</h4>
+                    <p>As tiles decrease, every move becomes critical for board clearance.</p>
+                    <p><strong>Careful:</strong> Final moves require precise planning to avoid deadlocks.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Early Merge</h4>
+                    <p>Merge identical tiles as soon as possible to create higher-value pieces.</p>
+                    <p><strong>Efficiency:</strong> Higher-level tiles clear more space when matched.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Space Creator</h4>
+                    <p>Focus on moves that create empty spaces to reveal hidden tile opportunities.</p>
+                    <p><strong>Revelation:</strong> New spaces often expose multiple matching possibilities.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Chain Builder</h4>
+                    <p>Create sequences where each match/merge enables the next move.</p>
+                    <p><strong>Flow:</strong> Build momentum through connected move sequences.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Blocker Removal</h4>
+                    <p>Remove tiles that are blocking access to valuable matches or merges.</p>
+                    <p><strong>Unblocking:</strong> Clear obstacles to access higher-value opportunities.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Level Optimizer</h4>
+                    <p>Balance between creating high-level tiles and maintaining board fluidity.</p>
+                    <p><strong>Balance:</strong> Don't create tiles that become impossible to match.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Endgame Specialist</h4>
+                    <p>Master precise moves when few tiles remain to avoid deadlocked positions.</p>
+                    <p><strong>Precision:</strong> Final moves require careful consideration of all possibilities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patterns-section">
+            <h3>Common Board Patterns</h3>
+
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <h4>Layered Layouts</h4>
+                    <p>Tiles arranged in layers with blocking tiles on top. Clear top layers first.</p>
+                    <p><strong>Strategy:</strong> Work from outside inward to reveal lower layers.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Isolated Groups</h4>
+                    <p>Separate groups of tiles with gaps between them. Clear groups independently.</p>
+                    <p><strong>Division:</strong> Focus on one group at a time to avoid confusion.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Merge-Rich Boards</h4>
+                    <p>Many identical tiles available for merging. Prioritize merging over simple matching.</p>
+                    <p><strong>Upgrade:</strong> Create high-level tiles early for efficient space clearing.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Blocked Configurations</h4>
+                    <p>Many tiles blocked by others. Focus on creating spaces to unblock positions.</p>
+                    <p><strong>Patience:</strong> Systematic space creation is key to progress.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Mixed Tile Types</h4>
+                    <p>Variety of tile types requiring careful matching. Plan merges by tile type.</p>
+                    <p><strong>Organization:</strong> Group similar tiles mentally for better planning.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Endgame Clusters</h4>
+                    <p>Few tiles remaining in tight configurations. Precise sequencing required.</p>
+                    <p><strong>Careful:</strong> One wrong move can create unsolvable positions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Mahjong Merge Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Merge Early</h4>
+                    <p>Create higher-level tiles as soon as possible for efficient clearing.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Create Spaces</h4>
+                    <p>Prioritize moves that create empty spaces to reveal new opportunities.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Plan Chains</h4>
+                    <p>Look for sequences where each move enables the next move.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Avoid Deadlocks</h4>
+                    <p>Don't create tiles that become impossible to match or merge.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Preserve Value</h4>
+                    <p>Keep tiles that could be useful for future merges.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Board Vision</h4>
+                    <p>See the entire board and plan multi-step sequences.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Endgame Care</h4>
+                    <p>Be extra careful with final moves to avoid deadlocked positions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Patterns</h4>
+                    <p>Learn to recognize common layouts and optimal solving strategies.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Mahjong</h3>
+            <p>Mahjong originated in China over 150 years ago and evolved into countless digital variants. Mahjong Merge
+                represents the modern fusion of traditional tile matching with contemporary merge mechanics.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Ancient Origins</h4>
+                    <p>Mahjong originated in China in the mid-19th century as a tile-based game.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Global Spread</h4>
+                    <p>Spread worldwide in the early 20th century, becoming popular in Asia and beyond.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Digital Adaptation</h4>
+                    <p>Mahjong games became popular on computers in the 1980s and 1990s.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Gaming</h4>
+                    <p>Mahjong apps became extremely popular on smartphones and tablets.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Modern Variants</h4>
+                    <p>Contemporary versions incorporate match-3 and merge mechanics.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Significance</h4>
+                    <p>Remains an important cultural game in Chinese and Asian communities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Mahjong Merge</h3>
+            <p>Mahjong Merge offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Spatial Reasoning:</strong> Develops understanding of 3D relationships and tile positioning
+                </li>
+                <li><strong>Strategic Planning:</strong> Builds long-term planning and sequence optimization</li>
+                <li><strong>Pattern Recognition:</strong> Improves ability to identify tile types and matching
+                    opportunities</li>
+                <li><strong>Problem Solving:</strong> Encourages creative solutions for complex tile arrangements</li>
+                <li><strong>Memory Enhancement:</strong> Strengthens visual memory for tile locations and types</li>
+                <li><strong>Logical Thinking:</strong> Develops systematic approach to puzzle solving</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

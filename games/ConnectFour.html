@@ -1,172 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Drop discs and build vertical, horizontal, or diagonal lines of four. Play online free on Play Mint.">
-<title>Connect Four - Play Mint</title>
+    <meta name="description"
+        content="Drop discs and build vertical, horizontal, or diagonal lines of four. Play online free on Play Mint.">
+    <title>Connect Four - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/connect-four/300x200/connect4300.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Connect Four</h1>
-            <p class="game-desc">Drop discs and build vertical, horizontal, or diagonal lines of four.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Stack the center column; always block opponent threes and set up two-way threats.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/connect-four/300x200/connect4300.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Connect Four</h1>
-                    
-                    <!-- Game container - Connect Four embed -->
-                    <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=ConnectFour&bgcolor=white"></script></div>
+                    <p class="game-desc">Drop discs and build vertical, horizontal, or diagonal lines of four.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Stack the center column; always block opponent threes and set up two-way threats.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Connect Four</h1>
+
+                <!-- Game container - Connect Four embed -->
+                <div class="game-container" id="gameContainer">
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=ConnectFour&bgcolor=white"></script>
+                    </div>
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +199,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +214,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +242,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +273,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +289,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +305,419 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Connect Four Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Connect Four: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Connect Four is a deceptively simple yet strategically deep game that combines pattern recognition,
+                forward thinking, and defensive play. This comprehensive guide covers everything from basic tactics to
+                advanced strategies that will help you dominate the game.</p>
+        </div>
+
+        <h3>Connect Four Fundamentals: Rules and Objectives</h3>
+        <p>Connect Four is played on a 7×6 vertical grid where players take turns dropping colored discs into columns.
+            The objective is to get four discs in a row horizontally, vertically, or diagonally before your opponent
+            does.</p>
+
+        <div class="basics-section">
+            <h4>Game Mechanics and Setup</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon board">⊞</div>
+                    <h5>Game Board</h5>
+                    <p>7 columns × 6 rows grid. Discs fall to the bottom of chosen columns due to gravity.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon drop">⬇</div>
+                    <h5>Disc Dropping</h5>
+                    <p>Choose any column to drop your disc. It falls to the lowest available position.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon connect">🔗</div>
+                    <h5>Four in a Row</h5>
+                    <p>Win by connecting four discs horizontally, vertically, or diagonally.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon turn">↻</div>
+                    <h5>Turn Alternation</h5>
+                    <p>Players alternate turns. First player to connect four discs wins.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon full">🚫</div>
+                    <h5>Full Columns</h5>
+                    <p>Cannot drop in columns that are already full (6 discs). Choose another column.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon draw">🤝</div>
+                    <h5>Draw Condition</h5>
+                    <p>Game ends in draw if board fills completely without a winner.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Center Column Priority</h4>
+                    <p>The center column (column 4) is the most valuable. It allows connections in all directions and is
+                        hardest for opponents to block.</p>
+                    <p><strong>Rule:</strong> Play center column early unless you have a specific tactical reason not
+                        to.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Threat Recognition</h4>
+                    <p>Always identify and block opponent threats. A threat is any position where opponent could win on
+                        their next turn.</p>
+                    <p><strong>Priority:</strong> Blocking wins takes precedence over creating your own threats.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Multiple Threats</h4>
+                    <p>Create positions where you threaten to win in multiple ways simultaneously. Forces opponent to
+                        choose which threat to block.</p>
+                    <p><strong>Advantage:</strong> Opponent can only block one threat per turn, leaving others open.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Odd-Even Principle</h4>
+                    <p>Control odd-numbered columns for better connectivity. Odd columns allow diagonal connections to
+                        even columns.</p>
+                    <p><strong>Strategy:</strong> Prioritize columns 1, 3, 5, 7 for their connection potential.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Stack Control</h4>
+                    <p>Control the height of columns to create or prevent connection opportunities.</p>
+                    <p><strong>Tactic:</strong> Keep columns at different heights to create diagonal possibilities.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Endgame Awareness</h4>
+                    <p>As board fills, focus on creating unavoidable threats. Look for positions where any move leads to
+                        your win.</p>
+                    <p><strong>Precision:</strong> Every move becomes critical in late game.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tactics-section">
+            <h3>Essential Tactics and Patterns</h3>
+
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <h4>The Trap Setup</h4>
+                    <p>Create a position where opponent is forced to play in a specific column, allowing you to complete
+                        a connection.</p>
+                    <p><strong>Example:</strong> Set up threats that force opponent into your trap column.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Sacrifice</h4>
+                    <p>Allow opponent to get three in a row, forcing them to block, while you create a winning threat
+                        elsewhere.</p>
+                    <p><strong>Risk:</strong> Requires opponent to miss the real threat. Use carefully.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Split Threat</h4>
+                    <p>Create two separate threats that opponent must address. They can only block one per turn.</p>
+                    <p><strong>Power:</strong> Forces opponent into defensive mode, allowing you to build more threats.
+                    </p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Diagonal Master</h4>
+                    <p>Control diagonal connections which are harder to spot and block than horizontal/vertical ones.
+                    </p>
+                    <p><strong>Advantage:</strong> Diagonals often surprise opponents who focus on obvious threats.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Column Dominance</h4>
+                    <p>Take control of a column by playing multiple discs in it, creating vertical threats.</p>
+                    <p><strong>Strategy:</strong> Use column dominance to force opponent responses elsewhere.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>The Board Control</h4>
+                    <p>Limit opponent's options by controlling key columns and forcing them into unfavorable positions.
+                    </p>
+                    <p><strong>Method:</strong> Play in columns that restrict opponent mobility.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="openings-section">
+            <h3>Opening Strategies</h3>
+
+            <div class="opening-grid">
+                <div class="opening-card">
+                    <h4>Center First</h4>
+                    <p>Always play center column first. Establishes immediate board control and connection potential.
+                    </p>
+                    <p><strong>Follow-up:</strong> Then play adjacent columns to build multiple threats.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Double Center</h4>
+                    <p>Play center twice in opening to create strong vertical presence and limit opponent options.</p>
+                    <p><strong>Risk:</strong> Leaves center vulnerable but creates immediate pressure.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Side Control</h4>
+                    <p>Control one side of the board while threatening center. Creates asymmetric pressure.</p>
+                    <p><strong>Advantage:</strong> Forces opponent to defend multiple areas.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Diagonal Setup</h4>
+                    <p>Set up diagonal connections early. Diagonals are harder to defend against.</p>
+                    <p><strong>Strategy:</strong> Play in columns that create diagonal possibilities.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Balanced Opening</h4>
+                    <p>Spread pieces across board to maintain flexibility and multiple connection options.</p>
+                    <p><strong>Flexibility:</strong> Don't commit to one area too early.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Aggressive Opening</h4>
+                    <p>Create immediate threats that force opponent on defensive from move one.</p>
+                    <p><strong>Pressure:</strong> Put opponent under immediate stress.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="defense-section">
+            <h3>Defensive Techniques</h3>
+
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>Threat Recognition</h4>
+                    <p>Always identify opponent threats before making your move. Look for three-in-a-row opportunities.
+                    </p>
+                    <p><strong>Prevention:</strong> Block any position where opponent could win next turn.</p>
+                </div>
+
+                <div class="defense-card">
+                    <h4>Counter-Play</h4>
+                    <p>While defending, look for moves that create your own threats or force opponent to defend.</p>
+                    <p><strong>Balance:</strong> Defense and offense can work together.</p>
+                </div>
+
+                <div class="defense-card">
+                    <h4>Position Evaluation</h4>
+                    <p>Assess whether a blocking move creates new threats for your opponent.</p>
+                    <p><strong>Calculation:</strong> Consider both immediate and future consequences.</p>
+                </div>
+
+                <div class="defense-card">
+                    <h4>Defensive Positioning</h4>
+                    <p>Position your pieces to block multiple potential threats with single moves.</p>
+                    <p><strong>Efficiency:</strong> One move can defend against multiple opponent plans.</p>
+                </div>
+
+                <div class="defense-card">
+                    <h4>Counter-Threats</h4>
+                    <p>Create threats that force opponent to stop attacking and defend instead.</p>
+                    <p><strong>Shift:</strong> Change from defender to attacker by creating stronger threats.</p>
+                </div>
+
+                <div class="defense-card">
+                    <h4>Endgame Defense</h4>
+                    <p>In late game, focus on preventing opponent connections while setting up your own.</p>
+                    <p><strong>Precision:</strong> Every move must serve defensive or offensive purposes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced-section">
+            <h3>Advanced Concepts</h3>
+
+            <div class="advanced-grid">
+                <div class="advanced-card">
+                    <h4>Game Theory Optimal</h4>
+                    <p>Connect Four is solved - first player can force a win with perfect play. Study optimal
+                        strategies.</p>
+                    <p><strong>Reality:</strong> Human games are rarely perfect, so focus on practical advantages.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Psychological Play</h4>
+                    <p>Learn opponent tendencies. Some players miss diagonal threats, others ignore vertical ones.</p>
+                    <p><strong>Adaptation:</strong> Exploit opponent weaknesses while hiding your own.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Time Pressure</h4>
+                    <p>Use time limits to force rushed decisions. Complex positions can overwhelm opponents.</p>
+                    <p><strong>Advantage:</strong> Create positions requiring deep calculation under time pressure.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Pattern Recognition</h4>
+                    <p>Learn winning and losing patterns. Experience helps you spot threats instantly.</p>
+                    <p><strong>Speed:</strong> Pattern recognition separates good players from great ones.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Board Vision</h4>
+                    <p>See the entire board as a system. Understand how moves in one area affect the whole game.</p>
+                    <p><strong>Holistic:</strong> Don't focus on one area at expense of others.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Probability Thinking</h4>
+                    <p>In uncertain positions, calculate odds. Sometimes risky plays have better expected value.</p>
+                    <p><strong>Calculation:</strong> Consider all possible opponent responses and their likelihood.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Connect Four Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Always Play Center First</h4>
+                    <p>The center column is statistically the best opening move. Don't deviate without reason.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Look for All Threats</h4>
+                    <p>Check horizontal, vertical, and diagonal connections. Don't miss diagonal threats.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Create Multiple Threats</h4>
+                    <p>Build positions where you threaten to win in several ways simultaneously.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Block Relentlessly</h4>
+                    <p>Never let opponent get three in a row. Block every winning threat immediately.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Think Two Moves Ahead</h4>
+                    <p>Consider your move, opponent response, and your follow-up. Plan sequences.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Control Key Columns</h4>
+                    <p>Dominate the center and adjacent columns. These are most valuable for connections.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Endgames</h4>
+                    <p>Late-game positions require perfect play. Study common endgame patterns.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn from Losses</h4>
+                    <p>Review games to understand mistakes. Identify missed threats and poor blocks.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The History of Connect Four</h3>
+            <p>Connect Four was invented in 1974 by Howard Wexler and Ned Strongin. Originally called "Four in a Row,"
+                it became a worldwide phenomenon through Milton Bradley's marketing.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Invention</h4>
+                    <p>Created in 1974 as a paper and pencil game. Physical version developed shortly after.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Commercial Success</h4>
+                    <p>Milton Bradley released it in 1974. Sold millions of copies worldwide.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mathematical Analysis</h4>
+                    <p>James D. Allen proved first player can force a win with perfect play in 1988.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Digital Adaptation</h4>
+                    <p>Appeared on early computers and became a standard inclusion in gaming devices.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Tournaments and championships exist, with players competing for speed and accuracy.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Impact</h4>
+                    <p>Iconic red and yellow colors, simple yet deep gameplay made it universally appealing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Connect Four</h3>
+            <p>Connect Four offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Strategic Planning:</strong> Develops long-term thinking and consequence evaluation</li>
+                <li><strong>Pattern Recognition:</strong> Improves ability to identify connection patterns and threats
+                </li>
+                <li><strong>Defensive Thinking:</strong> Teaches anticipation and prevention of opponent plans</li>
+                <li><strong>Decision-Making:</strong> Builds evaluation of multiple options under time pressure</li>
+                <li><strong>Spatial Reasoning:</strong> Enhances understanding of geometric relationships</li>
+                <li><strong>Logical Reasoning:</strong> Strengthens systematic thinking and deduction skills</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

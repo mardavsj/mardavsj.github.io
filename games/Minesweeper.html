@@ -1,186 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Use number clues to flag mines and clear the board safely. Play online free on Play Mint.">
-<title>Minesweeper - Play Mint</title>
+    <meta name="description"
+        content="Use number clues to flag mines and clear the board safely. Play online free on Play Mint.">
+    <title>Minesweeper - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/minesweeper/800x450/minesweeper800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Minesweeper</h1>
-            <p class="game-desc">Use number clues to flag mines and clear the board safely.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Flag mines around numbers first, then open safe clusters; start in the middle for more space.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/minesweeper/800x450/minesweeper800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Minesweeper</h1>
-                    
-                    <!-- Game container - Minesweeper embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Minesweeper -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=Minesweeper&bgcolor=white"></script>
+                    <p class="game-desc">Use number clues to flag mines and clear the board safely.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Flag mines around numbers first, then open safe clusters; start in the middle for more
+                                space.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Minesweeper</h1>
+
+                <!-- Game container - Minesweeper embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Minesweeper -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=Minesweeper&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +208,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +239,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -247,7 +260,7 @@
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -266,13 +279,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -281,11 +294,11 @@
     </script>
     <script>
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -295,41 +308,309 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Minesweeper Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Minesweeper: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Minesweeper is a timeless puzzle game that combines logic, probability, and pattern recognition. This
+                comprehensive guide will transform you from a novice clicker to a strategic master, covering everything
+                from basic techniques to advanced solving methods.</p>
+        </div>
+
+        <h3>Minesweeper Fundamentals: Rules and Interface</h3>
+        <p>Minesweeper is played on a grid of hidden squares, some containing mines. The goal is to reveal all non-mine
+            squares without detonating any mines. Numbers indicate how many mines are adjacent to that square.</p>
+
+        <div class="basics-section">
+            <h4>Understanding the Interface</h4>
+            <div class="interface-grid">
+                <div class="interface-card">
+                    <h5>Left Click</h5>
+                    <p>Reveals a square. If it's a mine, game over. If it's a number, it shows adjacent mine count.</p>
+                </div>
+                <div class="interface-card">
+                    <h5>Right Click</h5>
+                    <p>Flags a square as a mine. Prevents accidental clicks and helps with logic.</p>
+                </div>
+                <div class="interface-card">
+                    <h5>Middle Click (Both Buttons)</h5>
+                    <p>Reveals all unflagged adjacent squares. Use when you know the mine locations.</p>
+                </div>
+                <div class="interface-card">
+                    <h5>Numbers (1-8)</h5>
+                    <p>Indicates exactly how many mines are in the 8 adjacent squares.</p>
+                </div>
+                <div class="interface-card">
+                    <h5>Empty Squares</h5>
+                    <p>No adjacent mines. Automatically reveals surrounding area in a cascade.</p>
+                </div>
+                <div class="interface-card">
+                    <h5>Timer & Mine Counter</h5>
+                    <p>Timer shows elapsed time. Mine counter shows remaining unflagged mines.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="difficulty-section">
+            <h3>Difficulty Levels and Strategies</h3>
+
+            <div class="difficulty-grid">
+                <div class="difficulty-card">
+                    <h4>Beginner (9×9, 10 mines)</h4>
+                    <p>Perfect for learning basic patterns. Focus on edge squares and simple 1-2 number combinations.
+                    </p>
+                    <p><strong>Win Rate Goal:</strong> 90%+ with practice</p>
+                </div>
+                <div class="difficulty-card">
+                    <h4>Intermediate (16×16, 40 mines)</h4>
+                    <p>Introduces complex patterns and probability decisions. Requires systematic solving.</p>
+                    <p><strong>Win Rate Goal:</strong> 50-70% with good technique</p>
+                </div>
+                <div class="difficulty-card">
+                    <h4>Expert (30×16, 99 mines)</h4>
+                    <p>Ultimate challenge requiring advanced techniques and sometimes guessing. Very low win rates.</p>
+                    <p><strong>Win Rate Goal:</strong> 10-30% for advanced players</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Core Solving Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>1. The 1-2 Pattern</h4>
+                    <p>When a 1 touches a 2, the square where they meet must be a mine. The remaining squares around the
+                        2 are safe.</p>
+                    <p><strong>Example:</strong> A 1 adjacent to a 2 means the shared corner is mined, leaving 5 safe
+                        squares around the 2.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>2. Edge Analysis</h4>
+                    <p>Squares on the board edge have fewer neighbors. A number 3 on the edge means mines in only 5
+                        possible spots instead of 8.</p>
+                    <p><strong>Tip:</strong> Always consider board boundaries when counting possible mine locations.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>3. 1-2-1 Pattern</h4>
+                    <p>Three numbers in a diagonal line (1-2-1) create a predictable mine pattern. The center square of
+                        the 2 is always safe.</p>
+                    <p><strong>Pattern:</strong> Mines go in the corners where the 1's point.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>4. Box Method</h4>
+                    <p>Divide the board into 3×3 boxes. Solve each box systematically, using the boundaries between
+                        boxes for logic.</p>
+                    <p><strong>Strategy:</strong> Complete one box before moving to adjacent areas.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>5. Probability Calculation</h4>
+                    <p>When logic fails, calculate odds. Count remaining mines and empty squares to find the safest
+                        click.</p>
+                    <p><strong>Formula:</strong> Mines remaining ÷ Empty squares = Click probability</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>6. Flagging Strategy</h4>
+                    <p>Flag mines as soon as you know their location. This reduces mental load and prevents accidental
+                        clicks.</p>
+                    <p><strong>Rule:</strong> Only flag when 100% certain—use question marks for uncertain mines.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced-section">
+            <h3>Advanced Techniques for Expert Play</h3>
+
+            <div class="advanced-technique">
+                <h4>Chord Clicking (Middle Click)</h4>
+                <p>Use middle-click to reveal multiple squares at once when you know all mine locations around a number.
+                </p>
+                <p><strong>Safety:</strong> Only chord when completely certain—wrong chording causes multiple mine hits.
+                </p>
+            </div>
+
+            <div class="advanced-technique">
+                <h4>Pattern Recognition</h4>
+                <p>Learn common mine configurations. Experienced players recognize patterns instantly without counting.
+                </p>
+                <p><strong>Practice:</strong> Study solved boards to memorize frequent arrangements.</p>
+            </div>
+
+            <div class="advanced-technique">
+                <h4>Efficiency Techniques</h4>
+                <p>Minimize mouse movement and clicking. Use keyboard shortcuts and plan click sequences.</p>
+                <p><strong>Pro Tip:</strong> Click empty areas first to maximize information gain per click.</p>
+            </div>
+
+            <div class="advanced-technique">
+                <h4>Guess Management</h4>
+                <p>When forced to guess, choose squares with best odds. Consider board position and remaining mine
+                    distribution.</p>
+                <p><strong>Strategy:</strong> Corner and edge squares often have better odds than center squares.</p>
+            </div>
+        </div>
+
+        <div class="common-mistakes-section">
+            <h3>Common Mistakes to Avoid</h3>
+
+            <div class="mistakes-grid">
+                <div class="mistake-card">
+                    <h4>Rushing Clicks</h4>
+                    <p>Slow down and double-check your logic. One wrong click ends the game.</p>
+                    <p><strong>Solution:</strong> Pause and verify each move before clicking.</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Ignoring the Mine Counter</h4>
+                    <p>The counter shows remaining mines. If you have 3 mines left but 5 suspicious squares, keep
+                        looking.</p>
+                    <p><strong>Tip:</strong> Use the counter to validate your deductions.</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Over-Flagging</h4>
+                    <p>Don't flag squares unless certain. Wrong flags block your thinking and waste time.</p>
+                    <p><strong>Rule:</strong> Only flag when you can prove a square contains a mine.</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Poor Opening Strategy</h4>
+                    <p>Bad first clicks can create impossible positions. Start in corners or edges for better odds.</p>
+                    <p><strong>Best Practice:</strong> First click should be corner or edge, never center.</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Not Using Middle Click</h4>
+                    <p>Chord clicking saves time and reduces errors. Learn to use it safely.</p>
+                    <p><strong>Technique:</strong> Master chording for efficient play.</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Panicking on Guesses</h4>
+                    <p>When you must guess, stay calm. All guesses have some risk—choose the best odds.</p>
+                    <p><strong>Mindset:</strong> Accept that some games require educated guesses.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speed-section">
+            <h3>Speed Techniques for Competitive Play</h3>
+
+            <div class="speed-tips">
+                <div class="speed-card">
+                    <h4>Mouse Control</h4>
+                    <p>Keep mouse close to cursor. Use wrist movements instead of arm movements for precision.</p>
+                </div>
+
+                <div class="speed-card">
+                    <h4>Click Planning</h4>
+                    <p>Plan sequences of clicks. Click empties first to reveal information cascades.</p>
+                </div>
+
+                <div class="speed-card">
+                    <h4>Pattern Recognition</h4>
+                    <p>Instantly recognize common patterns without conscious thought through practice.</p>
+                </div>
+
+                <div class="speed-card">
+                    <h4>Efficient Flagging</h4>
+                    <p>Flag mines immediately when identified. Don't delay flagging.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Minesweeper</h3>
+            <p>Minesweeper was created by Robert Donner and Curt Johnson in 1989 for the Windows Entertainment Pack.
+                Originally called "Mine" in some versions, it became Minesweeper in Windows 3.1.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Origins</h4>
+                    <p>The game was inspired by earlier puzzle games like Mined-Out and Cube. The Windows version made
+                        it globally popular.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>World Records</h4>
+                    <p>The world record for expert Minesweeper is under 30 seconds. Professional players use specialized
+                        techniques and equipment.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Impact</h4>
+                    <p>Minesweeper was included in every Windows installation until Windows 8. It taught logic to
+                        millions of computer users.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Competitive Minesweeper has world championships and ranking systems. Players compete in different
+                        categories and difficulties.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Mental Benefits of Playing Minesweeper</h3>
+            <p>Beyond entertainment, Minesweeper offers significant cognitive benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Logical Reasoning:</strong> Develops systematic thinking and deduction skills</li>
+                <li><strong>Pattern Recognition:</strong> Improves ability to identify visual patterns quickly</li>
+                <li><strong>Probability Assessment:</strong> Teaches risk evaluation and decision-making under
+                    uncertainty</li>
+                <li><strong>Concentration:</strong> Requires sustained focus and attention to detail</li>
+                <li><strong>Problem-Solving:</strong> Enhances analytical thinking and strategic planning</li>
+                <li><strong>Memory:</strong> Strengthens short-term memory and spatial reasoning</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

@@ -1,186 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Fill the grid with logic-based numbers across multiple difficulty levels. Play online free on Play Mint.">
-<title>Sudoku - Play Mint</title>
+    <meta name="description"
+        content="Fill the grid with logic-based numbers across multiple difficulty levels. Play online free on Play Mint.">
+    <title>Sudoku - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/sudoku/800x450/sudokuclassic800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Sudoku</h1>
-            <p class="game-desc">Fill the grid with logic-based numbers across multiple difficulty levels.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Fill obvious singles first, then pencil candidates; use row/column elimination before guessing.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/sudoku/800x450/sudokuclassic800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Sudoku</h1>
-                    
-                    <!-- Game container - Sudoku embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Replace this section with actual game embed -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=Sudoku&bgcolor=white"></script>
+                    <p class="game-desc">Fill the grid with logic-based numbers across multiple difficulty levels.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Fill obvious singles first, then pencil candidates; use row/column elimination before
+                                guessing.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Sudoku</h1>
+
+                <!-- Game container - Sudoku embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Replace this section with actual game embed -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=Sudoku&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +208,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +239,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +255,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,38 +271,239 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Sudoku Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Sudoku: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Sudoku is more than just a number puzzle—it's a test of logical thinking, pattern recognition, and
+                systematic problem-solving. This comprehensive guide will transform you from a beginner to an expert
+                player.</p>
+        </div>
+
+        <h3>Understanding Sudoku Fundamentals</h3>
+        <p>Sudoku consists of a 9×9 grid divided into nine 3×3 subgrids. The goal is to fill every cell with numbers 1-9
+            so that each row, column, and 3×3 box contains each number exactly once. The puzzle starts with some numbers
+            already filled in as clues.</p>
+
+        <div class="strategy-section">
+            <h3>Core Solving Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>1. Single Candidate (Naked Single)</h4>
+                    <p>When only one number can possibly fit in a cell, place it immediately. This is the most basic and
+                        important technique—always scan for these first.</p>
+                    <p><strong>Example:</strong> If a row has 1,2,3,4,5,6,7,9 and one empty cell, that cell must be 8.
+                    </p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>2. Hidden Single</h4>
+                    <p>A number appears only once as a possibility in a row, column, or box, even if other candidates
+                        exist in that cell.</p>
+                    <p><strong>Example:</strong> In a row, the number 7 can only go in one cell among the remaining
+                        empty cells.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>3. Naked Pairs/Triples</h4>
+                    <p>When two cells in the same region (row/column/box) can only contain the same two numbers,
+                        eliminate those numbers from other cells in that region.</p>
+                    <p><strong>Example:</strong> Two cells in a row can only be 3 or 7. Remove 3 and 7 as candidates
+                        from all other cells in that row.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>4. Pointing Pairs</h4>
+                    <p>If a number in a 3×3 box can only be in one row or column, eliminate that number from the rest of
+                        that row/column outside the box.</p>
+                    <p><strong>Example:</strong> In a box, the number 5 can only be in row 3. Remove 5 as a candidate
+                        from row 3 outside this box.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced-section">
+            <h3>Advanced Techniques for Difficult Puzzles</h3>
+
+            <div class="advanced-technique">
+                <h4>X-Wing</h4>
+                <p>When a number can only be in two rows and two columns forming a rectangle, eliminate that number from
+                    other cells in those rows/columns.</p>
+                <p><strong>When to use:</strong> When basic techniques aren't enough and you're stuck on medium/hard
+                    puzzles.</p>
+            </div>
+
+            <div class="advanced-technique">
+                <h4>Swordfish</h4>
+                <p>Similar to X-Wing but with three rows/columns. Look for numbers that form a pattern across three rows
+                    and three columns.</p>
+                <p><strong>When to use:</strong> For challenging puzzles that require complex logical deductions.</p>
+            </div>
+
+            <div class="advanced-technique">
+                <h4>XY-Wing</h4>
+                <p>A chain of three cells where the middle cell's candidates overlap with the other two, allowing
+                    eliminations.</p>
+                <p><strong>When to use:</strong> When you need to break through logical barriers in expert-level
+                    puzzles.</p>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Success</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Start with What You Know</h4>
+                    <p>Beginners should focus on obvious singles and work systematically. Don't try advanced techniques
+                        until basic ones are mastered.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Pencil Marks Wisely</h4>
+                    <p>Mark all possible candidates in empty cells. This prevents overlooking possibilities and helps
+                        spot patterns.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Work One Region at a Time</h4>
+                    <p>Focus on completing one row, column, or box before moving to another. This prevents confusion and
+                        builds momentum.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Take Breaks When Stuck</h4>
+                    <p>If you're stuck for more than 10 minutes, step away. Fresh eyes often spot solutions that were
+                        previously missed.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Different Difficulty Levels</h4>
+                    <p>Alternate between easy, medium, and hard puzzles. Easy puzzles build confidence, hard ones
+                        develop advanced skills.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn from Your Mistakes</h4>
+                    <p>When you make an error, analyze why. Understanding mistakes prevents repeating them and improves
+                        logical thinking.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="variants-section">
+            <h3>Sudoku Variants to Try</h3>
+            <p>Once you master classic Sudoku, explore these variations for new challenges:</p>
+
+            <div class="variant-grid">
+                <div class="variant-card">
+                    <h4>Killer Sudoku</h4>
+                    <p>No initial numbers, but cells are grouped in "cages" with sum clues. Combines Sudoku logic with
+                        arithmetic.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Diagonal Sudoku</h4>
+                    <p>Standard rules plus both main diagonals must contain 1-9. Adds symmetry challenges.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Greater Than Sudoku</h4>
+                    <p>Inequality signs between adjacent cells. Numbers must be greater than or less than their
+                        neighbors.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Odd/Even Sudoku</h4>
+                    <p>Some cells are marked as odd or even numbers, providing additional constraints.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Playing Sudoku</h3>
+            <p>Beyond entertainment, Sudoku offers significant mental health benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Enhanced Logical Thinking:</strong> Develops systematic problem-solving skills applicable to
+                    real-world challenges.</li>
+                <li><strong>Improved Concentration:</strong> Requires sustained focus, helping build attention span and
+                    mental stamina.</li>
+                <li><strong>Better Memory:</strong> Regular play strengthens working memory and pattern recognition
+                    abilities.</li>
+                <li><strong>Reduced Stress:</strong> The meditative nature of logical puzzles provides mental relaxation
+                    and stress relief.</li>
+                <li><strong>Increased Mental Agility:</strong> Regular practice improves cognitive flexibility and quick
+                    thinking.</li>
+                <li><strong>Prevention of Cognitive Decline:</strong> Studies show puzzle-solving activities may help
+                    maintain brain health as we age.</li>
+            </ul>
+        </div>
+
+        <div class="learning-path">
+            <h3>Your Sudoku Learning Journey</h3>
+            <div class="progression-steps">
+                <div class="step">
+                    <h4>Beginner (1-2 weeks)</h4>
+                    <p>Master single candidates and hidden singles. Complete 4×4 and 6×6 puzzles. Focus on systematic
+                        scanning.</p>
+                </div>
+                <div class="step">
+                    <h4>Intermediate (2-4 weeks)</h4>
+                    <p>Learn naked/hidden pairs and pointing pairs. Solve easy and medium puzzles consistently.</p>
+                </div>
+                <div class="step">
+                    <h4>Advanced (1-3 months)</h4>
+                    <p>Master X-Wing, Swordfish, and XY-Wing. Tackle hard puzzles and understand complex patterns.</p>
+                </div>
+                <div class="step">
+                    <h4>Expert (Ongoing)</h4>
+                    <p>Solve puzzles in under 10 minutes. Create your own puzzles. Explore advanced variants.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-

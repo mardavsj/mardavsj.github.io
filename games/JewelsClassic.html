@@ -1,172 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Swap gems to create combos, power pieces, and cascade matches. Play online free on Play Mint.">
-<title>Jewels Classic - Play Mint</title>
+    <meta name="description"
+        content="Swap gems to create combos, power pieces, and cascade matches. Play online free on Play Mint.">
+    <title>Jewels Classic - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/jewels-classic/800x450/jewelsclassic800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Jewels Classic</h1>
-            <p class="game-desc">Swap gems to create combos, power pieces, and cascade matches.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Create 4- and 5-match combos to spawn power gems; clear near the top to prevent dead rows.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/jewels-classic/800x450/jewelsclassic800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Jewels Classic</h1>
-                    
-                    <!-- Game container - Jewels Classic embed -->
-                    <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=JewelsClassic&bgcolor=white"></script></div>
+                    <p class="game-desc">Swap gems to create combos, power pieces, and cascade matches.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Create 4- and 5-match combos to spawn power gems; clear near the top to prevent dead
+                                rows.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Jewels Classic</h1>
+
+                <!-- Game container - Jewels Classic embed -->
+                <div class="game-container" id="gameContainer">
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=JewelsClassic&bgcolor=white"></script>
+                    </div>
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +200,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +215,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +243,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +274,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +290,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +306,386 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Match-3 Puzzle Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Match-3 Puzzles: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Match-3 puzzle games like Jewels Classic combine pattern recognition, strategic planning, and quick
+                thinking. This comprehensive guide covers everything from basic matching to advanced techniques that
+                will help you achieve higher scores and master complex levels.</p>
+        </div>
+
+        <h3>Match-3 Fundamentals: Rules and Objectives</h3>
+        <p>Match-3 games involve swapping adjacent gems/jewels to create lines of three or more identical pieces. The
+            goal is to clear objectives while managing limited moves and achieving high scores through chain reactions
+            and special pieces.</p>
+
+        <div class="basics-section">
+            <h4>Core Game Mechanics</h4>
+            <div class="mechanics-grid">
+                <div class="mechanic-card">
+                    <h5>Basic Matching</h5>
+                    <p>Swap adjacent pieces to create horizontal or vertical lines of 3+ identical pieces. Matched
+                        pieces disappear, causing pieces above to fall.</p>
+                </div>
+                <div class="mechanic-card">
+                    <h5>Cascade Effect</h5>
+                    <p>When pieces fall, they can create new matches automatically. Chain reactions multiply your score.
+                    </p>
+                </div>
+                <div class="mechanic-card">
+                    <h5>Special Pieces</h5>
+                    <p>Created by matching 4+ pieces. Include line clearers, bombs, and rainbow gems with unique powers.
+                    </p>
+                </div>
+                <div class="mechanic-card">
+                    <h5>Objectives</h5>
+                    <p>Clear specific pieces, reach score targets, or survive for a certain number of moves.</p>
+                </div>
+                <div class="mechanic-card">
+                    <h5>Power-Ups</h5>
+                    <p>Extra abilities like shuffle, hammer, or color bombs that can be purchased or earned.</p>
+                </div>
+                <div class="mechanic-card">
+                    <h5>Level Progression</h5>
+                    <p>Each level has unique board layout, obstacles, and increasingly difficult objectives.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-pieces-section">
+            <h3>Special Pieces and Their Powers</h3>
+
+            <div class="special-grid">
+                <div class="special-card">
+                    <h4>Line Clearer (Horizontal/Vertical)</h4>
+                    <p>Created by matching 4 pieces in a row. Clears entire row or column when matched.</p>
+                    <p><strong>Strategy:</strong> Position near obstacles or hard-to-reach areas for maximum effect.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Bomb (3×3 Area)</h4>
+                    <p>Created by matching 5 pieces in an L or T shape. Explodes 3×3 area around it.</p>
+                    <p><strong>Best Use:</strong> Clear clustered obstacles or create chain reaction opportunities.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Rainbow Gem</h4>
+                    <p>Created by matching 5+ pieces in a line. Matches with any color when swapped.</p>
+                    <p><strong>Power:</strong> Extremely versatile for clearing specific colors or creating combos.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Color Bomb</h4>
+                    <p>Created by matching 5 pieces. When matched with another piece, clears all pieces of that color.
+                    </p>
+                    <p><strong>Ultimate:</strong> Combine with other specials for massive point explosions.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Wrapped Candy</h4>
+                    <p>Created by matching pieces in a specific pattern. Explodes adjacent area twice.</p>
+                    <p><strong>Combo Potential:</strong> Excellent for setting up chain reactions.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Striped + Wrapped</h4>
+                    <p>Combine striped and wrapped candies for massive explosions covering large areas.</p>
+                    <p><strong>Strategy:</strong> Save these combinations for difficult levels or high-point
+                        opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Advanced Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Look Ahead Planning</h4>
+                    <p>Always scan the board for potential matches 2-3 moves ahead. Don't just make the first match you
+                        see.</p>
+                    <p><strong>Tip:</strong> Consider how each move affects future possibilities and special piece
+                        creation.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Special Piece Prioritization</h4>
+                    <p>Create and combine special pieces strategically. Some combinations are worth saving moves for.
+                    </p>
+                    <p><strong>Rule:</strong> Color Bomb + Color Bomb = Clear entire board. Plan for these
+                        opportunities.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Cascade Optimization</h4>
+                    <p>Position matches to maximize cascade effects. Look for moves that create multiple simultaneous
+                        matches.</p>
+                    <p><strong>Technique:</strong> Create "cascade corridors" where falling pieces create new matches.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Obstacle Management</h4>
+                    <p>Clear obstacles systematically. Use line clearers and bombs to remove blockers efficiently.</p>
+                    <p><strong>Strategy:</strong> Don't waste moves on single obstacles—clear them in groups when
+                        possible.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Color Balance</h4>
+                    <p>Maintain roughly equal numbers of each color. Too many of one color creates matching
+                        difficulties.</p>
+                    <p><strong>Balance:</strong> If one color dominates, focus on clearing it to restore balance.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Move Efficiency</h4>
+                    <p>Every move should contribute to your objective. Avoid moves that don't clear pieces or create
+                        specials.</p>
+                    <p><strong>Evaluation:</strong> Ask "Does this move get me closer to my goal?" before making it.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patterns-section">
+            <h3>Common Patterns and Setups</h3>
+
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <h4>The L-Pattern</h4>
+                    <p>Position pieces to create L-shaped matches that generate bombs. Essential for high-level play.
+                    </p>
+                    <p><strong>Setup:</strong> Arrange 5 pieces in L or T formation for maximum bomb creation.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Cascade Chains</h4>
+                    <p>Create vertical chains where matches cause pieces to fall and create new matches automatically.
+                    </p>
+                    <p><strong>Design:</strong> Stack potential matches above each other for chain reactions.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Special Piece Corners</h4>
+                    <p>Position special pieces in corners where they can affect larger areas without disrupting main
+                        play.</p>
+                    <p><strong>Placement:</strong> Keep specials in corners until you need their power.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Color Separation</h4>
+                    <p>Group same colors together to create larger matches and special pieces more easily.</p>
+                    <p><strong>Technique:</strong> Use board layout to naturally separate colors into matchable groups.
+                    </p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Obstacle Clearing Formations</h4>
+                    <p>Position matches to clear multiple obstacles simultaneously with line clearers or bombs.</p>
+                    <p><strong>Efficiency:</strong> One well-placed special can clear 10+ obstacles at once.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Endgame Positioning</h4>
+                    <p>As moves run low, position for maximum cascade potential and special piece combinations.</p>
+                    <p><strong>Final Moves:</strong> Set up cascading matches that can clear remaining objectives
+                        automatically.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-types-section">
+            <h3>Common Level Types and Strategies</h3>
+
+            <div class="level-grid">
+                <div class="level-card">
+                    <h4>Score Target Levels</h4>
+                    <p>Reach a specific score within move limit. Focus on creating cascades and special piece
+                        combinations.</p>
+                    <p><strong>Strategy:</strong> Build score through chain reactions rather than individual matches.
+                    </p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Piece Clearing Levels</h4>
+                    <p>Clear specific types of pieces (chocolate, jelly, etc.) within move limit.</p>
+                    <p><strong>Technique:</strong> Use area effects (bombs) to clear multiple pieces simultaneously.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Ingredient Drop Levels</h4>
+                    <p>Drop ingredients from top to bottom of board. Requires clearing paths and managing board space.
+                    </p>
+                    <p><strong>Planning:</strong> Clear paths strategically while maintaining board balance.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Timed Levels</h4>
+                    <p>Limited time instead of moves. Requires fast matching and cascade creation.</p>
+                    <p><strong>Speed:</strong> Focus on quick matches and let cascades do the work.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Order Levels</h4>
+                    <p>Complete objectives in specific order. Plan move sequence carefully.</p>
+                    <p><strong>Sequence:</strong> Don't clear secondary objectives until primary ones are complete.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Mixed Objective Levels</h4>
+                    <p>Multiple objectives to complete. Balance progress across all requirements.</p>
+                    <p><strong>Balance:</strong> Allocate moves proportionally to each objective's difficulty.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Match-3 Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Scan the Entire Board</h4>
+                    <p>Don't focus on one area. Check all corners and edges for potential matches and setups.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Create Specials Early</h4>
+                    <p>Build special pieces in early moves. They become more valuable as the level progresses.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Power-Ups Wisely</h4>
+                    <p>Save power-ups for critical moments. Don't waste them on easy matches.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn Level Patterns</h4>
+                    <p>Each level type has optimal strategies. Study and remember what works for different objectives.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm Under Pressure</h4>
+                    <p>When moves are low, don't panic. Take extra time to find the best possible move.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Special Combinations</h4>
+                    <p>Learn which special piece combinations create the biggest effects and highest scores.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Watch Replay Videos</h4>
+                    <p>Study videos of expert players to learn advanced techniques and board vision.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Track Your Progress</h4>
+                    <p>Keep notes on difficult levels. Learn from both successes and failures.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Match-3 Games</h3>
+            <p>Match-3 games evolved from tile-matching puzzles in the 1980s. The genre exploded with Candy Crush Saga
+                in 2012, creating billions in revenue and countless clones.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Early Origins</h4>
+                    <p>Tile-matching games appeared in the 1980s with titles like "Chain Shot!" and "Plotting" on
+                        various platforms.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Web Game Era</h4>
+                    <p>Flash games popularized match-3 in the 2000s with titles like "Jewels" and "Diamond Mine."</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Revolution</h4>
+                    <p>Candy Crush Saga (2012) brought match-3 to mobile, generating over $1 billion in revenue.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Genre Explosion</h4>
+                    <p>Thousands of match-3 games followed, each with unique twists, power-ups, and monetization models.
+                    </p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Some match-3 games have competitive leagues and tournaments with cash prizes.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Psychology Research</h4>
+                    <p>Match-3 games are studied for their psychological effects on motivation, addiction, and cognitive
+                        benefits.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Match-3 Games</h3>
+            <p>Match-3 puzzles offer significant mental benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Pattern Recognition:</strong> Improves ability to identify visual patterns and relationships
+                </li>
+                <li><strong>Strategic Planning:</strong> Develops long-term planning and consequence evaluation</li>
+                <li><strong>Problem-Solving:</strong> Enhances analytical thinking and creative solution finding</li>
+                <li><strong>Attention to Detail:</strong> Builds focus and concentration on complex visual information
+                </li>
+                <li><strong>Spatial Reasoning:</strong> Strengthens understanding of spatial relationships and
+                    transformations</li>
+                <li><strong>Decision-Making:</strong> Teaches rapid evaluation of multiple options under time pressure
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

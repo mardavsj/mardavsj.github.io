@@ -1,172 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Shoot matching marbles to slow the chain before it reaches the hole. Play online free on Play Mint.">
-<title>Easter Zuma - Play Mint</title>
+    <meta name="description"
+        content="Shoot matching marbles to slow the chain before it reaches the hole. Play online free on Play Mint.">
+    <title>Easter Zuma - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/easter-zuma/800x450/easterzuma800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Easter Zuma</h1>
-            <p class="game-desc">Shoot matching marbles to slow the chain before it reaches the hole.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Target balls nearest the hole; create gaps to pause the chain and buy time.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/easter-zuma/800x450/easterzuma800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Easter Zuma</h1>
-                    
-                    <!-- Game container - Easter Zuma embed -->
-                    <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=EasterZuma&bgcolor=white"></script></div>
+                    <p class="game-desc">Shoot matching marbles to slow the chain before it reaches the hole.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Target balls nearest the hole; create gaps to pause the chain and buy time.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Easter Zuma</h1>
+
+                <!-- Game container - Easter Zuma embed -->
+                <div class="game-container" id="gameContainer">
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=EasterZuma&bgcolor=white"></script>
+                    </div>
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +199,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +214,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +242,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +273,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +289,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +305,371 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Easter Zuma Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Easter Zuma: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Easter Zuma is a festive marble-shooting puzzle game where players must clear colorful chains of marbles
+                before they reach the exit hole. This comprehensive guide covers everything from basic shooting
+                mechanics to advanced chain reaction strategies that will help you master the Easter-themed marble
+                madness and achieve high scores.</p>
+        </div>
+
+        <h3>Easter Zuma Fundamentals: Rules and Objectives</h3>
+        <p>Easter Zuma is a fast-paced puzzle game where players shoot marbles to create matching groups and prevent the
+            marble chain from reaching the exit.</p>
+
+        <div class="basics-section">
+            <h4>Core Game Mechanics</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon chain">🔗</div>
+                    <h5>Marble Chain</h5>
+                    <p>Moving chain of colored marbles that advances toward the exit hole.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon shooter">🎯</div>
+                    <h5>Marble Shooter</h5>
+                    <p>Stationary launcher that shoots marbles at the chain to insert new ones.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon match">🎨</div>
+                    <h5>Color Matching</h5>
+                    <p>Create groups of 3+ same-colored marbles to clear them from the chain.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon path">🌀</div>
+                    <h5>Path Layout</h5>
+                    <p>Curved or complex paths that the marble chain follows toward the exit.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon speed">⚡</div>
+                    <h5>Chain Speed</h5>
+                    <p>Chain movement speed increases as game progresses, adding time pressure.</p>
+                </div>
+                <div class="basic-card">
+                    <h4>Scoring System</h4>
+                    <p>Earn points for clearing marbles, with bonuses for chain reactions and speed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Position Planning</h4>
+                    <p>Calculate shot trajectory and insertion point carefully before firing.</p>
+                    <p><strong>Precision:</strong> Accurate positioning prevents wasted shots and creates optimal
+                        matches.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Chain Reaction Creation</h4>
+                    <p>Plan shots that create cascading clears where one clear triggers others.</p>
+                    <p><strong>Multiplication:</strong> Chain reactions clear many marbles with single well-placed shot.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Color Distribution</h4>
+                    <p>Analyze chain color patterns to identify best insertion points for matches.</p>
+                    <p><strong>Analysis:</strong> Understanding color distribution reveals optimal shooting
+                        opportunities.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Gap Management</h4>
+                    <p>Create and maintain gaps in the chain to buy time for strategic shots.</p>
+                    <p><strong>Control:</strong> Strategic gaps prevent chain advancement and create breathing room.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Speed Adaptation</h4>
+                    <p>Adjust strategy as chain speed increases, prioritizing quick clears over perfection.</p>
+                    <p><strong>Adaptation:</strong> Faster chains require quicker decisions and more aggressive play.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Risk Assessment</h4>
+                    <p>Evaluate shot risk vs. reward. Some shots create better future opportunities.</p>
+                    <p><strong>Planning:</strong> Consider long-term chain state, not just immediate clears.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Gap Creator</h4>
+                    <p>Shoot marbles that create spaces in the chain, temporarily halting advancement.</p>
+                    <p><strong>Time Management:</strong> Gaps provide crucial seconds to plan better shots.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Chain Starter</h4>
+                    <p>Target positions that will trigger multiple color group clears simultaneously.</p>
+                    <p><strong>Efficiency:</strong> Single shots that clear 10+ marbles dramatically slow chain
+                        progress.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Color Organizer</h4>
+                    <p>Group same-colored marbles together to create larger, more valuable clear groups.</p>
+                    <p><strong>Consolidation:</strong> Organized colors create bigger explosions and higher scores.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Path Predictor</h4>
+                    <p>Anticipate chain movement around curves to position shots for maximum impact.</p>
+                    <p><strong>Prediction:</strong> Understanding path physics enables precise shot placement.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Emergency Clear</h4>
+                    <p>When chain is close to exit, take any available clear rather than overthinking.</p>
+                    <p><strong>Survival:</strong> Any clear is better than letting chain reach the exit hole.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Speed Burst</h4>
+                    <p>Create rapid-fire clears during slow chain moments to build large score multipliers.</p>
+                    <p><strong>Multiplication:</strong> Quick successive clears build massive point bonuses.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-features-section">
+            <h3>Easter Zuma Special Features</h3>
+
+            <div class="special-grid">
+                <div class="special-card">
+                    <h4>Easter Egg Bonuses</h4>
+                    <p>Special Easter-themed power-ups that provide unique clearing abilities.</p>
+                    <p><strong>Advantage:</strong> Easter eggs offer powerful area clears and special effects.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Seasonal Themes</h4>
+                    <p>Easter decorations and spring-themed visual elements throughout levels.</p>
+                    <p><strong>Immersion:</strong> Festive atmosphere enhances gameplay experience.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Holiday Challenges</h4>
+                    <p>Special Easter-themed level objectives and scoring challenges.</p>
+                    <p><strong>Variety:</strong> Holiday-specific goals add replayability and challenge.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Spring Colors</h4>
+                    <p>Pastel color schemes and Easter-themed marble designs.</p>
+                    <p><strong>Aesthetics:</strong> Pleasant visual design creates relaxing gameplay atmosphere.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Event Rewards</h4>
+                    <p>Special achievements and rewards for Easter-themed accomplishments.</p>
+                    <p><strong>Motivation:</strong> Holiday-specific goals encourage extended play sessions.</p>
+                </div>
+
+                <div class="special-card">
+                    <h4>Limited-Time Modes</h4>
+                    <p>Seasonal game modes available only during Easter period.</p>
+                    <p><strong>Exclusivity:</strong> Time-limited content creates urgency and special appeal.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-types-section">
+            <h3>Common Level Patterns</h3>
+
+            <div class="level-grid">
+                <div class="level-card">
+                    <h4>Straight Path Levels</h4>
+                    <p>Simple linear chains. Focus on creating gaps and chain reactions.</p>
+                    <p><strong>Strategy:</strong> Straight paths allow predictable shot planning and timing.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Curved Path Levels</h4>
+                    <p>Bending chains require trajectory prediction around corners.</p>
+                    <p><strong>Physics:</strong> Curve navigation requires understanding marble path physics.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Multi-Path Levels</h4>
+                    <p>Branching paths with multiple chain segments to manage.</p>
+                    <p><strong>Multi-tasking:</strong> Multiple chains require divided attention and prioritization.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Speed Ramp Levels</h4>
+                    <p>Chains that gradually increase speed, requiring adaptation.</p>
+                    <p><strong>Adaptation:</strong> Strategy must evolve as speed increases throughout level.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Color Flood Levels</h4>
+                    <p>Levels dominated by one or two colors, creating clearing opportunities.</p>
+                    <p><strong>Efficiency:</strong> Dominant colors allow for large-scale chain reactions.</p>
+                </div>
+
+                <div class="level-card">
+                    <h4>Obstacle Levels</h4>
+                    <p>Levels with barriers or obstacles affecting marble paths.</p>
+                    <p><strong>Navigation:</strong> Obstacles require creative shot placement and path prediction.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Easter Zuma Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Watch the Chain</h4>
+                    <p>Always monitor chain position and speed to anticipate time pressure.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Plan Chain Reactions</h4>
+                    <p>Look for shots that will create multiple clears with one marble.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Create Gaps</h4>
+                    <p>Use clears to create spaces in the chain and buy time.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Study Color Patterns</h4>
+                    <p>Analyze chain colors to identify optimal insertion points.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm Under Pressure</h4>
+                    <p>When chain is close to exit, focus on any available clear.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Master Trajectories</h4>
+                    <p>Learn how marbles bounce and curve around path obstacles.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Easter Bonuses</h4>
+                    <p>Take advantage of holiday-themed power-ups and special effects.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Speed Shooting</h4>
+                    <p>Develop quick, accurate shooting skills for fast-moving chains.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Marble Popper Games</h3>
+            <p>Easter Zuma represents the festive evolution of marble-popping puzzle games, combining classic mechanics
+                with seasonal themes.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Zuma Origins</h4>
+                    <p>Original Zuma released in 2003, inspired by arcade game Puzz Loop.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Physics Innovation</h4>
+                    <p>Zuma introduced realistic marble physics and chain reactions.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Casual Gaming Boom</h4>
+                    <p>Zuma became one of the most popular casual games of the 2000s.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Themed Variants</h4>
+                    <p>Holiday and seasonal versions added replayability and variety.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Adaptation</h4>
+                    <p>Touch controls made marble poppers perfect for mobile gaming.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Speed clearing and high-score challenges emerged among players.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Easter Zuma</h3>
+            <p>Easter Zuma offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Hand-Eye Coordination:</strong> Improves motor skills and reaction time through precise
+                    shooting</li>
+                <li><strong>Spatial Reasoning:</strong> Develops understanding of trajectories and marble physics</li>
+                <li><strong>Pattern Recognition:</strong> Enhances ability to identify color sequences and clearing
+                    opportunities</li>
+                <li><strong>Strategic Planning:</strong> Builds planning skills for optimal shot sequences and chain
+                    reactions</li>
+                <li><strong>Decision Making:</strong> Teaches rapid assessment of multiple shooting options under time
+                    pressure</li>
+                <li><strong>Stress Management:</strong> Provides engaging distraction while developing cognitive skills
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

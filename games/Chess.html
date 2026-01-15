@@ -1,186 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Battle through classic chess strategy with clean visuals and quick play. Play online free on Play Mint.">
-<title>Chess - Play Mint</title>
+    <meta name="description"
+        content="Battle through classic chess strategy with clean visuals and quick play. Play online free on Play Mint.">
+    <title>Chess - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/chess/800x450/chess800x450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Chess</h1>
-            <p class="game-desc">Battle through classic chess strategy with clean visuals and quick play.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Develop knights and bishops before the queen roams; castle early and fight for center squares.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/chess/800x450/chess800x450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Chess</h1>
-                    
-                    <!-- Game container - Chess embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Chess -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=Chess&bgcolor=white"></script>
+                    <p class="game-desc">Battle through classic chess strategy with clean visuals and quick play.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Develop knights and bishops before the queen roams; castle early and fight for center
+                                squares.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Chess</h1>
+
+                <!-- Game container - Chess embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Chess -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=Chess&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +207,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +238,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +254,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,38 +270,339 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Chess Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Chess: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Chess is the ultimate battle of minds, combining strategy, tactics, and psychology. This comprehensive
+                guide will elevate your game from beginner to master level, covering everything from basic rules to
+                advanced concepts.</p>
+        </div>
+
+        <h3>Chess Fundamentals: Rules and Piece Movement</h3>
+        <p>Chess is played on an 8×8 board with 16 pieces per player. The objective is to checkmate your opponent's
+            king—putting it under attack with no legal moves to escape.</p>
+
+        <div class="pieces-section">
+            <h4>How Each Piece Moves</h4>
+            <div class="pieces-grid">
+                <div class="piece-card">
+                    <h5>♔ King</h5>
+                    <p>Most important piece. Moves one square in any direction. Cannot move into check. Castling
+                        available under specific conditions.</p>
+                </div>
+                <div class="piece-card">
+                    <h5>♕ Queen</h5>
+                    <p>Most powerful piece. Moves any number of squares in any direction (horizontal, vertical,
+                        diagonal).</p>
+                </div>
+                <div class="piece-card">
+                    <h5>♖ Rook</h5>
+                    <p>Moves any number of squares horizontally or vertically. Castling partner with the king.</p>
+                </div>
+                <div class="piece-card">
+                    <h5>♗ Bishop</h5>
+                    <p>Moves any number of squares diagonally. Each bishop stays on its original color squares.</p>
+                </div>
+                <div class="piece-card">
+                    <h5>♘ Knight</h5>
+                    <p>Moves in an L-shape: two squares in one direction, then one perpendicular. Only piece that can
+                        jump over others.</p>
+                </div>
+                <div class="piece-card">
+                    <h5>♙ Pawn</h5>
+                    <p>Moves one square forward (two on first move). Captures diagonally. Can promote to any piece when
+                        reaching the 8th rank.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Essential Chess Principles</h3>
+
+            <div class="principle-grid">
+                <div class="principle-card">
+                    <h4>1. Control the Center</h4>
+                    <p>The four central squares (e4, e5, d4, d5) are crucial. Pieces in the center have more mobility
+                        and influence over the board.</p>
+                </div>
+
+                <div class="principle-card">
+                    <h4>2. Develop Your Pieces</h4>
+                    <p>Bring your knights and bishops out early. Don't move the same piece twice in the opening unless
+                        necessary.</p>
+                </div>
+
+                <div class="principle-card">
+                    <h4>3. Castle Early</h4>
+                    <p>King safety is paramount. Castle kingside (O-O) or queenside (O-O-O) to protect your king and
+                        connect your rooks.</p>
+                </div>
+
+                <div class="principle-card">
+                    <h4>4. Don't Bring Queen Out Too Early</h4>
+                    <p>The queen is powerful but vulnerable to attacks when undeveloped pieces surround her. Develop
+                        minor pieces first.</p>
+                </div>
+
+                <div class="principle-card">
+                    <h4>5. Protect Your King</h4>
+                    <p>Keep your king safe. Use pawns as a shield and avoid creating weaknesses around your king.</p>
+                </div>
+
+                <div class="principle-card">
+                    <h4>6. Think About Your Opponent's Moves</h4>
+                    <p>Always consider what your opponent can do. Look for threats and defensive resources.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tactics-section">
+            <h3>Essential Chess Tactics</h3>
+
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <h4>Pins</h4>
+                    <p>A piece cannot move because it would expose a more valuable piece behind it to capture. Absolute
+                        pins prevent any movement; relative pins allow movement but with consequences.</p>
+                    <p><strong>Example:</strong> Bishop pins knight to queen - the knight cannot move because it would
+                        expose the queen.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>Forks</h4>
+                    <p>One piece attacks two or more enemy pieces simultaneously. Knights are especially good at forking
+                        due to their unique movement.</p>
+                    <p><strong>Example:</strong> Knight attacks both king and queen - opponent can only save one piece.
+                    </p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>Skewers</h4>
+                    <p>Opposite of a pin - a more valuable piece is attacked first, forcing it to move and exposing the
+                        less valuable piece behind it.</p>
+                    <p><strong>Example:</strong> Queen attacks king, with bishop behind - king moves, exposing bishop to
+                        capture.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>Discovered Attacks</h4>
+                    <p>Moving one piece reveals an attack by another piece behind it. Can create double attacks or
+                        discovered checks.</p>
+                    <p><strong>Example:</strong> Moving a pawn reveals a rook attack on the queen.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>Removing the Defender</h4>
+                    <p>If a piece is protected by another piece, capture or force away the defender to attack the
+                        protected piece.</p>
+                    <p><strong>Example:</strong> Knight protected by pawn - capture the pawn first, then take the
+                        knight.</p>
+                </div>
+
+                <div class="tactic-card">
+                    <h4>Zwischenzug (Intermediate Move)</h4>
+                    <p>In the middle of a combination, insert an unexpected move that forces your opponent to respond,
+                        often gaining tempo.</p>
+                    <p><strong>Example:</strong> Instead of recapturing immediately, check the king first to disrupt
+                        opponent's plans.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="openings-section">
+            <h3>Popular Chess Openings</h3>
+
+            <div class="opening-grid">
+                <div class="opening-card">
+                    <h4>Italian Game (1.e4 e5 2.Nf3 Nc6 3.Bc4)</h4>
+                    <p>One of the oldest openings. Develops bishop to a strong diagonal and prepares kingside castling.
+                        Leads to tactical games.</p>
+                    <p><strong>Key Ideas:</strong> Control center, develop pieces, prepare castling.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Ruy Lopez (1.e4 e5 2.Nf3 Nc6 3.Bb5)</h4>
+                    <p>Most respected response to 1.e4 e5. Bishop pins the knight to the king, pressuring the center.
+                    </p>
+                    <p><strong>Key Ideas:</strong> Pressure on e5 pawn, prepare d3 push, flexible development.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Sicilian Defense (1.e4 c5)</h4>
+                    <p>Most popular response to 1.e4. Asymmetric pawn structure leads to complex, tactical positions.
+                    </p>
+                    <p><strong>Key Ideas:</strong> Fight for center, prepare counterattacks, active piece play.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>French Defense (1.e4 e6)</h4>
+                    <p>Solid but passive defense. Creates pawn chain and prepares counterplay on queenside.</p>
+                    <p><strong>Key Ideas:</strong> Solid pawn structure, counterattack with ...c5 or ...f6, active
+                        bishops.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>Queen's Gambit (1.d4 d5 2.c4)</h4>
+                    <p>Classical opening offering a center pawn. Can be accepted or declined. Leads to strategic
+                        battles.</p>
+                    <p><strong>Key Ideas:</strong> Fight for center control, develop pieces harmoniously, prepare
+                        kingside attack.</p>
+                </div>
+
+                <div class="opening-card">
+                    <h4>King's Indian Defense (1.d4 Nf6 2.c4 g6)</h4>
+                    <p>Hypermodern defense. Allows white to build big center, then strikes with ...e5 or ...c5.</p>
+                    <p><strong>Key Ideas:</strong> Fianchetto bishop, prepare pawn breaks, kingside attack.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="endgame-section">
+            <h3>Essential Endgame Knowledge</h3>
+
+            <div class="endgame-grid">
+                <div class="endgame-card">
+                    <h4>King and Pawn Endgames</h4>
+                    <p>Most common endgame. Key principles: opposition, triangulation, outside passed pawn, king
+                        activity.</p>
+                    <p><strong>Essential Skills:</strong> Know how to promote pawns and prevent promotion.</p>
+                </div>
+
+                <div class="endgame-card">
+                    <h4>Rook Endgames</h4>
+                    <p>Complex but learnable. Active rook on 7th rank, cutting off opponent's king, Lucena and Philidor
+                        positions.</p>
+                    <p><strong>Essential Skills:</strong> Rook behind passed pawn, active king, proper defense
+                        techniques.</p>
+                </div>
+
+                <div class="endgame-card">
+                    <h4>Queen Endgames</h4>
+                    <p>Usually decisive. Queen coordinates with king to attack. Know perpetual check possibilities.</p>
+                    <p><strong>Essential Skills:</strong> Queen and king coordination, avoiding stalemate, perpetual
+                        check.</p>
+                </div>
+
+                <div class="endgame-card">
+                    <h4>Minor Piece Endgames</h4>
+                    <p>Bishop vs knight, same-colored bishops, opposite-colored bishops. Know drawing and winning
+                        techniques.</p>
+                    <p><strong>Essential Skills:</strong> Bishop pair advantage, wrong-colored bishop, knight outposts.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="improvement-section">
+            <h3>Improving Your Chess</h3>
+
+            <div class="improvement-tips">
+                <div class="improvement-card">
+                    <h4>Study Master Games</h4>
+                    <p>Analyze games by world champions. Understand their thought processes and strategic decisions.</p>
+                </div>
+
+                <div class="improvement-card">
+                    <h4>Solve Tactical Puzzles</h4>
+                    <p>Practice finding combinations and calculating variations. Build your tactical vision.</p>
+                </div>
+
+                <div class="improvement-card">
+                    <h4>Play Regularly</h4>
+                    <p>Consistent practice is key. Play games, analyze your mistakes, and learn from them.</p>
+                </div>
+
+                <div class="improvement-card">
+                    <h4>Study Endgames</h4>
+                    <p>Endgame knowledge often decides games. Learn basic positions and techniques.</p>
+                </div>
+
+                <div class="improvement-card">
+                    <h4>Review Your Games</h4>
+                    <p>Always analyze your games afterward. Identify mistakes and missed opportunities.</p>
+                </div>
+
+                <div class="improvement-card">
+                    <h4>Learn from Books</h4>
+                    <p>Read chess books by masters. "My System" by Nimzowitsch and "Think Like a Grandmaster" are
+                        excellent starts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Rich History of Chess</h3>
+            <p>Chess originated in India around the 6th century as "Chaturanga," meaning "four divisions" (infantry,
+                cavalry, elephants, chariots). The modern rules evolved over centuries:</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>6th Century - Chaturanga</h4>
+                    <p>Ancient Indian game with four pieces: infantry (pawn), cavalry (knight), elephants (bishop),
+                        chariots (rook).</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>7th Century - Shatranj</h4>
+                    <p>Persian version with simplified rules. Queen was a weak advisor piece, bishop moved differently.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h4>15th Century - Modern Chess</h4>
+                    <p>Queen and bishop gained modern movement. Rules standardized in Europe.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>1886 - First World Championship</h4>
+                    <p>Wilhelm Steinitz became first official world champion, defeating Johannes Zukertort.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>1997 - Deep Blue vs Kasparov</h4>
+                    <p>IBM's computer defeated world champion Garry Kasparov, marking AI's triumph over human chess
+                        skill.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-

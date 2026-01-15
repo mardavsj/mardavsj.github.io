@@ -1,186 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Rotate and drop falling blocks to clear lines and avoid stack overflow. Play online free on Play Mint.">
-<title>Tetris - Play Mint</title>
+    <meta name="description"
+        content="Rotate and drop falling blocks to clear lines and avoid stack overflow. Play online free on Play Mint.">
+    <title>Tetris - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/tetris/800x450/tetrisfun800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Tetris Fun</h1>
-            <p class="game-desc">Rotate and drop falling blocks to clear lines and avoid stack overflow.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Keep a clean well for I pieces; avoid stacking over gaps and fix holes immediately.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/tetris/800x450/tetrisfun800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Tetris Fun</h1>
-                    
-                    <!-- Game container - Tetris embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Replace this section with actual game embed -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=TetrisFun&bgcolor=white"></script>
+                    <p class="game-desc">Rotate and drop falling blocks to clear lines and avoid stack overflow.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Keep a clean well for I pieces; avoid stacking over gaps and fix holes immediately.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Tetris Fun</h1>
+
+                <!-- Game container - Tetris embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Replace this section with actual game embed -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=TetrisFun&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +207,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +238,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +254,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,41 +270,391 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Tetris Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Tetris: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Tetris is more than just a puzzle game—it's a test of spatial reasoning, quick decision-making, and
+                pattern recognition. This comprehensive guide will help you achieve higher scores, master advanced
+                techniques, and understand the psychology behind this timeless classic.</p>
+        </div>
+
+        <h3>Tetris Fundamentals: Rules and Tetrominoes</h3>
+        <p>Tetris involves falling geometric shapes called Tetrominoes that players must arrange to create complete
+            horizontal lines, which then disappear. The game ends when the pieces reach the top of the playing field.
+        </p>
+
+        <div class="tetrominoes-section">
+            <h4>The Seven Tetrominoes</h4>
+            <div class="tetrominoes-grid">
+                <div class="tetromino-card">
+                    <div class="tetromino-shape i-shape">I</div>
+                    <h5>Line Piece (I)</h5>
+                    <p>4 blocks in a straight line. Most versatile piece for clearing lines. Can create flat surfaces or
+                        clear multiple lines.</p>
+                </div>
+                <div class="tetromino-card">
+                    <div class="tetromino-shape o-shape">O</div>
+                    <h5>Square Piece (O)</h5>
+                    <p>2×2 square. Only piece that doesn't rotate. Perfect for filling small gaps and creating stable
+                        foundations.</p>
+                </div>
+                <div class="tetromino-card">
+                    <div class="tetromino-shape t-shape">T</div>
+                    <h5>T Piece (T)</h5>
+                    <p>Three blocks in a row with one in the center. Excellent for creating overhangs and filling
+                        complex patterns.</p>
+                </div>
+                <div class="tetromino-card">
+                    <div class="tetromino-shape s-shape">S</div>
+                    <h5>S Piece (S)</h5>
+                    <p>Zigzag shape. Good for clearing lines in specific patterns and creating wells for later pieces.
+                    </p>
+                </div>
+                <div class="tetromino-card">
+                    <div class="tetromino-shape z-shape">Z</div>
+                    <h5>Z Piece (Z)</h5>
+                    <p>Reverse zigzag. Useful for clearing lines and filling gaps in diagonal patterns.</p>
+                </div>
+                <div class="tetromino-card">
+                    <div class="tetromino-shape j-shape">J</div>
+                    <h5>J Piece (J)</h5>
+                    <p>L-shape with extension on left. Versatile for creating stairs and filling various hole patterns.
+                    </p>
+                </div>
+                <div class="tetromino-card">
+                    <div class="tetromino-shape l-shape">L</div>
+                    <h5>L Piece (L)</h5>
+                    <p>L-shape with extension on right. Mirror of J piece. Great for creating platforms and filling
+                        spaces.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="scoring-section">
+            <h3>Scoring System and Line Clears</h3>
+
+            <div class="scoring-grid">
+                <div class="scoring-card">
+                    <h4>Single Line (1 line)</h4>
+                    <p>Clear one horizontal line. Base points depend on current level.</p>
+                    <p class="score">100 × level</p>
+                </div>
+                <div class="scoring-card">
+                    <h4>Double (2 lines)</h4>
+                    <p>Clear two lines simultaneously. More efficient than two singles.</p>
+                    <p class="score">300 × level</p>
+                </div>
+                <div class="scoring-card">
+                    <h4>Triple (3 lines)</h4>
+                    <p>Clear three lines at once. Very efficient scoring.</p>
+                    <p class="score">500 × level</p>
+                </div>
+                <div class="scoring-card">
+                    <h4>Tetris (4 lines)</h4>
+                    <p>Clear four lines simultaneously. Most valuable move!</p>
+                    <p class="score">800 × level</p>
+                </div>
+            </div>
+
+            <div class="bonus-info">
+                <h4>Additional Scoring</h4>
+                <ul>
+                    <li><strong>Soft Drop:</strong> 1 point per cell dropped slowly</li>
+                    <li><strong>Hard Drop:</strong> 2 points per cell dropped instantly</li>
+                    <li><strong>T-Spin:</strong> Bonus for rotating T-piece before line clear</li>
+                    <li><strong>Back-to-Back:</strong> Bonus for consecutive special clears</li>
+                    <li><strong>Combo:</strong> Points for consecutive line clears without missing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Advanced Tetris Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Next Piece Preview</h4>
+                    <p>Always look at upcoming pieces. Plan 3-5 moves ahead. Don't just react—anticipate what pieces
+                        you'll need.</p>
+                    <p><strong>Key:</strong> Build structures that accommodate future pieces, not just the current one.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Hold Queue Management</h4>
+                    <p>Use the hold feature strategically. Save pieces for when you really need them. Don't hold pieces
+                        unnecessarily.</p>
+                    <p><strong>Tip:</strong> Hold pieces that don't fit your current plan but might be useful later.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Well Management</h4>
+                    <p>Create and maintain a well (vertical gap) for long straight pieces. Keep it in a consistent
+                        location.</p>
+                    <p><strong>Strategy:</strong> Use S/Z pieces to create wells, then fill them with I pieces for
+                        Tetrises.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Pattern Recognition</h4>
+                    <p>Learn common patterns and how to clear them efficiently. Recognize when you can set up Tetrises.
+                    </p>
+                    <p><strong>Practice:</strong> Study high-level gameplay to recognize efficient setups.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Speed vs Accuracy</h4>
+                    <p>Find your balance. Too fast leads to mistakes; too slow hurts scoring. Practice muscle memory for
+                        common placements.</p>
+                    <p><strong>Goal:</strong> Place pieces quickly but accurately, minimizing decision time.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Recovery Techniques</h4>
+                    <p>When you make mistakes, don't panic. Use spin moves, creative placements, and focus on damage
+                        control.</p>
+                    <p><strong>Mindset:</strong> Accept mistakes and focus on the next piece, not what's already placed.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>T-Spin</h4>
+                    <p>Rotate T-piece into a tight space, then clear lines. Requires precise placement and rotation.</p>
+                    <p><strong>Types:</strong> Mini T-Spin (1 corner) and full T-Spin (2 corners). Higher scoring
+                        potential.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>Perfect Clear</h4>
+                    <p>Clear entire playing field without any blocks remaining. Requires careful planning and specific
+                        piece sequences.</p>
+                    <p><strong>Reward:</strong> Massive points bonus and special recognition in many Tetris variants.
+                    </p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>REN (Combo)</h4>
+                    <p>Consecutive line clears without interruption. Each consecutive clear increases the combo
+                        multiplier.</p>
+                    <p><strong>Strategy:</strong> Set up chains of line clears to maximize scoring potential.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>DAS (Delayed Auto Shift)</h4>
+                    <p>Technique for precise piece placement. Hold direction key to move piece automatically after
+                        initial delay.</p>
+                    <p><strong>Mastery:</strong> Allows lightning-fast, precise movements once muscle memory is
+                        developed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patterns-section">
+            <h3>Common Patterns and Setups</h3>
+
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <h4>Double Well Setup</h4>
+                    <p>Create two wells side by side. Allows alternating I pieces for consistent Tetrises.</p>
+                    <p><strong>Best for:</strong> High-level play with good piece sequences.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Staircase Pattern</h4>
+                    <p>Build diagonal "stairs" up the side. Allows flexible piece placement and Tetris opportunities.
+                    </p>
+                    <p><strong>Best for:</strong> Adapting to unpredictable piece sequences.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Flat Surface</h4>
+                    <p>Maintain a completely flat top surface. Allows maximum flexibility for piece placement.</p>
+                    <p><strong>Best for:</strong> Beginners and when you need to adapt quickly.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Cavity Setup</h4>
+                    <p>Create intentional holes to set up future Tetrises. Requires careful planning.</p>
+                    <p><strong>Best for:</strong> Advanced players who can predict piece sequences.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="variants-section">
+            <h3>Tetris Variants and Modes</h3>
+
+            <div class="variant-grid">
+                <div class="variant-card">
+                    <h4>Sprint Mode</h4>
+                    <p>Clear 40 lines as fast as possible. Tests speed and efficiency.</p>
+                    <p><strong>Focus:</strong> Fast decision-making and optimized line clearing.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Ultra Mode</h4>
+                    <p>Survive for 3 minutes or clear 150 lines. Endurance challenge.</p>
+                    <p><strong>Focus:</strong> Sustained concentration and strategic planning.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Marathon Mode</h4>
+                    <p>Endless play until game over. Focus on survival and high scoring.</p>
+                    <p><strong>Focus:</strong> Long-term strategy and pattern recognition.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Battle 2P</h4>
+                    <p>Send cleared lines to opponent. Competitive multiplayer.</p>
+                    <p><strong>Focus:</strong> Offensive line clearing and defensive survival.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Effect Mode</h4>
+                    <p>Special effects trigger based on performance. Adds chaos and fun.</p>
+                    <p><strong>Focus:</strong> Adapting to changing conditions and special abilities.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Puzzle Mode</h4>
+                    <p>Solve specific challenges with limited pieces. Logic puzzles.</p>
+                    <p><strong>Focus:</strong> Creative problem-solving and optimal piece usage.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Legend of Tetris</h3>
+            <p>Tetris was created in 1984 by Soviet programmer Alexey Pajitnov while working at the Dorodnicyn Computing
+                Centre. The game's name comes from "tetra" (four) and "tennis" (Pajitnov's favorite sport).</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Origin Story</h4>
+                    <p>Pajitnov was inspired by a puzzle game called Pentominoes. He spent three months coding Tetris on
+                        an Electronika 60 computer, never intending it to be more than a personal project.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Global Phenomenon</h4>
+                    <p>The game spread rapidly through the Soviet Union and Eastern Europe. By 1986, it had become a
+                        worldwide sensation, ported to numerous platforms.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Legal Battles</h4>
+                    <p>Rights issues plagued Tetris for years. The Soviet government claimed ownership, leading to
+                        complex licensing deals. Nintendo's Game Boy version sold millions.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Impact</h4>
+                    <p>Tetris has influenced art, music, and popular culture. It's been featured in films, inspired
+                        video art, and even helped reduce stress during scientific experiments.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Modern Legacy</h4>
+                    <p>Today, Tetris Effect brings the game to virtual reality, and competitive Tetris is a growing
+                        esports scene with professional players and tournaments.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Scientific Studies</h4>
+                    <p>Research shows Tetris can improve spatial reasoning, reduce PTSD symptoms, and even help prevent
+                        malaria by occupying mosquito nets in some developing regions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Tetris Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Practice Daily</h4>
+                    <p>Short, consistent practice sessions are more effective than occasional long ones. Build muscle
+                        memory through repetition.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Analyze Your Replays</h4>
+                    <p>Review your games to identify mistakes and missed opportunities. Learning from errors accelerates
+                        improvement.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn from Pros</h4>
+                    <p>Watch high-level Tetris gameplay on YouTube. Study their decision-making and pattern recognition.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm Under Pressure</h4>
+                    <p>As speed increases, stay relaxed. Tension leads to mistakes. Practice deep breathing during
+                        intense games.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Experiment with Styles</h4>
+                    <p>Try different playing styles and patterns. What works for one player might not work for another.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Set Realistic Goals</h4>
+                    <p>Focus on gradual improvement rather than immediate high scores. Celebrate small victories along
+                        the way.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

@@ -1,172 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Grow your snake by collecting pellets without colliding with your own tail. Play online free on Play Mint.">
-<title>Snake Dash - Play Mint</title>
+    <meta name="description"
+        content="Grow your snake by collecting pellets without colliding with your own tail. Play online free on Play Mint.">
+    <title>Snake Dash - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/snake-dash/800x450/snakedash800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Snake Dash</h1>
-            <p class="game-desc">Grow your snake by collecting pellets without colliding with your own tail.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Hug the borders early, then move inward; leave yourself an exit lane before speeding up.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/snake-dash/800x450/snakedash800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Snake Dash</h1>
-                    
-                    <!-- Game container - Snake Dash embed -->
-                    <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=SnakeDash&bgcolor=white"></script></div>
+                    <p class="game-desc">Grow your snake by collecting pellets without colliding with your own tail.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Hug the borders early, then move inward; leave yourself an exit lane before speeding up.
+                            </p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Snake Dash</h1>
+
+                <!-- Game container - Snake Dash embed -->
+                <div class="game-container" id="gameContainer">
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=SnakeDash&bgcolor=white"></script>
+                    </div>
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +200,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +215,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +243,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +274,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +290,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +306,325 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Snake Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Snake: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Snake is one of the most iconic video games ever created, combining simple mechanics with surprisingly
+                deep strategy. This comprehensive guide covers everything from basic survival to advanced techniques
+                that will help you achieve massive scores and master the game's nuances.</p>
+        </div>
+
+        <h3>Snake Fundamentals: Rules and Objectives</h3>
+        <p>Snake involves controlling a growing snake that moves around a bounded area, eating food to grow longer while
+            avoiding collisions with walls or your own body. The game ends when you crash, and your score is based on
+            length and speed.</p>
+
+        <div class="controls-section">
+            <h4>Controls and Basic Movement</h4>
+            <div class="controls-grid">
+                <div class="control-card">
+                    <h5>Arrow Keys / WASD</h5>
+                    <p>Change direction: Up, Down, Left, Right. Cannot reverse directly into yourself.</p>
+                </div>
+                <div class="control-card">
+                    <h5>Food (Apples/Targets)</h5>
+                    <p>Red squares that appear randomly. Eating one grows your snake by one segment and increases score.
+                    </p>
+                </div>
+                <div class="control-card">
+                    <h5>Snake Body</h5>
+                    <p>Each segment follows the head's path. Collision with any body segment ends the game.</p>
+                </div>
+                <div class="control-card">
+                    <h5>Boundaries</h5>
+                    <p>Game area edges. Hitting them ends the game (unless wraparound mode is enabled).</p>
+                </div>
+                <div class="control-card">
+                    <h5>Score System</h5>
+                    <p>Points for eating food, often multiplied by speed or combo bonuses.</p>
+                </div>
+                <div class="control-card">
+                    <h5>Speed Increase</h5>
+                    <p>Game speed typically increases as you grow longer, making control more challenging.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Corner Navigation</h4>
+                    <p>Use corners to create safe zones and control your movement. Corners prevent you from boxing
+                        yourself in.</p>
+                    <p><strong>Technique:</strong> Approach corners at angles that give you multiple escape routes.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Body Positioning</h4>
+                    <p>Keep your body positioned to create barriers and safe zones. Use your tail as a movable wall.</p>
+                    <p><strong>Tip:</strong> Position your body to block dangerous areas while keeping escape routes
+                        open.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Food Planning</h4>
+                    <p>Don't just chase immediate food—plan paths that set up future moves and avoid dead ends.</p>
+                    <p><strong>Strategy:</strong> Consider 3-5 food items ahead when planning your route.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Space Management</h4>
+                    <p>Leave yourself enough space to maneuver. Don't fill areas completely—always maintain escape
+                        routes.</p>
+                    <p><strong>Rule:</strong> Never reduce your available space below what you need for safe movement.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Speed Control</h4>
+                    <p>Balance speed vs control. Higher speed gives more points but reduces reaction time.</p>
+                    <p><strong>Decision:</strong> Slow down in tight spaces, speed up in open areas.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Risk Assessment</h4>
+                    <p>Evaluate danger levels of different paths. Some tight maneuvers are worth the risk for high-value
+                        food.</p>
+                    <p><strong>Calculation:</strong> Compare space requirements vs potential rewards.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patterns-section">
+            <h3>Advanced Patterns and Techniques</h3>
+
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <h4>The Spiral Pattern</h4>
+                    <p>Create a spiral path that efficiently clears the board while maintaining safe corridors.</p>
+                    <p><strong>Best for:</strong> Clearing large open areas systematically.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Corner Boxing</h4>
+                    <p>Use corners to create temporary safe zones, then break out when needed.</p>
+                    <p><strong>Technique:</strong> Box yourself in corners to force food placement in safer areas.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Body Wall Creation</h4>
+                    <p>Position your body to create walls that guide food placement and block dangerous areas.</p>
+                    <p><strong>Advanced:</strong> Use your body as movable barriers to control the game flow.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Escape Route Planning</h4>
+                    <p>Always maintain multiple escape routes. Never commit to a path that leaves you trapped.</p>
+                    <p><strong>Rule:</strong> Have at least two viable escape directions at all times.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Food Chaining</h4>
+                    <p>Create chains of food that lead you through safe corridors and open areas.</p>
+                    <p><strong>Strategy:</strong> Position yourself to force food to appear in desired locations.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>Speed Bursts</h4>
+                    <p>Use short speed increases to quickly clear areas, then slow down for precision work.</p>
+                    <p><strong>Timing:</strong> Speed up when you have clear paths, slow down in tight spaces.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="variants-section">
+            <h3>Snake Game Variants</h3>
+
+            <div class="variant-grid">
+                <div class="variant-card">
+                    <h4>Classic Snake</h4>
+                    <p>Traditional gameplay with solid boundaries. Focus on spiral patterns and corner control.</p>
+                    <p><strong>Strategy:</strong> Systematic area clearing with spiral movements.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Wraparound Snake</h4>
+                    <p>Snake can pass through walls to opposite side. Changes boundary strategy completely.</p>
+                    <p><strong>Advantage:</strong> No dead ends, but requires different spatial thinking.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Multiplayer Snake</h4>
+                    <p>Multiple snakes compete for food. Can steal others' food or cause collisions.</p>
+                    <p><strong>Strategy:</strong> Balance growth with defensive positioning.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Obstacle Snake</h4>
+                    <p>Fixed obstacles block movement. Requires careful path planning around barriers.</p>
+                    <p><strong>Challenge:</strong> Navigation around immovable objects.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>Portal Snake</h4>
+                    <p>Portals teleport snake to different locations. Adds complexity to movement planning.</p>
+                    <p><strong>Skill:</strong> Understanding portal connections and timing.</p>
+                </div>
+
+                <div class="variant-card">
+                    <h4>AI Snake</h4>
+                    <p>Computer-controlled snakes with different behaviors. Learn from AI movement patterns.</p>
+                    <p><strong>Analysis:</strong> Study AI strategies to improve human play.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for High Scores</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Start Slow</h4>
+                    <p>Begin at lower speeds to establish good positioning. Speed up gradually as you gain control.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Plan Ahead</h4>
+                    <p>Always think 3-5 moves ahead. Consider where food will appear and how it affects your path.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Corners Wisely</h4>
+                    <p>Corners are your friends. Use them to create safe zones and control the game flow.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Avoid Dead Ends</h4>
+                    <p>Never position yourself where you can only move in one direction. Always maintain options.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Control Your Growth</h4>
+                    <p>Don't grow recklessly. Each segment reduces your maneuverability.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn from Mistakes</h4>
+                    <p>Analyze what went wrong when you crash. Identify patterns that lead to failure.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Patterns</h4>
+                    <p>Master specific patterns like spirals and corner navigation through repetition.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm</h4>
+                    <p>Panic leads to mistakes. Take deep breaths and focus on your planned moves.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Snake</h3>
+            <p>Snake originated in the late 1970s with games like "Blockade" and "Worm." The modern Snake game became
+                popular with Nokia phones in the 1990s.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Early Origins</h4>
+                    <p>The first Snake-like game was "Blockade" in 1976. Players drew lines/trails that others had to
+                        avoid.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Arcade Era</h4>
+                    <p>Games like "Worm" and "Surround" popularized the concept in arcades during the 1980s.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Revolution</h4>
+                    <p>Nokia included Snake in their phones starting with the 6110 in 1997. It became a cultural
+                        phenomenon.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Modern Variants</h4>
+                    <p>Contemporary versions include Slither.io, Paper.io, and various mobile implementations with
+                        power-ups and multiplayer modes.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Snake has competitive tournaments and speedrunning communities. World records exist for various
+                        Snake variants.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Impact</h4>
+                    <p>Snake influenced countless games and remains one of the most ported game concepts in history.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Snake</h3>
+            <p>Snake offers surprising mental benefits beyond simple entertainment:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Spatial Awareness:</strong> Develops understanding of movement and positioning in 2D space
+                </li>
+                <li><strong>Strategic Planning:</strong> Improves long-term planning and consequence evaluation</li>
+                <li><strong>Hand-Eye Coordination:</strong> Enhances motor skills and reaction time</li>
+                <li><strong>Risk Assessment:</strong> Teaches evaluation of danger vs reward in decision-making</li>
+                <li><strong>Pattern Recognition:</strong> Builds ability to identify and utilize spatial patterns</li>
+                <li><strong>Concentration:</strong> Requires sustained focus and attention management</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

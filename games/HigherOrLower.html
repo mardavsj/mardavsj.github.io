@@ -1,172 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Predict whether the next card is higher or lower in a rapid-fire guessing game. Play online free on Play Mint.">
-<title>Higher or Lower - Play Mint</title>
+    <meta name="description"
+        content="Predict whether the next card is higher or lower in a rapid-fire guessing game. Play online free on Play Mint.">
+    <title>Higher or Lower - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/higher-or-lower/800x450/higherorLower800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Higher or Lower</h1>
-            <p class="game-desc">Predict whether the next card is higher or lower in a rapid-fire guessing game.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Early on guess lower on high cards and higher on low cards; middle values (7/8) are coin flips.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/higher-or-lower/800x450/higherorLower800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Higher or Lower</h1>
-                    
-                    <!-- Game container - Higher or Lower embed -->
-                    <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=HigherOrLower&bgcolor=white"></script></div>
+                    <p class="game-desc">Predict whether the next card is higher or lower in a rapid-fire guessing game.
+                    </p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Early on guess lower on high cards and higher on low cards; middle values (7/8) are coin
+                                flips.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Higher or Lower</h1>
+
+                <!-- Game container - Higher or Lower embed -->
+                <div class="game-container" id="gameContainer">
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=HigherOrLower&bgcolor=white"></script>
+                    </div>
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +201,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +216,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +244,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +275,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +291,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +307,364 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Higher or Lower Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Higher or Lower: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Higher or Lower is a deceptively simple yet strategically deep card game that tests your knowledge of
+                card rankings and probability. This comprehensive guide covers everything from basic rules to advanced
+                strategies for maximizing your score.</p>
+        </div>
+
+        <h3>Higher or Lower Fundamentals: Rules and Objectives</h3>
+        <p>Higher or Lower is a prediction game where players guess whether the next card will be higher or lower than
+            the current card, building streaks while managing risk and reward.</p>
+
+        <div class="basics-section">
+            <h4>Game Mechanics and Setup</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon deck">🃏</div>
+                    <h5>Card Deck</h5>
+                    <p>Standard 52-card deck. Cards are revealed one at a time from a shuffled deck.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon current">🎴</div>
+                    <h5>Current Card</h5>
+                    <p>The card currently displayed. Players predict if the next card will be higher or lower.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon predict">🔮</div>
+                    <h5>Prediction Choice</h5>
+                    <p>Choose "Higher" or "Lower" for each card. Correct predictions continue the streak.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon streak">🔥</div>
+                    <h5>Streak Building</h5>
+                    <p>Consecutive correct predictions build your streak. Longer streaks earn more points.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon score">📊</div>
+                    <h5>Scoring System</h5>
+                    <p>Earn points based on streak length. Bonus multipliers for long streaks.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon risk">⚠️</div>
+                    <h5>Risk Management</h5>
+                    <p>Wrong prediction ends the streak. Balance aggression with caution.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rules-section">
+            <h3>Core Rules and Card Rankings</h3>
+
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <h4>Card Hierarchy</h4>
+                    <p>Cards rank from lowest to highest: A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K.</p>
+                    <p><strong>Note:</strong> Ace is low (1), not high. This is crucial for prediction accuracy.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Suit Irrelevance</h4>
+                    <p>Suits (hearts, diamonds, clubs, spades) don't affect card rankings. Only face value matters.</p>
+                    <p><strong>Focus:</strong> Ignore suit colors and symbols - only number/face value counts.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Equal Cards</h4>
+                    <p>If the next card equals the current card, the prediction is wrong and the streak ends.</p>
+                    <p><strong>Penalty:</strong> Equal cards always break streaks, regardless of prediction.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Streak Continuation</h4>
+                    <p>Correct predictions continue the streak. Each correct guess becomes the new current card.</p>
+                    <p><strong>Chain:</strong> The next card becomes the new comparison point for following predictions.
+                    </p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Game End</h4>
+                    <p>Game continues until deck runs out or player chooses to cash out current streak.</p>
+                    <p><strong>Strategy:</strong> Decide when to cash out based on risk tolerance and current streak
+                        value.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h4>Perfect Game</h4>
+                    <p>Theoretically possible but extremely rare. Would require predicting all 51 card comparisons
+                        correctly.</p>
+                    <p><strong>Reality:</strong> Most games end with wrong predictions or equal cards.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Probability Awareness</h4>
+                    <p>Understand odds based on current card position. Cards in the middle offer balanced odds.</p>
+                    <p><strong>Calculation:</strong> Low cards favor "higher," high cards favor "lower."</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Risk Assessment</h4>
+                    <p>Evaluate streak value vs. continuation risk. Longer streaks are worth protecting.</p>
+                    <p><strong>Decision:</strong> Consider cashing out valuable streaks rather than risking them.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Pattern Recognition</h4>
+                    <p>Notice deck patterns and card distribution. Some decks may have unusual distributions.</p>
+                    <p><strong>Adaptation:</strong> Adjust strategy based on observed card patterns.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Conservative Play</h4>
+                    <p>Play safe with obvious predictions. Build steady points rather than chasing long shots.</p>
+                    <p><strong>Consistency:</strong> Reliable scoring often beats risky high-reward plays.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Aggressive Play</h4>
+                    <p>Take calculated risks for high-value streaks. Requires good risk assessment.</p>
+                    <p><strong>Timing:</strong> Know when to be aggressive vs. when to play conservatively.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Cash Out Strategy</h4>
+                    <p>Decide when to end streaks and bank points. Don't let greed cost valuable scores.</p>
+                    <p><strong>Discipline:</strong> Set personal cash-out points based on streak length.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="probability-section">
+            <h3>Probability Analysis and Odds</h3>
+
+            <div class="probability-grid">
+                <div class="probability-card">
+                    <h4>Low Card Odds (A-6)</h4>
+                    <p>7 cards higher, 6 cards lower (including equals). Higher has slight edge.</p>
+                    <p><strong>Strategy:</strong> Favor "higher" predictions with low cards.</p>
+                </div>
+
+                <div class="probability-card">
+                    <h4>Middle Card Odds (7-8)</h4>
+                    <p>Balanced odds - roughly equal higher/lower possibilities.</p>
+                    <p><strong>Strategy:</strong> More careful analysis required for middle cards.</p>
+                </div>
+
+                <div class="probability-card">
+                    <h4>High Card Odds (9-K)</h4>
+                    <p>6 cards higher, 7 cards lower (including equals). Lower has slight edge.</p>
+                    <p><strong>Strategy:</strong> Favor "lower" predictions with high cards.</p>
+                </div>
+
+                <div class="probability-card">
+                    <h4>Equal Card Risk</h4>
+                    <p>3 cards of each rank (except some variations). Equal cards always end streaks.</p>
+                    <p><strong>Awareness:</strong> Equal cards are always a threat, regardless of prediction.</p>
+                </div>
+
+                <div class="probability-card">
+                    <h4>Streak Impact</h4>
+                    <p>Longer streaks increase point value but also increase loss impact.</p>
+                    <p><strong>Calculation:</strong> Consider both potential gain and loss when continuing streaks.</p>
+                </div>
+
+                <div class="probability-card">
+                    <h4>Expected Value</h4>
+                    <p>Calculate whether continuing a streak has positive expected value.</p>
+                    <p><strong>Math:</strong> Compare potential points gained vs. probability of losing the streak.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Advanced Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Safe Play</h4>
+                    <p>When odds are clearly in your favor (>60%), make the obvious prediction.</p>
+                    <p><strong>Confidence:</strong> Take easy points when they're available.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Calculated Risk</h4>
+                    <p>Take borderline predictions when the streak value justifies the risk.</p>
+                    <p><strong>Assessment:</strong> Risk increases with streak length - adjust accordingly.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Pattern Play</h4>
+                    <p>Notice if certain cards appear more frequently. Adjust predictions accordingly.</p>
+                    <p><strong>Observation:</strong> Track card distribution throughout the game.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Momentum Shift</h4>
+                    <p>After a wrong prediction, start conservatively to rebuild confidence.</p>
+                    <p><strong>Recovery:</strong> Don't let one mistake lead to reckless subsequent plays.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Endgame Push</h4>
+                    <p>As deck runs low, take more risks if streak is valuable enough.</p>
+                    <p><strong>Final Cards:</strong> Fewer remaining cards means higher risk tolerance.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Statistical Play</h4>
+                    <p>Use probability calculations to make mathematically optimal decisions.</p>
+                    <p><strong>Analysis:</strong> Consider exact odds for each prediction scenario.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Higher or Lower Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Know the Odds</h4>
+                    <p>Always calculate whether higher or lower has better probability.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Ace is Low</h4>
+                    <p>Never forget: Ace counts as 1, the lowest card in the deck.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Equal Cards Lose</h4>
+                    <p>Same-rank cards always end your streak, no matter your prediction.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Cash Out Wisely</h4>
+                    <p>Don't be greedy. Bank points when you have a good streak going.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Disciplined</h4>
+                    <p>Stick to your strategy. Emotional decisions lead to losses.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Track Patterns</h4>
+                    <p>Watch for unusual card distributions that might affect odds.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Manage Risk</h4>
+                    <p>Balance between safe plays and calculated risks for optimal scoring.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn from Losses</h4>
+                    <p>Review wrong predictions to understand where your judgment failed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The History of Higher or Lower</h3>
+            <p>Higher or Lower originated as a simple card game but evolved into a popular digital game testing
+                probability judgment and risk management.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Traditional Roots</h4>
+                    <p>Based on simple card guessing games played with physical decks.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Digital Evolution</h4>
+                    <p>Became popular as a mobile and web game in the smartphone era.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Probability Game</h4>
+                    <p>Emphasizes mathematical thinking and probability calculation.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Casual Appeal</h4>
+                    <p>Simple rules combined with strategic depth attract wide audience.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>High-score competitions and leaderboards exist for skilled players.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Educational Value</h4>
+                    <p>Teaches probability concepts in an engaging, interactive way.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Higher or Lower</h3>
+            <p>Higher or Lower offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Probability Understanding:</strong> Develops intuitive grasp of odds and likelihood</li>
+                <li><strong>Risk Assessment:</strong> Builds ability to evaluate risk vs. reward scenarios</li>
+                <li><strong>Decision Making:</strong> Improves quick decision-making under uncertainty</li>
+                <li><strong>Mathematical Thinking:</strong> Strengthens numerical reasoning and calculation skills</li>
+                <li><strong>Pattern Recognition:</strong> Enhances ability to spot trends and distributions</li>
+                <li><strong>Emotional Control:</strong> Teaches discipline and avoiding impulsive decisions</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

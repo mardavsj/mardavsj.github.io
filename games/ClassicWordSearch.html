@@ -1,186 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Find hidden words in every direction; great for quick brain breaks. Play online free on Play Mint.">
-<title>Classic Word Search - Play Mint</title>
+    <meta name="description"
+        content="Find hidden words in every direction; great for quick brain breaks. Play online free on Play Mint.">
+    <title>Classic Word Search - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/classic-word-search/800x450/classic-word-search800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Classic Word Search</h1>
-            <p class="game-desc">Find hidden words in every direction; great for quick brain breaks.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Scan for uncommon letters first (Q, Z, X) and remember words can run backwards/diagonal.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/classic-word-search/800x450/classic-word-search800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Classic Word Search</h1>
-                    
-                    <!-- Game container - Classic Word Search embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Classic Word Search -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=ClassicWordSearch&bgcolor=white"></script>
+                    <p class="game-desc">Find hidden words in every direction; great for quick brain breaks.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Scan for uncommon letters first (Q, Z, X) and remember words can run backwards/diagonal.
+                            </p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove  Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Classic Word Search</h1>
+
+                <!-- Game container - Classic Word Search embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Classic Word Search -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=ClassicWordSearch&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +208,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +239,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -247,7 +260,7 @@
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -266,13 +279,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -281,11 +294,11 @@
     </script>
     <script>
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -295,41 +308,367 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Classic Word Search Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Classic Word Search: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Classic Word Search is a timeless puzzle game where players hunt for hidden words within grids of
+                letters. This comprehensive guide covers everything from basic word-finding techniques to advanced
+                pattern recognition strategies that will help you complete puzzles efficiently and discover the joy of
+                linguistic exploration.</p>
+        </div>
+
+        <h3>Classic Word Search Fundamentals: Rules and Objectives</h3>
+        <p>Classic Word Search is a word puzzle game where players locate words hidden within a grid of letters,
+            following specific directional rules and themes.</p>
+
+        <div class="basics-section">
+            <h4>Core Game Mechanics</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon grid">📋</div>
+                    <h5>Letter Grid</h5>
+                    <p>Rectangular grid filled with letters containing hidden words in various directions.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon wordlist">📝</div>
+                    <h5>Word List</h5>
+                    <p>List of target words to find within the grid, usually 10-30 words per puzzle.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon direction">↗️</div>
+                    <h5>Directional Rules</h5>
+                    <p>Words can be hidden horizontally, vertically, diagonally, forwards, or backwards.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon selection">👆</div>
+                    <h5>Word Selection</h5>
+                    <p>Click and drag or tap to highlight found words, which are then marked off the list.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon theme">🎭</div>
+                    <h5>Thematic Categories</h5>
+                    <p>Puzzles organized by themes like animals, foods, countries, professions, etc.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon completion">✅</div>
+                    <h5>Completion Goal</h5>
+                    <p>Find all words in the list to complete the puzzle and unlock the next challenge.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Systematic Scanning</h4>
+                    <p>Scan the grid methodically rather than randomly searching. Use consistent patterns.</p>
+                    <p><strong>Organization:</strong> Structured approach prevents missing words and reduces
+                        frustration.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Word Length Priority</h4>
+                    <p>Start with longer words first, as they stand out more and are easier to spot.</p>
+                    <p><strong>Efficiency:</strong> Long words create visual anchors that make shorter words easier to
+                        find.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Letter Pattern Recognition</h4>
+                    <p>Look for distinctive letter combinations and uncommon sequences that stand out.</p>
+                    <p><strong>Pattern Matching:</strong> Unique letter patterns make words easier to identify.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Directional Discipline</h4>
+                    <p>Check all eight possible directions for each potential word start.</p>
+                    <p><strong>Completeness:</strong> Systematic directional checking ensures no words are missed.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Contextual Themes</h4>
+                    <p>Use puzzle theme to predict likely words and letter combinations.</p>
+                    <p><strong>Predictive:</strong> Theme knowledge helps anticipate word content and structure.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Progressive Elimination</h4>
+                    <p>As words are found, use remaining letters to identify harder-to-spot words.</p>
+                    <p><strong>Deduction:</strong> Process of elimination becomes more powerful as puzzle progresses.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Grid Sweep</h4>
+                    <p>Sweep through grid row by row, checking each letter as a potential word start.</p>
+                    <p><strong>Methodical:</strong> Systematic row scanning ensures complete coverage.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Word Fragment</h4>
+                    <p>Look for partial words or distinctive syllables that suggest complete words.</p>
+                    <p><strong>Recognition:</strong> Word fragments provide clues to full word locations.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Reverse Search</h4>
+                    <p>When stuck, read words backwards to find reverse-direction hidden words.</p>
+                    <p><strong>Alternative:</strong> Backwards reading reveals words hidden in reverse orientation.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Intersection Method</h4>
+                    <p>Use found words as landmarks to locate intersecting or adjacent words.</p>
+                    <p><strong>Relational:</strong> Word relationships help locate additional hidden words.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Vowel Pattern</h4>
+                    <p>Look for common vowel patterns and consonant clusters typical of theme words.</p>
+                    <p><strong>Linguistic:</strong> Understanding phonetic patterns aids word recognition.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Diagonal Discipline</h4>
+                    <p>Pay special attention to diagonal directions, which are often overlooked.</p>
+                    <p><strong>Comprehensive:</strong> Diagonal words require focused attention to find.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="difficulty-levels-section">
+            <h3>Difficulty Levels and Approaches</h3>
+
+            <div class="difficulty-grid">
+                <div class="difficulty-card">
+                    <h4>Beginner Puzzles</h4>
+                    <p>Small grids, common words, mostly horizontal/vertical. Focus on building confidence.</p>
+                    <p><strong>Foundation:</strong> Learn basic scanning and word recognition patterns.</p>
+                </div>
+
+                <div class="difficulty-card">
+                    <h4>Intermediate Puzzles</h4>
+                    <p>Larger grids, diagonal words, less common vocabulary. Develop systematic approaches.</p>
+                    <p><strong>Technique:</strong> Master directional discipline and pattern recognition.</p>
+                </div>
+
+                <div class="difficulty-card">
+                    <h4>Advanced Puzzles</h4>
+                    <p>Complex themes, backwards words, overlapping letters. Challenge linguistic knowledge.</p>
+                    <p><strong>Mastery:</strong> Combine multiple techniques for complex puzzle solving.</p>
+                </div>
+
+                <div class="difficulty-card">
+                    <h4>Themed Challenges</h4>
+                    <p>Specialized vocabulary requiring domain knowledge. Research theme context.</p>
+                    <p><strong>Knowledge:</strong> Theme understanding becomes crucial for success.</p>
+                </div>
+
+                <div class="difficulty-card">
+                    <h4>Time Challenges</h4>
+                    <p>Speed-based puzzles requiring quick recognition. Develop rapid scanning skills.</p>
+                    <p><strong>Speed:</strong> Fast identification through extensive practice and familiarity.</p>
+                </div>
+
+                <div class="difficulty-card">
+                    <h4>Mixed Direction Puzzles</h4>
+                    <p>All eight directions with no hints. Pure pattern recognition required.</p>
+                    <p><strong>Purity:</strong> Test complete mastery of word search fundamentals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="thematic-strategies-section">
+            <h3>Thematic Puzzle Strategies</h3>
+
+            <div class="theme-grid">
+                <div class="theme-card">
+                    <h4>Animal Themes</h4>
+                    <p>Look for animal names, focusing on distinctive letter combinations like "ph" or "qu".</p>
+                    <p><strong>Patterns:</strong> Animal names often have unique phonetic structures.</p>
+                </div>
+
+                <div class="theme-card">
+                    <h4>Geography Themes</h4>
+                    <p>Country and city names often have repeated letters or distinctive endings.</p>
+                    <p><strong>Recognition:</strong> Geographic names follow specific linguistic patterns.</p>
+                </div>
+
+                <div class="theme-card">
+                    <h4>Food and Cooking</h4>
+                    <p>Culinary terms often contain vowels and common letter combinations.</p>
+                    <p><strong>Association:</strong> Food themes benefit from culinary knowledge.</p>
+                </div>
+
+                <div class="theme-card">
+                    <h4>Science and Nature</h4>
+                    <p>Technical terms with Greek/Latin roots and complex letter patterns.</p>
+                    <p><strong>Vocabulary:</strong> Scientific themes require broader word knowledge.</p>
+                </div>
+
+                <div class="theme-card">
+                    <h4>Sports and Games</h4>
+                    <p>Sports terminology with action words and equipment names.</p>
+                    <p><strong>Context:</strong> Sports knowledge helps identify relevant vocabulary.</p>
+                </div>
+
+                <div class="theme-card">
+                    <h4>Arts and Literature</h4>
+                    <p>Cultural terms, artist names, and literary references.</p>
+                    <p><strong>Culture:</strong> Arts themes reward cultural and literary knowledge.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Word Search Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Start with the Obvious</h4>
+                    <p>Find the easiest words first to build momentum and confidence.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use the Word List</h4>
+                    <p>Study the word list for patterns and themes before starting.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Check All Directions</h4>
+                    <p>Never assume words are only horizontal - check all eight directions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Look for Intersections</h4>
+                    <p>Found words often intersect with or border other hidden words.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Take Breaks</h4>
+                    <p>If stuck, step away briefly - fresh eyes often spot missed words.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Regularly</h4>
+                    <p>Regular play improves pattern recognition and vocabulary knowledge.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn Root Words</h4>
+                    <p>Understanding word roots helps identify unfamiliar vocabulary.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Enjoy the Process</h4>
+                    <p>Word search is as much about learning as it is about completion.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Word Search Puzzles</h3>
+            <p>Word search puzzles evolved from simple children's activities to sophisticated linguistic challenges
+                enjoyed by people of all ages.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Origins in Education</h4>
+                    <p>Word search puzzles began as educational tools in the 1960s.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Newspaper Popularity</h4>
+                    <p>1970s newspapers popularized word search as a daily feature.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Digital Revolution</h4>
+                    <p>Computer programs in the 1980s made puzzle creation easier.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Themed Variations</h4>
+                    <p>1990s saw explosion of themed puzzles for different interests.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Gaming</h4>
+                    <p>Smartphone apps made word search accessible anytime, anywhere.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Educational Value</h4>
+                    <p>Modern word search recognized for cognitive benefits and learning.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Classic Word Search</h3>
+            <p>Classic Word Search offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Vocabulary Expansion:</strong> Regular play introduces new words and improves language
+                    knowledge</li>
+                <li><strong>Pattern Recognition:</strong> Develops ability to identify letter patterns and word
+                    structures</li>
+                <li><strong>Concentration:</strong> Builds sustained attention and focus during puzzle solving</li>
+                <li><strong>Memory Enhancement:</strong> Improves both short-term and long-term memory retention</li>
+                <li><strong>Problem Solving:</strong> Encourages systematic thinking and logical deduction</li>
+                <li><strong>Stress Reduction:</strong> Provides relaxing mental activity that reduces anxiety</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

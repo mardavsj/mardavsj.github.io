@@ -1,172 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Hunt for hidden items across Prague landmarks in richly detailed scenes. Play online free on Play Mint.">
-<title>Prague Hidden Objects - Play Mint</title>
+    <meta name="description"
+        content="Hunt for hidden items across Prague landmarks in richly detailed scenes. Play online free on Play Mint.">
+    <title>Prague Hidden Objects - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/prague-hidden-objects/800x450/praquehiddenobjects800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Prague Hidden Objects</h1>
-            <p class="game-desc">Hunt for hidden items across Prague landmarks in richly detailed scenes.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Scan cluttered shelves and corners first; zoom and use hints only when stuck.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/prague-hidden-objects/800x450/praquehiddenobjects800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Prague Hidden Objects</h1>
-                    
-                    <!-- Game container - Prague Hidden Objects embed -->
-                    <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=PragueHiddenObjects&bgcolor=white"></script></div>
+                    <p class="game-desc">Hunt for hidden items across Prague landmarks in richly detailed scenes.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Scan cluttered shelves and corners first; zoom and use hints only when stuck.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Prague Hidden Objects</h1>
+
+                <!-- Game container - Prague Hidden Objects embed -->
+                <div class="game-container" id="gameContainer">
+                    <div>
+                        <script
+                            src="https://cdn.htmlgames.com/embed.js?game=PragueHiddenObjects&bgcolor=white"></script>
+                    </div>
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +200,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +215,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +243,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +274,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +290,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +306,329 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Prague Hidden Objects Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Prague Hidden Objects: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Prague Hidden Objects is an immersive hidden object game set in the beautiful city of Prague, where
+                players must find various items within richly detailed scenes of Czech landmarks. This comprehensive
+                guide covers everything from basic search techniques to advanced visual scanning strategies that will
+                help you complete scenes efficiently and discover Prague's hidden treasures.</p>
+        </div>
+
+        <h3>Prague Hidden Objects Fundamentals: Rules and Objectives</h3>
+        <p>Prague Hidden Objects is a visual search game where players locate specific items within detailed scenes of
+            Prague landmarks and architecture.</p>
+
+        <div class="basics-section">
+            <h4>Core Game Mechanics</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon scene">🏛️</div>
+                    <h5>Detailed Scenes</h5>
+                    <p>Richly detailed images of Prague landmarks filled with hundreds of visual elements.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon list">📋</div>
+                    <h5>Object Lists</h5>
+                    <p>Lists of specific items to find within each scene, ranging from common to obscure.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon search">🔍</div>
+                    <h5>Visual Search</h5>
+                    <p>Systematic scanning of scenes to locate listed objects of various sizes and visibility.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon timer">⏱️</div>
+                    <h5>Time Challenges</h5>
+                    <p>Optional time limits that add pressure and scoring bonuses for speed.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon hint">💡</div>
+                    <h5>Hint System</h5>
+                    <p>Limited hints available to highlight object locations when stuck.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon score">📊</div>
+                    <h5>Scoring System</h5>
+                    <p>Points awarded for finding objects, with bonuses for speed and hint efficiency.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Systematic Scanning</h4>
+                    <p>Use consistent search patterns rather than random looking to avoid missing objects.</p>
+                    <p><strong>Methodical:</strong> Structured approach ensures complete scene coverage.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Size-Based Search</h4>
+                    <p>Look for larger, more obvious objects first to build momentum and reduce visual clutter.</p>
+                    <p><strong>Efficiency:</strong> Large objects are easier to spot and create reference points.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Context Awareness</h4>
+                    <p>Use Prague landmark knowledge to anticipate likely object locations and themes.</p>
+                    <p><strong>Predictive:</strong> Scene context helps predict object placement and types.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Pattern Recognition</h4>
+                    <p>Look for visual patterns and groupings that might contain multiple target objects.</p>
+                    <p><strong>Grouping:</strong> Related objects often appear in thematic clusters.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Hint Management</h4>
+                    <p>Use hints strategically for difficult objects rather than easy ones.</p>
+                    <p><strong>Conservation:</strong> Save hints for truly challenging finds to maximize scoring.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Time Optimization</h4>
+                    <p>Balance thoroughness with speed, especially in timed challenge modes.</p>
+                    <p><strong>Pacing:</strong> Find optimal speed that maintains accuracy while maximizing points.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Grid Scan</h4>
+                    <p>Divide scene into imaginary grid sections and systematically search each quadrant.</p>
+                    <p><strong>Comprehensive:</strong> Grid method ensures no area is overlooked.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Focal Zoom</h4>
+                    <p>Focus on specific areas of interest and mentally zoom in on details.</p>
+                    <p><strong>Concentration:</strong> Focused attention reveals objects hidden in complex backgrounds.
+                    </p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The List Elimination</h4>
+                    <p>Cross-reference found objects with the list to identify remaining targets.</p>
+                    <p><strong>Tracking:</strong> List management prevents searching for already-found items.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Contextual Clue</h4>
+                    <p>Use scene theme and location knowledge to predict object types and locations.</p>
+                    <p><strong>Intelligence:</strong> Prague knowledge helps anticipate architectural and cultural
+                        elements.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Pattern Match</h4>
+                    <p>Look for objects that match list descriptions in shape, color, or function.</p>
+                    <p><strong>Association:</strong> Visual matching connects list items to scene elements.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Hint Conservation</h4>
+                    <p>Attempt difficult searches multiple times before using valuable hints.</p>
+                    <p><strong>Patience:</strong> Extended searching often succeeds without hint cost.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="prague-landmarks-section">
+            <h3>Prague Landmark Features</h3>
+
+            <div class="landmark-grid">
+                <div class="landmark-card">
+                    <h4>Prague Castle</h4>
+                    <p>Gothic architecture with towers, spires, and intricate stonework details.</p>
+                    <p><strong>Search Focus:</strong> Look for architectural elements, gargoyles, and decorative
+                        features.</p>
+                </div>
+
+                <div class="landmark-card">
+                    <h4>Charles Bridge</h4>
+                    <p>Historic bridge with statues, towers, and Vltava River views.</p>
+                    <p><strong>Search Focus:</strong> Bridge statues, architectural details, and riverside elements.</p>
+                </div>
+
+                <div class="landmark-card">
+                    <h4>Old Town Square</h4>
+                    <p>Cobbled square with Astronomical Clock and surrounding buildings.</p>
+                    <p><strong>Search Focus:</strong> Clock mechanisms, architectural ornaments, and square features.
+                    </p>
+                </div>
+
+                <div class="landmark-card">
+                    <h4>St. Vitus Cathedral</h4>
+                    <p>Gothic cathedral with stained glass, sculptures, and intricate interiors.</p>
+                    <p><strong>Search Focus:</strong> Religious iconography, stone carvings, and decorative elements.
+                    </p>
+                </div>
+
+                <div class="landmark-card">
+                    <h4>Wenceslas Square</h4>
+                    <p>Historic square with hotels, shops, and National Museum.</p>
+                    <p><strong>Search Focus:</strong> Street elements, architectural facades, and urban features.</p>
+                </div>
+
+                <div class="landmark-card">
+                    <h4>Jewish Quarter</h4>
+                    <p>Historic synagogues and Jewish cemetery with unique architectural style.</p>
+                    <p><strong>Search Focus:</strong> Hebrew inscriptions, ceremonial objects, and cultural artifacts.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Prague Hidden Objects Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Learn Prague Landmarks</h4>
+                    <p>Study real Prague landmarks to understand architectural context.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Systematic Search</h4>
+                    <p>Don't randomly scan; use consistent patterns to cover scenes.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Look for Scale Variations</h4>
+                    <p>Objects can be very small or partially hidden; check all sizes.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Read Object Descriptions</h4>
+                    <p>Pay attention to specific details in object names and descriptions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Take Breaks</h4>
+                    <p>If stuck, look away briefly to reset visual attention.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Hints Wisely</h4>
+                    <p>Save hints for truly impossible objects; most are findable.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Build Visual Memory</h4>
+                    <p>Practice improves ability to spot objects in complex scenes.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Enjoy the Architecture</h4>
+                    <p>Take time to appreciate Prague's beautiful landmarks while searching.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Evolution of Hidden Object Games</h3>
+            <p>Prague Hidden Objects represents the sophisticated evolution of hidden object games, combining visual
+                search with cultural education.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Children's Activity Books</h4>
+                    <p>Hidden object activities originated in children's puzzle books.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Computer Games</h4>
+                    <p>Digital hidden object games emerged in late 1990s PC gaming.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Casual Gaming Boom</h4>
+                    <p>2000s saw explosion of casual hidden object games for broad audiences.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Educational Integration</h4>
+                    <p>Modern games incorporate historical and cultural learning elements.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Adaptation</h4>
+                    <p>Touch controls made hidden object games perfect for mobile platforms.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Tourism</h4>
+                    <p>Games featuring real locations promote cultural awareness and tourism.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Prague Hidden Objects</h3>
+            <p>Prague Hidden Objects offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Visual Processing:</strong> Enhances ability to process complex visual information quickly
+                </li>
+                <li><strong>Attention to Detail:</strong> Develops focus on small details within larger contexts</li>
+                <li><strong>Pattern Recognition:</strong> Improves ability to identify shapes and objects in clutter
+                </li>
+                <li><strong>Memory Enhancement:</strong> Builds visual memory and recall abilities</li>
+                <li><strong>Cultural Knowledge:</strong> Increases awareness of architectural and historical elements
+                </li>
+                <li><strong>Stress Reduction:</strong> Provides calming, focused activity for mental relaxation</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

@@ -1,172 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Tilt and roll your ball through tricky mazes without falling off. Play online free on Play Mint.">
-<title>Maze Roll - Play Mint</title>
+    <meta name="description"
+        content="Tilt and roll your ball through tricky mazes without falling off. Play online free on Play Mint.">
+    <title>Maze Roll - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-    
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/maze-roll/800x450/mazeroll800450.jpg');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Maze Roll</h1>
-            <p class="game-desc">Tilt and roll your ball through tricky mazes without falling off.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Use light tilts and short bursts; pause near corners to avoid overshooting.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/maze-roll/800x450/mazeroll800450.jpg');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Maze Roll</h1>
-                    
-                    <!-- Game container - Maze Roll embed -->
-                    <div class="game-container" id="gameContainer">
-                        <div><script src="https://cdn.htmlgames.com/embed.js?game=MazeRoll&bgcolor=white"></script></div>
+                    <p class="game-desc">Tilt and roll your ball through tricky mazes without falling off.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Use light tilts and short bursts; pause near corners to avoid overshooting.</p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Maze Roll</h1>
+
+                <!-- Game container - Maze Roll embed -->
+                <div class="game-container" id="gameContainer">
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=MazeRoll&bgcolor=white"></script>
+                    </div>
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -185,13 +199,13 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
@@ -200,20 +214,20 @@
     </script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -228,19 +242,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -259,10 +273,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -275,13 +289,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -291,41 +305,362 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
     </script>
+
+    <!-- Comprehensive Maze Roll Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Maze Roll: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Maze Roll is a physics-based puzzle game that combines rolling ball mechanics with maze navigation. This
+                comprehensive guide covers everything from basic controls to advanced techniques that will help you
+                master level design and achieve perfect completions.</p>
+        </div>
+
+        <h3>Maze Roll Fundamentals: Rules and Objectives</h3>
+        <p>Maze Roll involves guiding a rolling ball through complex maze structures to reach goal points while avoiding
+            obstacles and collecting items along the way.</p>
+
+        <div class="basics-section">
+            <h4>Game Mechanics and Physics</h4>
+            <div class="basics-grid">
+                <div class="basic-card">
+                    <div class="basic-icon ball">⚫</div>
+                    <h5>Rolling Ball</h5>
+                    <p>Control a ball that rolls based on physics. Momentum and gravity affect movement.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon tilt">📱</div>
+                    <h5>Tilt Controls</h5>
+                    <p>Tilt device or use arrow keys to control ball direction and speed.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon maze">🌐</div>
+                    <h5>Maze Structure</h5>
+                    <p>Complex 3D maze with walls, ramps, gaps, and obstacles to navigate.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon goal">🎯</div>
+                    <h5>Goal Points</h5>
+                    <p>Reach designated goal areas to complete levels. Multiple goals may exist.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon collect">💎</div>
+                    <h5>Collectibles</h5>
+                    <p>Gather coins, gems, or special items for bonus points and achievements.</p>
+                </div>
+                <div class="basic-card">
+                    <div class="basic-icon physics">⚡</div>
+                    <h5>Physics Engine</h5>
+                    <p>Realistic physics affect ball movement, bouncing, and momentum conservation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Momentum Management</h4>
+                    <p>Control ball speed and momentum carefully. Too much speed can cause loss of control.</p>
+                    <p><strong>Balance:</strong> Build speed for ramps but slow down for precise maneuvers.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Path Planning</h4>
+                    <p>Study the maze layout before moving. Identify optimal routes and potential shortcuts.</p>
+                    <p><strong>Scouting:</strong> Look for ramps, jumps, and alternative paths before starting.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Precision Control</h4>
+                    <p>Use gentle, controlled movements for tight spaces and sharp turns.</p>
+                    <p><strong>Steady:</strong> Sudden movements can cause the ball to overshoot or fall off edges.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Obstacle Navigation</h4>
+                    <p>Learn to navigate around or over obstacles using ramps, jumps, and momentum.</p>
+                    <p><strong>Creative:</strong> Many obstacles have multiple ways to overcome them.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Collectible Optimization</h4>
+                    <p>Plan routes that collect maximum items without sacrificing efficiency.</p>
+                    <p><strong>Efficiency:</strong> Don't take unnecessary detours for low-value collectibles.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Risk Assessment</h4>
+                    <p>Evaluate risky maneuvers against safer but longer routes.</p>
+                    <p><strong>Decision:</strong> Sometimes safer paths are faster than risky shortcuts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Essential Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Controlled Roll</h4>
+                    <p>Maintain steady, predictable ball movement through gentle tilting.</p>
+                    <p><strong>Stability:</strong> Avoid sudden jerks that can destabilize the ball.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Momentum Build</h4>
+                    <p>Gradually build speed for ramps and jumps, then control descent.</p>
+                    <p><strong>Timing:</strong> Perfect timing between acceleration and deceleration.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Precision Stop</h4>
+                    <p>Use counter-tilting to stop the ball at exact positions.</p>
+                    <p><strong>Control:</strong> Master the art of stopping on a dime.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Wall Bounce</h4>
+                    <p>Use maze walls for controlled rebounds and direction changes.</p>
+                    <p><strong>Physics:</strong> Calculate bounce angles for precise navigation.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Gap Jump</h4>
+                    <p>Build sufficient momentum to clear gaps and obstacles.</p>
+                    <p><strong>Power:</strong> Judge distance and required speed for successful jumps.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>The Corner Turn</h4>
+                    <p>Navigate sharp corners by rolling along walls and using momentum.</p>
+                    <p><strong>Technique:</strong> Use wall guidance for tight cornering.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="obstacle-section">
+            <h3>Common Obstacles and Solutions</h3>
+
+            <div class="obstacle-grid">
+                <div class="obstacle-card">
+                    <h4>Ramps and Slopes</h4>
+                    <p>Build momentum going up, control speed going down. Use gravity to your advantage.</p>
+                    <p><strong>Strategy:</strong> Speed control is crucial on downhill sections.</p>
+                </div>
+
+                <div class="obstacle-card">
+                    <h4>Gaps and Chasms</h4>
+                    <p>Calculate required momentum for jumps. Practice approach speed.</p>
+                    <p><strong>Precision:</strong> Too slow = fall short, too fast = overshoot landing.</p>
+                </div>
+
+                <div class="obstacle-card">
+                    <h4>Moving Platforms</h4>
+                    <p>Time jumps to coincide with platform position. Anticipate movement patterns.</p>
+                    <p><strong>Timing:</strong> Study platform movement before attempting jumps.</p>
+                </div>
+
+                <div class="obstacle-card">
+                    <h4>Spinning Obstacles</h4>
+                    <p>Avoid contact with rotating hazards. Time passages between rotations.</p>
+                    <p><strong>Avoidance:</strong> Plan routes that steer clear of danger zones.</p>
+                </div>
+
+                <div class="obstacle-card">
+                    <h4>Narrow Bridges</h4>
+                    <p>Maintain steady, straight movement. Avoid tilting that causes deviation.</p>
+                    <p><strong>Stability:</strong> Keep the ball centered on narrow pathways.</p>
+                </div>
+
+                <div class="obstacle-card">
+                    <h4>Teleporters</h4>
+                    <p>Use portals strategically for shortcuts. Understand entry/exit relationships.</p>
+                    <p><strong>Navigation:</strong> Learn portal connections for optimal routing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced-section">
+            <h3>Advanced Techniques</h3>
+
+            <div class="advanced-grid">
+                <div class="advanced-card">
+                    <h4>Physics Mastery</h4>
+                    <p>Understand ball physics including momentum, friction, and bounce dynamics.</p>
+                    <p><strong>Prediction:</strong> Anticipate ball behavior in complex situations.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Speed Optimization</h4>
+                    <p>Find fastest routes while maintaining control. Balance speed vs. precision.</p>
+                    <p><strong>Efficiency:</strong> Master speed runs require perfect technique.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Multi-Route Planning</h4>
+                    <p>Identify multiple paths through complex mazes. Choose based on skill level.</p>
+                    <p><strong>Flexibility:</strong> Have backup routes for failed attempts.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Collectible Routing</h4>
+                    <p>Plan routes that collect all items efficiently without unnecessary backtracking.</p>
+                    <p><strong>Optimization:</strong> Create loops that gather items while progressing.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Recovery Techniques</h4>
+                    <p>Learn to recover from mistakes and continue toward goals.</p>
+                    <p><strong>Resilience:</strong> Don't restart immediately - try to salvage runs.</p>
+                </div>
+
+                <div class="advanced-card">
+                    <h4>Level Analysis</h4>
+                    <p>Study level layouts to identify optimal paths and potential shortcuts.</p>
+                    <p><strong>Preparation:</strong> Analyze levels before attempting speed runs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Maze Roll Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Control Your Speed</h4>
+                    <p>Slow and steady wins races. Too much speed leads to mistakes.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Study the Maze</h4>
+                    <p>Take time to understand the layout before starting your run.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Walls Wisely</h4>
+                    <p>Maze walls can help control direction and prevent falls.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Master Momentum</h4>
+                    <p>Learn to build and control momentum for ramps and jumps.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Precision</h4>
+                    <p>Work on stopping and positioning the ball exactly where needed.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Learn Physics</h4>
+                    <p>Understand how gravity, momentum, and bounces affect ball movement.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Find Shortcuts</h4>
+                    <p>Look for hidden paths and alternative routes through levels.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Patient</h4>
+                    <p>Mistakes happen. Learn from them and improve your technique.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The History of Rolling Ball Games</h3>
+            <p>Rolling ball maze games evolved from early arcade games and have become a staple of mobile gaming. Maze
+                Roll represents the modern evolution of this classic genre.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Arcade Origins</h4>
+                    <p>Early rolling ball games appeared in arcades in the 1970s and 1980s.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Console Era</h4>
+                    <p>Games like Marble Madness popularized the genre on home consoles.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Mobile Revolution</h4>
+                    <p>Touch controls and accelerometers made rolling ball games perfect for mobile.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Physics Engines</h4>
+                    <p>Advanced physics engines created more realistic and challenging gameplay.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Indie Development</h4>
+                    <p>Independent developers created countless variations with unique themes.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Speedrunning and high-score competitions exist for skilled players.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Cognitive Benefits of Maze Roll</h3>
+            <p>Maze Roll offers significant mental development benefits:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Hand-Eye Coordination:</strong> Improves motor skills and device control precision</li>
+                <li><strong>Spatial Awareness:</strong> Develops understanding of 3D space and object positioning</li>
+                <li><strong>Problem Solving:</strong> Encourages creative solutions for complex navigation challenges
+                </li>
+                <li><strong>Physics Understanding:</strong> Builds intuition about momentum, gravity, and motion</li>
+                <li><strong>Strategic Planning:</strong> Teaches route optimization and risk assessment</li>
+                <li><strong>Patience and Focus:</strong> Builds concentration through challenging precision tasks</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-

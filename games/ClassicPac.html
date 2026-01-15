@@ -1,186 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Chomp pellets, dodge ghosts, and use power-ups to clear the maze. Play online free on Play Mint.">
-<title>Classic Pac - Play Mint</title>
+    <meta name="description"
+        content="Chomp pellets, dodge ghosts, and use power-ups to clear the maze. Play online free on Play Mint.">
+    <title>Classic Pac - Play Mint</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- AdSense script placeholder - uncomment when ready to add AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
     <script>window.gameContentLoaded = true;</script>
     <!-- Fullscreen ad overlay -->
     <div id="fullscreen-ad-overlay" style="display: flex;">
         <div class="ad-content">
-            <button id="close-ad-btn" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
-                        <div class="ad-placeholder-fullscreen">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
-                     crossorigin="anonymous"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="1275363699"></ins>
+            <button id="close-ad-btn"
+                style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; cursor: pointer; display: none;">×</button>
+            <div class="ad-placeholder-fullscreen">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1308401027139954"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-1308401027139954" data-ad-slot="1275363699"></ins>
                 <script>
-                     // Only show fullscreen ad if game content exists
-                     if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     }
+                    // Only show fullscreen ad if game content exists
+                    if (typeof gameContentLoaded !== 'undefined' && gameContentLoaded) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
                 </script>
             </div>
             <div class="loader"></div>
             <p>Loading your game...</p>
         </div>
     </div>
-        
+
     <div class="container-full" style="filter: blur(5px); opacity: 0.5;" id="game-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative;">
             <a href="../index.html" class="back-button">← Back to Home</a>
             <div>
-                <span id="info-icon" style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
-                <span id="escape-mode-button" class="escape-mode-text" style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
-                <div id="info-modal" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
+                <span id="info-icon"
+                    style="cursor: pointer; font-size: 14px; color: #7f8c8d; border: 1px solid #7f8c8d; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 5px;">i</span>
+                <span id="escape-mode-button" class="escape-mode-text"
+                    style="color: #7f8c8d; font-style: italic; display: none; cursor: pointer;">Escape mode</span>
+                <div id="info-modal"
+                    style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ccc; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; width: 300px; border-radius: 8px;">
                     <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space to hide the game instantly.</p>
-                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.</p>
+                    <p style="margin: 0 0 10px 0; font-weight: bold;">Double-tap Space again to get back to the game.
+                    </p>
                     <p style="margin: 0; font-style: italic; color: #7f8c8d;">Stay ahead with instant privacy.</p>
-                    <p style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you trigger it.</p>
+                    <p
+                        style="font-size: 0.85rem; color: #2c3e50; margin-top: 10px; background: #fff8e1; padding: 8px 10px; border-radius: 8px; border: 1px solid #f2d488; font-weight: 600;">
+                        This shortcut does not hide ads or alter content; it only moves between Play Mint pages when you
+                        trigger it.</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- AdSense ad - top -->
         <!-- Game page with vertical ads -->
-                
-<section class="game-hero-section" style="background-image: url('../assets/images/games/classic-pac/800x450/classicpac800450.webp');">
-    <div class="game-hero-inner">
-        <div class="game-hero-text">
-            <button class="scroll-to-games" type="button" onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
-                <span class="scroll-icon" aria-hidden="true"></span>
-                <span class="scroll-label">Play game</span>
-            </button>
-            <h1 class="game-title">Classic Pac</h1>
-            <p class="game-desc">Chomp pellets, dodge ghosts, and use power-ups to clear the maze.</p>
-            <div class="game-highlight-grid">
-                <div class="highlight-card"><h4>Quick overview</h4><p>This browser game runs directly in your browser -- no downloads or logins. We verify load speed and basic controls on desktop and mobile.</p></div>
-                <div class="highlight-card"><h4>Best for</h4><p>Short sessions and casual play without signups.</p></div>
-                <div class="highlight-card"><h4>Controls</h4><p>Tap/click to start; many titles also use arrow keys/space.</p></div>
-                <div class="highlight-card"><h4>Tips</h4><p>Let the game load fully before fullscreen; adjust audio if needed.</p></div>
-                <div class="highlight-card"><h4>Game-specific tip</h4><p>Clear corner pellets right after grabbing a power-up; herd ghosts together for chains.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ad-container" id="gameTopAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameTopAd").style.display = "none";
-                 }
-            </script>
-        </div>
-        </div>
-<div class="game-page-with-ads">
-            <!-- Left vertical ad -->
-            <div class="vertical-ad-container" id="leftVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("leftVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-            
-            <!-- Main content -->
-            <div class="main-content">
-                <div class="game-page">
+
+        <section class="game-hero-section"
+            style="background-image: url('../assets/images/games/classic-pac/800x450/classicpac800450.webp');">
+            <div class="game-hero-inner">
+                <div class="game-hero-text">
+                    <button class="scroll-to-games" type="button"
+                        onclick="document.getElementById('gameContainer')?.scrollIntoView({ behavior: 'smooth' });">
+                        <span class="scroll-icon" aria-hidden="true"></span>
+                        <span class="scroll-label">Play game</span>
+                    </button>
                     <h1 class="game-title">Classic Pac</h1>
-                    
-                    <!-- Game container - Classic Pac embed -->
-                    <div class="game-container" id="gameContainer">
-                        <!-- START: Game Embed Script - Replace this section with actual game embed -->
-                        <div>
-                            <script src="https://cdn.htmlgames.com/embed.js?game=ClassicPac&bgcolor=white"></script>
+                    <p class="game-desc">Chomp pellets, dodge ghosts, and use power-ups to clear the maze.</p>
+                    <div class="game-highlight-grid">
+                        <div class="highlight-card">
+                            <h4>Quick overview</h4>
+                            <p>This browser game runs directly in your browser -- no downloads or logins. We verify load
+                                speed and basic controls on desktop and mobile.</p>
                         </div>
-                        <!-- END: Game Embed Script -->
+                        <div class="highlight-card">
+                            <h4>Best for</h4>
+                            <p>Short sessions and casual play without signups.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Controls</h4>
+                            <p>Tap/click to start; many titles also use arrow keys/space.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Tips</h4>
+                            <p>Let the game load fully before fullscreen; adjust audio if needed.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Game-specific tip</h4>
+                            <p>Clear corner pellets right after grabbing a power-up; herd ghosts together for chains.
+                            </p>
+                        </div>
                     </div>
-                    
-                    <!-- Fullscreen button below the game -->
-                    <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
                 </div>
             </div>
-            
-            <!-- Right vertical ad -->
-            <div class="vertical-ad-container" id="rightVerticalAd">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1308401027139954"
-                     data-ad-slot="7760880993"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     // Only load ad if game content exists
-                     if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                         document.getElementById("rightVerticalAd").style.display = "none";
-                     }
-                </script>
-            </div>
-        </div>
-        
-        <!-- AdSense ad - bottom -->
-        <div class="ad-container" id="gameBottomAd">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1308401027139954"
-                 data-ad-slot="1694166093"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        </section>
+        <div class="ad-container" id="gameTopAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                 // Only load ad if game content exists
-                 if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 } else {
-                     document.getElementById("gameBottomAd").style.display = "none";
-                 }
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("gameTopAd").style.display = "none";
+                }
             </script>
         </div>
     </div>
-    
+    <div class="game-page-with-ads">
+        <!-- Left vertical ad -->
+        <div class="vertical-ad-container" id="leftVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("leftVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="game-page">
+                <h1 class="game-title">Classic Pac</h1>
+
+                <!-- Game container - Classic Pac embed -->
+                <div class="game-container" id="gameContainer">
+                    <!-- START: Game Embed Script - Replace this section with actual game embed -->
+                    <div>
+                        <script src="https://cdn.htmlgames.com/embed.js?game=ClassicPac&bgcolor=white"></script>
+                    </div>
+                    <!-- END: Game Embed Script -->
+                </div>
+
+                <!-- Fullscreen button below the game -->
+                <button class="fullscreen-button" onclick="toggleFullscreen()">Remove Ads</button>
+            </div>
+        </div>
+
+        <!-- Right vertical ad -->
+        <div class="vertical-ad-container" id="rightVerticalAd">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+                data-ad-slot="7760880993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                // Only load ad if game content exists
+                if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    document.getElementById("rightVerticalAd").style.display = "none";
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- AdSense ad - bottom -->
+    <div class="ad-container" id="gameBottomAd">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1308401027139954"
+            data-ad-slot="1694166093" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            // Only load ad if game content exists
+            if (typeof gameContentLoaded !== "undefined" && gameContentLoaded) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                document.getElementById("gameBottomAd").style.display = "none";
+            }
+        </script>
+    </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
         // Show fullscreen ad with loader, show close button immediately
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add a small delay to ensure DOM is fully loaded
-            setTimeout(function() {
+            setTimeout(function () {
                 const adOverlay = document.getElementById('fullscreen-ad-overlay');
                 const gameContent = document.getElementById('game-content');
                 const closeAdBtn = document.getElementById('close-ad-btn');
                 const body = document.body;
-                
+
                 // Debug logging
                 console.log('Fullscreen ad script loaded');
                 console.log('adOverlay:', adOverlay);
                 console.log('gameContent:', gameContent);
                 console.log('closeAdBtn:', closeAdBtn);
-                
+
                 // Function to hide ad and show game content
                 function hideAdAndShowGame() {
                     if (adOverlay) {
@@ -195,19 +208,19 @@
                         body.classList.remove('no-scroll');
                     }
                 }
-                
+
                 if (adOverlay && gameContent) {
                     console.log('Showing fullscreen ad');
                     // Add no-scroll class to body
                     if (body) {
                         body.classList.add('no-scroll');
                     }
-                    
+
                     // Show close button immediately
                     if (closeAdBtn) {
                         closeAdBtn.style.display = 'block';
                     }
-                    
+
                     // Set up close button event listener
                     if (closeAdBtn) {
                         closeAdBtn.addEventListener('click', hideAdAndShowGame);
@@ -226,10 +239,10 @@
                 }
             }, 100); // 100ms delay
         });
-        
+
         // Redirect to learning page when spacebar is double-clicked
         let lastSpacePress = 0;
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             // Check if spacebar was pressed
             if (event.code === 'Space') {
                 event.preventDefault();
@@ -242,13 +255,13 @@
                 lastSpacePress = now;
             }
         });
-        
+
         // Handle info icon click to show/hide modal
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const infoIcon = document.getElementById('info-icon');
             const escapeModeButton = document.getElementById('escape-mode-button');
             const infoModal = document.getElementById('info-modal');
-            
+
             if ((infoIcon || escapeModeButton) && infoModal) {
                 // Function to toggle modal visibility
                 function toggleModal() {
@@ -258,38 +271,38 @@
                         infoModal.style.display = 'none';
                     }
                 }
-                
+
                 // Add event listeners to both elements
                 if (infoIcon) {
-                    infoIcon.addEventListener('click', function(e) {
+                    infoIcon.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 if (escapeModeButton) {
-                    escapeModeButton.addEventListener('click', function(e) {
+                    escapeModeButton.addEventListener('click', function (e) {
                         e.stopPropagation();
                         toggleModal();
                     });
                 }
-                
+
                 // Close modal when clicking elsewhere
-                document.addEventListener('click', function() {
+                document.addEventListener('click', function () {
                     infoModal.style.display = 'none';
                 });
-                
+
                 // Prevent modal from closing when clicking inside it
-                infoModal.addEventListener('click', function(e) {
+                infoModal.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             }
         });
-        
+
         // Fullscreen API implementation
         function toggleFullscreen() {
             var elem = document.getElementById("gameContainer");
-            
+
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -308,26 +321,351 @@
                 }
             }
         }
-        
+
         // Handle fullscreen change events
         document.addEventListener('fullscreenchange', exitHandler);
         document.addEventListener('webkitfullscreenchange', exitHandler);
         document.addEventListener('mozfullscreenchange', exitHandler);
         document.addEventListener('MSFullscreenChange', exitHandler);
-        
+
         function exitHandler() {
             if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
                 // Exited fullscreen
             }
         }
     </script>
+
+    <!-- Comprehensive Pac-Man Guide Section -->
+    <div class="game-guide-section">
+        <h2>Master Pac-Man: Complete Strategy Guide</h2>
+
+        <div class="guide-intro">
+            <p>Pac-Man is the arcade classic that defined gaming culture. This comprehensive guide covers everything
+                from basic survival to advanced techniques that will help you achieve perfect games and understand the
+                psychology behind this legendary game.</p>
+        </div>
+
+        <h3>Pac-Man Fundamentals: Rules and Characters</h3>
+        <p>Pac-Man involves controlling a yellow character through a maze, eating dots while avoiding four colorful
+            ghosts. The goal is to clear all dots and survive increasingly aggressive ghost behavior.</p>
+
+        <div class="characters-section">
+            <h4>The Characters and Their Behaviors</h4>
+            <div class="characters-grid">
+                <div class="character-card">
+                    <div class="character-icon pacman">P</div>
+                    <h5>Pac-Man (You)</h5>
+                    <p>The hero who eats dots and power pellets. Can eat ghosts when powered up. Moves through tunnels
+                        that wrap around the screen.</p>
+                </div>
+                <div class="character-card">
+                    <div class="character-icon blinky">R</div>
+                    <h5>Blinky (Red) - Shadow</h5>
+                    <p>Most aggressive ghost. Directly chases Pac-Man. Speed increases as more dots are eaten.</p>
+                </div>
+                <div class="character-card">
+                    <div class="character-icon pinky">P</div>
+                    <h5>Pinky (Pink) - Speedy</h5>
+                    <p>Tries to ambush Pac-Man by targeting 4 spaces ahead. Most likely to trap you in corners.</p>
+                </div>
+                <div class="character-card">
+                    <div class="character-icon inky">B</div>
+                    <h5>Inky (Cyan) - Bashful</h5>
+                    <p>Uses complex targeting based on Blinky's position. Unpredictable and often the most dangerous.
+                    </p>
+                </div>
+                <div class="character-card">
+                    <div class="character-icon clyde">O</div>
+                    <h5>Clyde (Orange) - Pokey</h5>
+                    <p>Least aggressive. Chases when far from Pac-Man, retreats when close. Good for luring.</p>
+                </div>
+                <div class="character-card">
+                    <div class="character-icon power">●</div>
+                    <h5>Power Pellets</h5>
+                    <p>Large dots in maze corners. Make ghosts vulnerable for 10 seconds. Worth 50 points each.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3>Core Playing Strategies</h3>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Power Pellet Timing</h4>
+                    <p>Don't eat power pellets too early or too late. Time them to coincide with ghost positions for
+                        maximum effect.</p>
+                    <p><strong>Rule:</strong> Eat pellets when ghosts are grouped together, not when they're spread out.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Ghost Luring</h4>
+                    <p>Use Clyde's retreat behavior to separate ghost groups. Lure individual ghosts into traps.</p>
+                    <p><strong>Technique:</strong> Get close to Clyde to make him retreat, then deal with other ghosts.
+                    </p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Pattern Recognition</h4>
+                    <p>Learn the ghosts' movement patterns and predictable behaviors. Each ghost has specific targeting
+                        logic.</p>
+                    <p><strong>Mastery:</strong> Anticipate ghost movements 2-3 steps ahead.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Tunnel Usage</h4>
+                    <p>Use the side tunnels strategically for escapes and shortcuts. Ghosts can't follow you through
+                        tunnels immediately.</p>
+                    <p><strong>Escape:</strong> Lead ghosts into tunnels then double back to trap them.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Corner Control</h4>
+                    <p>Control the corners where power pellets are located. Use them as safe zones during power pellet
+                        effects.</p>
+                    <p><strong>Defense:</strong> Position yourself in corners to force ghosts to come to you.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Score Optimization</h4>
+                    <p>Maximize points by eating ghosts in specific sequences and clearing boards efficiently.</p>
+                    <p><strong>Bonus:</strong> Clear fruits and bonus items for massive point multipliers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="phases-section">
+            <h3>The Four Phases of Ghost Behavior</h3>
+
+            <div class="phases-grid">
+                <div class="phase-card">
+                    <h4>Phase 1: Scatter (First 7 seconds)</h4>
+                    <p>Ghosts move to their corners. This is your best time to eat dots safely.</p>
+                    <p><strong>Strategy:</strong> Focus on clearing dots while ghosts are distracted.</p>
+                </div>
+
+                <div class="phase-card">
+                    <h4>Phase 2: Chase (20 seconds)</h4>
+                    <p>Ghosts chase Pac-Man using their individual targeting patterns. Most dangerous phase.</p>
+                    <p><strong>Survival:</strong> Use luring and positioning to avoid being trapped.</p>
+                </div>
+
+                <div class="phase-card">
+                    <h4>Phase 3: Scatter (7 seconds)</h4>
+                    <p>Brief return to corners. Use this time to reposition and plan your next moves.</p>
+                    <p><strong>Recovery:</strong> Clear remaining dots in safe areas.</p>
+                </div>
+
+                <div class="phase-card">
+                    <h4>Phase 4: Chase (Indefinite)</h4>
+                    <p>Continuous chase until power pellet is eaten. Requires perfect positioning.</p>
+                    <p><strong>Mastery:</strong> Learn to navigate while being constantly pursued.</p>
+                </div>
+            </div>
+
+            <div class="phase-note">
+                <p><strong>Important:</strong> After each power pellet effect, ghosts return to their starting positions
+                    and the pattern repeats, but with increased speed.</p>
+            </div>
+        </div>
+
+        <div class="techniques-section">
+            <h3>Advanced Techniques</h3>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <h4>The Last Dot Strategy</h4>
+                    <p>Save one dot until ghosts are in perfect position, then eat it while they're vulnerable.</p>
+                    <p><strong>Timing:</strong> Requires precise knowledge of ghost movement patterns.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>Ghost Stacking</h4>
+                    <p>Position ghosts on top of each other to clear multiple ghosts with one power pellet sequence.</p>
+                    <p><strong>Setup:</strong> Use maze geometry to force ghosts into the same pathways.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>Fruit Timing</h4>
+                    <p>Eat fruits at optimal times for maximum points. Some fruits are worth more than others.</p>
+                    <p><strong>Sequence:</strong> Cherry (100) → Strawberry (300) → Peach (500) → etc.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>Perfect Level Strategy</h4>
+                    <p>Clear entire levels without dying. Requires memorizing optimal paths and ghost patterns.</p>
+                    <p><strong>Goal:</strong> Complete levels in minimum time with maximum points.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>Speed Running</h4>
+                    <p>Complete levels as quickly as possible. Requires knowing shortest paths and optimal pellet
+                        timing.</p>
+                    <p><strong>Record:</strong> World records are under 3 minutes per level.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4>Multi-Life Management</h4>
+                    <p>Use extra lives strategically. Don't waste them on recoverable mistakes.</p>
+                    <p><strong>Conservation:</strong> Save lives for truly dangerous situations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patterns-section">
+            <h3>Famous Pac-Man Patterns</h3>
+
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <h4>The Channeling Technique</h4>
+                    <p>Use the tunnels to create artificial barriers. Lead ghosts into tunnels then escape.</p>
+                    <p><strong>Advanced:</strong> Requires precise timing and knowledge of ghost AI.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>The Corner Trap</h4>
+                    <p>Lure ghosts into corners then eat power pellets to trap and eat them.</p>
+                    <p><strong>Setup:</strong> Position yourself to force ghosts into corner areas.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>The Box Escape</h4>
+                    <p>When trapped in the center box area, time your escape perfectly to avoid pursuing ghosts.</p>
+                    <p><strong>Timing:</strong> Exit just as ghosts are turning away.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>The Fruit Loop</h4>
+                    <p>Circular patterns around the fruit area to clear dots while managing ghost positions.</p>
+                    <p><strong>Efficiency:</strong> Clears large areas while maintaining control.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>The Side Path Strategy</h4>
+                    <p>Use the side corridors to create safe zones and separate ghost groups.</p>
+                    <p><strong>Divide:</strong> Split ghosts into manageable smaller groups.</p>
+                </div>
+
+                <div class="pattern-card">
+                    <h4>The Endgame Rush</h4>
+                    <p>When few dots remain, use power pellets strategically to clear remaining ghosts.</p>
+                    <p><strong>Finale:</strong> Position for maximum ghost clearing potential.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>Pro Tips for Pac-Man Mastery</h3>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Learn Ghost Patterns</h4>
+                    <p>Each ghost has predictable behavior. Study their targeting systems and movement patterns.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Use Audio Cues</h4>
+                    <p>Listen to the soundtrack changes. Different tunes indicate different ghost behaviors.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Master Power Pellet Timing</h4>
+                    <p>Eat power pellets when ghosts are grouped together, not when they're spread out.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Control Your Speed</h4>
+                    <p>Don't rush. Take time to position yourself correctly before making moves.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Memorize the Maze</h4>
+                    <p>Know every turn, dead end, and shortcut in the maze layout.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Practice Level 1</h4>
+                    <p>Master the first level completely before progressing. It's the foundation for all others.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Watch Expert Play</h4>
+                    <p>Study videos of professional Pac-Man players to learn advanced techniques.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Stay Calm</h4>
+                    <p>Panic leads to mistakes. Take deep breaths and focus on your planned moves.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>The Legend of Pac-Man</h3>
+            <p>Created by Toru Iwatani in 1980, Pac-Man became the most successful arcade game ever, grossing over $2.5
+                billion worldwide and influencing countless games and pop culture.</p>
+
+            <div class="history-facts">
+                <div class="fact-card">
+                    <h4>Origin Story</h4>
+                    <p>Iwatani designed Pac-Man as an alternative to violent games. The character was inspired by a
+                        pizza with a slice missing.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Cultural Phenomenon</h4>
+                    <p>Pac-Man introduced characters with personalities and became a feminist icon in the 1980s.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Technical Innovation</h4>
+                    <p>First game to use RGB color palette and complex sound design. Required custom hardware.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>World Records</h4>
+                    <p>Perfect games (255 levels) have been achieved. Speed runs complete levels in under 3 minutes.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Modern Legacy</h4>
+                    <p>Pac-Man appears in over 30 different games and remains one of gaming's most recognizable
+                        characters.</p>
+                </div>
+
+                <div class="fact-card">
+                    <h4>Competitive Scene</h4>
+                    <p>Professional tournaments and high-score competitions continue to this day.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Mental Benefits of Playing Pac-Man</h3>
+            <p>Pac-Man offers unique cognitive benefits beyond entertainment:</p>
+
+            <ul class="benefits-list">
+                <li><strong>Spatial Memory:</strong> Develops ability to remember and navigate complex layouts</li>
+                <li><strong>Pattern Recognition:</strong> Improves identification of movement patterns and behaviors
+                </li>
+                <li><strong>Risk Assessment:</strong> Teaches evaluation of danger vs reward in dynamic situations</li>
+                <li><strong>Timing Skills:</strong> Builds precise timing and rhythm recognition</li>
+                <li><strong>Strategic Planning:</strong> Enhances long-term planning and consequence prediction</li>
+                <li><strong>Stress Management:</strong> Teaches remaining calm under pressure and time constraints</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update year in footer
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
